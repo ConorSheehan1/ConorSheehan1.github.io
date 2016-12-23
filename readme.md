@@ -1,5 +1,4 @@
 I'm a developer, just finished a masters degree in computer science from UCD. I was a demonstrator for python classes and I'm particularly interested in data analytics. You can find some of my work here on github, or in the links below.
-___
 
 * [https://conorsgapminder.herokuapp.com/](https://conorsgapminder.herokuapp.com/) 
 	* A visualisation of GDP and life expectancy based on open data between 1900 and 2015, using d3.js
