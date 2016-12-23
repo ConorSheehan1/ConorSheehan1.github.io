@@ -1,7 +1,4 @@
-I'm a developer, just finished a masters degree in computer science from UCD. I was a demonstrator at UCD and plan to continue helping people learn to program. I'm particularly interested in data analytics.  
-
-You can find some of my work here on github, or in the links below.  
-(Some of the links may be slow initially because the heroku dynos take time to boot up)
+I'm a developer, just finished a masters degree in computer science from UCD. I was a demonstrator at UCD and plan to continue helping people learn to program. I'm particularly interested in data analytics. You can find some of my work here on github, or in the links below. 
 
 * [https://conorsgapminder.herokuapp.com/](https://conorsgapminder.herokuapp.com/) 
 	* A visualisation of GDP and life expectancy based on open data between 1900 and 2015, using d3.js
