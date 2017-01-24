@@ -1,3 +1,5 @@
+<link rel="shortcut icon" type="image/x-ico" href="{{ "/favicon.ico" | prepend: site.baseurl }}" >
+
 # Where I've worked
 * [UCD](https://www.cs.ucd.ie/) as a demonstrator for the school of computer science (current)
 
