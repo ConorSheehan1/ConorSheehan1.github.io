@@ -1,11 +1,14 @@
 <link rel="shortcut icon" type="image/x-ico" href="{{ "/favicon.ico" | prepend: site.baseurl }}" >
 
 # Where I've worked
-* [UCD](https://www.cs.ucd.ie/) as a demonstrator for the school of computer science (current)
+* [NLI](https://www.nli.ie) as a software developer (2017 - current)
+* [UCD](https://www.cs.ucd.ie/) as a computer science demonstrator (2016 - 2017)
 
 # What I can do
-* Python (Flask, Tkinter, Pandas, scikit)
-* JavaScript (d3.js)
+* Python (Pandas, scikit-learn, Selenium, Flask, Tkinter)
+* Ruby (Rails, Rspec, Cucumber)
+* Php (Zend)
+* JavaScript (d3.js, jQuery)
 * Java
 * C
 
@@ -21,5 +24,6 @@
 
 # What I like
 * Python
+* Rails
 * Data Science
-* Information Visualisation
+* Data Visualisation
