@@ -1,8 +1,13 @@
-<link rel="shortcut icon" type="image/x-ico" href="{{ "/favicon.ico" | prepend: site.baseurl }}" >
+---
+layout: default
+---
 
-# Where I've worked
-* [NLI](https://www.nli.ie) as a software developer (2017 - current)
-* [UCD](https://www.cs.ucd.ie/) as a computer science demonstrator (2016 - 2017)
+# Experience
+
+| Organisation                  | Title              | Time        |
+|:------------------------------|:-------------------|:------------|
+| [NLI](https://www.nli.ie)     | Software Developer | 2017 - now  |
+| [UCD](https://www.cs.ucd.ie/) | Demonstrator       | 2016 - 2017 |
 
 # What I can do
 * Python (Pandas, scikit-learn, Selenium, Flask, Tkinter)

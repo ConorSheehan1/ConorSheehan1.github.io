@@ -3,23 +3,43 @@
 
 @import "{{ site.theme }}";
 
+@mixin setLinkSelectorStyle {
+  &:hover, &:active, &:focus{
+    @content;
+  }
+}
+
+$footer_height: 50px;
+
+#body {
+  padding-bottom: $footer_height;
+}
+
 #footer {
   background-color: red;
-  position:absolute;
+  position:fixed;
   bottom:0;
   width:100%;
-  height:60px;
-
-  z-index: 1;
-  height: 40px;
-
-  /*width: 50%;*/
+  height: $footer_height;
   margin: 0 auto;
-  /*padding: 0 25%;*/
-
+  padding-top: 10px;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
+  height: 100%;
 }
+
+.footer-block {
+  @include setLinkSelectorStyle {
+    color: blue;
+  }
+
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 32px;
+}
+
+
