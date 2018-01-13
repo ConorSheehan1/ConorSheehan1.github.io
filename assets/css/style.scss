@@ -42,8 +42,20 @@ section #title {
     }
   }
 
-  .col-3 {
-    margin: $icon_size 2em 0 2em;
+  // 5 items in header: 3 * .col, 2 * .cs-header-link
+  // 95% taken up, 5% left for margin auto to center items
+  .col {
+    width: 15%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cs-header-link {
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
+    // align link with text under icons
+    margin-top: 32px;
   }
 
   .text-truncate {
@@ -70,8 +82,8 @@ section #title {
     span {
       display: none;
     }
-    // stop aligning other link text with text underneath icona
-    .col-3 {
+    // stop aligning other link text with text underneath icons
+    .cs-header-link {
       margin: 0;
     }
   } 
