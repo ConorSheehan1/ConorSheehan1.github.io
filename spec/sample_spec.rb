@@ -4,15 +4,12 @@ describe "home page", type: :feature, js: true do
 
   it "has a title" do
     visit '/'
-    # `binding.pry` is useful for crafting the right selector
-    # or checking the actual state of the page
-    # binding.pry # test will pause here
     expect(page).to have_title "Conor Sheehan"
   end
 
-  it "returns ok for all links" do
+  it "does not throw 400/500 error for any link" do
     visit '/'
-    within("#header") do
+    within(".wrapper") do
       all('a').each do |link|
         http_status = Faraday.head(link[:href].to_s).status
         puts "#{link.text}, #{http_status}"
@@ -23,5 +20,10 @@ describe "home page", type: :feature, js: true do
       end
     end
   end
+
+  it "does throw 400/500 error for url which fails" do
+    http_status = Faraday.head("https://en.wikipedia.org/__wiki_/").status
+    expect((400..500)).to include(http_status)
+  end    
 
 end
