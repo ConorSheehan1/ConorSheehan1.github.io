@@ -11,4 +11,5 @@ group :development, :test do
   gem "capybara"
   gem "rack-jekyll"
   gem "pry"
+  gem "faraday"
 end

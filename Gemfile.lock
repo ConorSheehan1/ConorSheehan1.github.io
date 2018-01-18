@@ -280,6 +280,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   chromedriver-helper
+  faraday
   github-pages
   pry
   rack-jekyll
