@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ConorSheehan1/ConorSheehan1.github.io.svg?branch=master)](https://travis-ci.org/ConorSheehan1/ConorSheehan1.github.io)
+
 ## Local setup
 1. install dependencies
     ```
