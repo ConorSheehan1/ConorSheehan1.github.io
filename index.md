@@ -31,8 +31,8 @@ layout: default
 * [http://restimator.herokuapp.com](http://restimator.herokuapp.com)  
 	* Estimating the occupancy of rooms in the UCD computer science building based on WiFI logs (flask, scikit, pandas)
 
-* [http://ec2-54-154-159-134.eu-west-1.compute.amazonaws.com/](http://ec2-54-154-159-134.eu-west-1.compute.amazonaws.com/)  
-  * Web App built on jcdecaux dublin bikes api
+* [https://dubbikesmap-api-heroku.herokuapp.com/](https://dubbikesmap-api-heroku.herokuapp.com/)  
+  * Dublin Bikes WebApp built on jcdecaux api
 
 # What I like
 
