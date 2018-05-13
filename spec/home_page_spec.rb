@@ -10,7 +10,10 @@ describe "home page", type: :feature, js: true do
   it "does not throw 400/500 error for any link" do
     visit '/'
     within(".wrapper") do
-      all('a').each do |link|
+      exclude_links = ['more','View Source on GitHub']
+      links = all('a').select {|l| !exclude_links.any? { |word| l.text.include?(word) }}
+      
+      links.each do |link|
         http_status = Faraday.head(link[:href].to_s).status
         puts "#{link.text}, #{http_status}"
         # linkedin returns 999 code (possibly filter by user agent)
