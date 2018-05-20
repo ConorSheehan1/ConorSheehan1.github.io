@@ -23,19 +23,14 @@ layout: default
 ## College Projects
 ------------------------------------------------------------------------------------------------------  
 
-* [https://dubbikesmap-api-heroku.herokuapp.com/](https://dubbikesmap-api-heroku.herokuapp.com/)  
-  * Dublin Bikes WebApp built on jcdecaux api  
-  * [View Source Code](https://github.com/ConorSheehan1/dublin_bikes)
+{% for project in site.data.projects.college %}
+  * {{project.title}}
+  * [View Site]({{site.live}})
+  * [View Source Code]({{project.src}})
 
-{% for image in site.data.images.projects.dublin_bikes %}
-  [![{{ image[1].alt }}]({{image[1].src}})]({{image[1].src}})
-{% endfor %}
+  {% for image in site.data.images.projects[project.id] %}
+    [![{{ image[1].alt }}]({{image[1].src}})]({{image[1].src}})
+  {% endfor %}
 
-* [http://restimator.herokuapp.com](http://restimator.herokuapp.com)  
-  * Estimating the occupancy of rooms in the UCD computer science building based on WiFI logs (flask, scikit, pandas)  
-  * [View Source Code](https://github.com/ConorSheehan1/ReSTimator_Team1100)
-
-{% for image in site.data.images.projects.restimator %}
-  [![{{ image[1].alt }}]({{image[1].src}})]({{image[1].src}})
 {% endfor %}
 
