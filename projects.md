@@ -27,9 +27,9 @@ layout: default
   * Dublin Bikes WebApp built on jcdecaux api  
   * [View Source Code](https://github.com/ConorSheehan1/dublin_bikes)
 
-
-[![map](assets/images/dublin_bikes/map.png)](assets/images/dublin_bikes/map.png)
-[![chart](assets/images/dublin_bikes/chart.png)](assets/images/dublin_bikes/chart.png)
+{% for image in site.data.images.projects.dublin_bikes %}
+  [![{{ image[0] }}]({{image[1].src}})]({{image[1].src}})
+{% endfor %}
 
 * [http://restimator.herokuapp.com](http://restimator.herokuapp.com)  
   * Estimating the occupancy of rooms in the UCD computer science building based on WiFI logs (flask, scikit, pandas)  
