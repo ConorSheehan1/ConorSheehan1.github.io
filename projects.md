@@ -2,29 +2,34 @@
 layout: default
 ---
 
+
 ## Things I've made
+------------------------------------------------------------------------------------------------------
 
 * [chrome-compare](https://chrome.google.com/webstore/detail/chrome-compare/fbojbhlkngpihcjhjhadacdfikocgjfe) 
   * A google-chrome extension to compare the same page accross multiple sites (js) 
   * [View Source Code](https://github.com/ConorSheehan1/chrome-compare)
 
-+ test
---------------- 
-  * [https://conorsgapminder.herokuapp.com](https://conorsgapminder.herokuapp.com) 
-    * visualization of GDP and life expectancy of countries (d3.js) 
-    * [View Source Code](https://github.com/ConorSheehan1/InfoVisD3)
-    
-  * [https://conorsworldmap.herokuapp.com](https://conorsworldmap.herokuapp.com)
-    * visualization of GDP grouped by government type, using (d3.js, datamaps)  
-    * [View Source Code](https://github.com/ConorSheehan1/InfoVisD3)
+* [https://conorsgapminder.herokuapp.com](https://conorsgapminder.herokuapp.com) 
+  * visualization of GDP and life expectancy of countries (d3.js) 
+  * [View Source Code](https://github.com/ConorSheehan1/InfoVisD3)
+  
+* [https://conorsworldmap.herokuapp.com](https://conorsworldmap.herokuapp.com)
+  * visualization of GDP grouped by government type, using (d3.js, datamaps)  
+  * [View Source Code](https://github.com/ConorSheehan1/InfoVisD3)
 
 
 
 ## College Projects
+------------------------------------------------------------------------------------------------------  
 
 * [https://dubbikesmap-api-heroku.herokuapp.com/](https://dubbikesmap-api-heroku.herokuapp.com/)  
   * Dublin Bikes WebApp built on jcdecaux api  
   * [View Source Code](https://github.com/ConorSheehan1/dublin_bikes)
+
+
+[![map](assets/images/dublin_bikes/map.png)](assets/images/dublin_bikes/map.png)
+[![chart](assets/images/dublin_bikes/chart.png)](assets/images/dublin_bikes/chart.png)
 
 * [http://restimator.herokuapp.com](http://restimator.herokuapp.com)  
   * Estimating the occupancy of rooms in the UCD computer science building based on WiFI logs (flask, scikit, pandas)  
