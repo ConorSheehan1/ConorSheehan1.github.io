@@ -15,5 +15,5 @@ Dir.glob("#{__dir__}/../assets/images/*/*#{file_type}").each do |file|
 end
 
 data["projects"] = projects
-# pp data
+pp data
 puts data.to_yaml

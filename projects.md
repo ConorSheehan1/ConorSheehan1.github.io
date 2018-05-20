@@ -28,13 +28,14 @@ layout: default
   * [View Source Code](https://github.com/ConorSheehan1/dublin_bikes)
 
 {% for image in site.data.images.projects.dublin_bikes %}
-  [![{{ image[0] }}]({{image[1].src}})]({{image[1].src}})
+  [![{{ image[1].alt }}]({{image[1].src}})]({{image[1].src}})
 {% endfor %}
 
 * [http://restimator.herokuapp.com](http://restimator.herokuapp.com)  
   * Estimating the occupancy of rooms in the UCD computer science building based on WiFI logs (flask, scikit, pandas)  
   * [View Source Code](https://github.com/ConorSheehan1/ReSTimator_Team1100)
 
-[![sign up](assets/images/restimator/sign_up.png)](assets/images/restimator/sign_up.png)
-[![occupancy example](assets/images/restimator/occupancy.png)](assets/images/restimator/occupancy.png)
+{% for image in site.data.images.projects.restimator %}
+  [![{{ image[1].alt }}]({{image[1].src}})]({{image[1].src}})
+{% endfor %}
 
