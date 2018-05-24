@@ -12,5 +12,4 @@ group :development, :test do
   gem "rack-jekyll"
   gem "pry"
   gem "faraday"
-  gem "yaml"
 end
