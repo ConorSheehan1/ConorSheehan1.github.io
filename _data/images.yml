@@ -1,16 +1,10 @@
-path: assets/images/
-projects:
-  dublin_bikes:
-    chart:
-      src: assets/images/dublin_bikes/chart.png
-      alt: chart
-    map:
-      src: assets/images/dublin_bikes/map.png
-      alt: map
-  restimator:
-    occupancy:
-      src: assets/images/restimator/occupancy.png
-      alt: occupancy
-    sign_up:
-      src: assets/images/restimator/sign_up.png
-      alt: sign_up
+dublin_bikes:
+  - src: assets/images/dublin_bikes/chart.png
+    alt: chart
+  - src: assets/images/dublin_bikes/map.png
+    alt: map
+restimator:
+  - src: assets/images/restimator/occupancy.png
+    alt: occupancy
+  - src: assets/images/restimator/sign_up.png
+    alt: sign_up

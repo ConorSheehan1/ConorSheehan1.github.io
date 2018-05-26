@@ -283,6 +283,7 @@ DEPENDENCIES
   chromedriver-helper
   faraday
   github-pages
+  jekyll-paginate
   pry
   rack-jekyll
   rspec

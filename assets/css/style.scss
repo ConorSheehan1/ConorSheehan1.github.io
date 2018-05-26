@@ -1,6 +1,7 @@
 ---
 ---
 
+//@import "bootstrap";
 @import "{{ site.theme }}";
 
 $header_height: 60px;
@@ -55,7 +56,7 @@ section #title {
     margin: 0 auto;
     text-align: center;
     // align link with text under icons
-    margin-top: 32px;
+    margin-top: 37px;
   }
 
   .text-truncate {

@@ -1,3 +1,20 @@
 theme: jekyll-theme-midnight
 title: Conor Sheehan
-exclude: [README.md, LICENSE.md, Gemfile, Gemfile.lock, scripts/*, spec/*]
+
+plugins: 
+  - jekyll-paginate
+
+paginate: 2
+paginate_path: "/projects/page:num/"
+
+sass:
+  sass_dir: "_sass/bootstrap-sass-3.3.7/assets/stylesheets"
+  style: :compressed
+
+exclude: 
+  - README.md
+  - LICENSE.md
+  - Gemfile 
+  - Gemfile.lock
+  - scripts/*
+  - spec/*
