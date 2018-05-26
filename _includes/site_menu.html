@@ -1,0 +1,20 @@
+<div id="site_menu">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/projects">Projects</a></li>
+    <ul>
+      <li>Personal</li>
+        <ul>
+          {% for post in site.categories["personal"] %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      <li>College</li>
+        <ul>
+          {% for post in site.categories["college"] %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+    </ul>
+  </ul>
+</div>

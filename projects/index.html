@@ -10,31 +10,21 @@ pagination:
   ul.pager li {display: inline;border: 1px solid black; padding: 10px; margin: 5px;}
 </style>
 
-<div class="home">
-
+<div class="projects">
   <h1 class="page-heading">Projects</h1>
-  
-  {{ content }}
-
   <ul class="post-list">
-    <!-- 
-        Here is the main paginator logic called.
-        All calls to site.posts should be replaced by paginator.posts 
-    -->
     {% for post in paginator.posts %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
         <h2>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
-        <span class="badge badge-secondary"> {{ post.categories }} </span>
+        <p>Categories: <span class="badge"> {{ post.categories }} </span></p>
       </li>
     {% endfor %}
   </ul>
   
-  <!-- 
-    Showing buttons to move to the next and to the previous list of posts (pager buttons).
-  -->
+  <!-- next prev nav -->
   {% if paginator.total_pages > 1 %}
   <ul class="pager">
       {% if paginator.previous_page %}

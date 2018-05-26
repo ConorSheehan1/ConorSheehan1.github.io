@@ -23,6 +23,13 @@ https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-
     bundle exec rspec
     ```
 
+## Configuration
+1. All pages should use the default layout or a layout which inherits from the default layout.  
+This is because the default layout loads all css/js required by pages.
+1. Lightbox.min.css is customized to look for images in /images/lightbox/ instead of /images/
+1. Pagination only works from index.html pages, hence the need for projects/index.html
+1. For jekyll plugins on github pages, the plugin must be included in both _config.yml and Gemfile
+
 
 ## Credit
 Jekyll theme: https://github.com/pages-themes/midnight

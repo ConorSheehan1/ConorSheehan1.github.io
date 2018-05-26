@@ -18,7 +18,6 @@ layout: default
 * DevOps
 
 
-
 ## [Projects]({{'/projects' | relative_url }})
 
 {% for post in site.categories["personal"] %}
