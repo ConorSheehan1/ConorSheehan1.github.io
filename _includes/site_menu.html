@@ -3,18 +3,18 @@
     <li><a href="/">Home</a></li>
     <li><a href="/projects">Projects</a></li>
     <ul>
-      <li>Personal</li>
+      {% for c in site.categories %}
+        {% assign category=c[0] %}
+        <li>
+          {{ category | capitalize }}
+        </li>
         <ul>
-          {% for post in site.categories["personal"] %}
+          {% assign posts = site.categories[category] | sort: 'date' | reverse %}
+          {% for post in posts %}
             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
           {% endfor %}
         </ul>
-      <li>College</li>
-        <ul>
-          {% for post in site.categories["college"] %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-          {% endfor %}
-        </ul>
+      {% endfor %}
     </ul>
   </ul>
 </div>
