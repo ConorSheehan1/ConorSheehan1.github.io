@@ -25,19 +25,4 @@ describe "home page", type: :feature, js: true do
       end
     end
   end
-
-  context "header" do
-    # should catch case where my profile link changes
-    it "has a valid linked-in link" do
-      linked_in_link = page.find(:xpath, 
-        "//div[contains(@class, 'col')]//span[text()='Linked In']"
-        )
-      linked_in_link.click()
-      sleep(2)
-      title = page.title.downcase()
-      expect(title).to include("conor")
-      expect(title).to include("linkedin")
-    end
-  end
-
 end
