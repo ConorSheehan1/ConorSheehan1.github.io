@@ -6,7 +6,7 @@
       {% for c in site.categories %}
         {% assign category=c[0] %}
         <li>
-          {{ category | capitalize }}
+          {{ category | replace: "_", " " | capitalize }}
         </li>
         <ul>
           {% assign posts = site.categories[category] | sort: 'date' | reverse %}

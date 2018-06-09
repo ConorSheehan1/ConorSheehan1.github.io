@@ -5,10 +5,10 @@ layout: default
 
 # Experience
 
-| Organisation                  | Title              | Time        |
-|:------------------------------|:-------------------|:------------|
-| [NLI](https://www.nli.ie)     | Software Developer | 2017 - now  |
-| [UCD](https://www.cs.ucd.ie/) | Demonstrator       | 2016 - 2017 |
+| Title              | Organisation                  | Time        |
+|:-------------------|:------------------------------|:------------|
+| Software Developer | [NLI](https://www.nli.ie)     | 2017 - now  |
+| Demonstrator       | [UCD](https://www.cs.ucd.ie/) | 2016 - 2017 |
 
 
 # What I can do
