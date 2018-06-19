@@ -5,13 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% seo %}
-    <link href="{{ '/assets/css/lightbox.min.css' | relative_url }}" rel="stylesheet">
+    {% seo %}
+    <link href="{{ '/dist/lightbox/css/lightbox.min.css' | relative_url }}" rel="stylesheet">
+    <link rel="stylesheet" href="
+      {{ '/dist/jstree/themes/' | append: site.jstree_theme | append: '/style.min.css' | relative_url }}
+    " />
+
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
     <link rel="shortcut icon" type="image/x-ico" href="{{ '/assets/images/icons/favicon.ico' | prepend: site.baseurl }}" >
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/lightbox.min.js' | relative_url }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="{{ '/dist/lightbox/js/lightbox.min.js' | relative_url }}"></script>
+
+
+    <!-- <script src="{{ '/assets/js/respond.js' | relative_url }}"></script> -->
+    <!-- <script src="{{ '/assets/js/lightbox.min.js' | relative_url }}"></script> -->
+    <!-- <script src="{{ '/assets/js/jstree.min.js' | relative_url }}"></script> -->
     <script>
         $(document).ready(function(){
         $('.markdown-block .sqs-block-content h2').css('cursor','pointer');
@@ -23,7 +32,7 @@
         lightbox.option({
           'resizeDuration': 200,
           'wrapAround': true
-        })
+        });
     </script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -59,6 +68,20 @@
     {% endif %}
 
     {% include site_menu.html %}
+
+    <script src="{{ '/dist/jstree/jstree.min.js' | relative_url }}"></script>
+    <script type="text/javascript">
+        $('#projects_tree').jstree({
+          'core' : {
+             "themes": {
+                "name": "{{site.jstree_theme}}",
+                "dots": true,
+                "icons": true
+            },
+          },
+          "plugins": ['theme', "html_data", "types"],
+        });
+    </script>
 
   </body>
 </html>

@@ -19,3 +19,5 @@ exclude:
   - scripts/*
   - spec/*
   - vendor/*
+
+jstree_theme: "default"
