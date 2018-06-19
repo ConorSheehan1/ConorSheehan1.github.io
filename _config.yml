@@ -20,4 +20,4 @@ exclude:
   - spec/*
   - vendor/*
 
-jstree_theme: "default"
+jstree_theme: "default-dark"

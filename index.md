@@ -36,7 +36,7 @@ layout: default
   * [View Source Code](https://github.com/ConorSheehan1/dublin_bikes)
 
 
-# What I like
+# What I'm interested in
 
 * Python
 * Ruby

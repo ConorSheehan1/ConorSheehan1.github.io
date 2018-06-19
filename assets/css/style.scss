@@ -8,10 +8,17 @@ $header_height: 60px;
 $icon_size: 32px;
 $wide_screen: 700px;
 $small_screen: 480px;
+$brand_primary: #ffcc00;
 
 @mixin setLinkSelectorStyle {
   &:hover, &:active, &:focus{
     @content;
+  }
+}
+
+@mixin jstreeSearch {
+  .jstree-search {
+    color: $brand_primary
   }
 }
 
@@ -99,6 +106,19 @@ section #title {
     margin-top: $header_height;
   }
 }
+
+// overrides for jstree style
+.jstree-default {
+  @include jstreeSearch;
+}
+
+.jstree-default-dark {
+  @include jstreeSearch;
+  .jstree-anchor {
+    color: white;
+  }
+}
+
 
 
 
