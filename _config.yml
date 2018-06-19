@@ -4,7 +4,7 @@ title: Conor Sheehan
 plugins: 
   - jekyll-paginate
 
-paginate: 2
+paginate: 3
 paginate_path: "/projects/page:num/"
 
 sass:

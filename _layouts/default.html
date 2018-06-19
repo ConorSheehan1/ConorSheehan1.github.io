@@ -8,14 +8,14 @@
     {% seo %}
 
     <link rel="stylesheet" href="
-      {{ '/dist/jstree/themes/' | append: site.jstree_theme | append: '/style.min.css' | relative_url }}
+      {{ '/assets/dist/jstree/themes/' | append: site.jstree_theme | append: '/style.min.css' | relative_url }}
     " />
-    <link href="{{ '/dist/lightbox/css/lightbox.min.css' | relative_url }}" rel="stylesheet">
+    <link href="{{ '/assets/dist/lightbox/css/lightbox.min.css' | relative_url }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="shortcut icon" type="image/x-ico" href="{{ '/assets/images/icons/favicon.ico' | prepend: site.baseurl }}" >
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
-    <script src="{{ '/dist/lightbox/js/lightbox.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/dist/lightbox/js/lightbox.min.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
@@ -29,7 +29,11 @@
           <hr>
         </div>
         {{ content }}
+
       </section>
+      {% comment %}
+        {% include footer.html %}
+      {% endcomment %}
     </div>
 
 
@@ -44,9 +48,8 @@
       </script>
     {% endif %}
 
-    {% include projects_menu.html %}
 
-    <script src="{{ '/dist/jstree/jstree.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/dist/jstree/jstree.min.js' | relative_url }}"></script>
     <script type="text/javascript">
             // js tree config and activation
       $('#projects_tree').jstree({

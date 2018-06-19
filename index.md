@@ -20,16 +20,14 @@ layout: default
 
 ## [Projects]({{'/projects' | relative_url }})
 
-{% for post in site.categories["personal"] %}
-{% endfor %}
+{% include projects_menu.html %}
 
-## Personal Projects
+### Preview
 * chrome-compare  
   * A Google Chrome extension for comparing the same page accross multiple sites (js) 
   * [View Site](https://chrome.google.com/webstore/detail/chrome-compare/fbojbhlkngpihcjhjhadacdfikocgjfe) 
   * [View Source Code](https://github.com/ConorSheehan1/chrome-compare)
 
-## College Projects
 * Dublin Bikes
   * Dublin Bikes WebApp built on jcdecaux api (python flask)
   * [View Site](https://dubbikesmap-api-heroku.herokuapp.com/)
