@@ -67,6 +67,14 @@
         },
       });
 
+      $('#projects_tree').bind("select_node.jstree", function (e, data) {
+        $('#jstree').jstree('save_state');
+       }) ;
+
+      $('#projects_tree').on("activate_node.jstree", function(e,data){
+         window.location.href = data.node.a_attr.href;
+       })
+
       // $('#btn-search').click(function(){
       //   $('#projects_tree').jstree('search', $('#search').val());
       // })

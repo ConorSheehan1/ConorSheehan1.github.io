@@ -22,6 +22,15 @@ $brand_primary: #ffcc00;
   }
 }
 
+@mixin jstreeClickable {
+  .jstree-anchor {
+    color: $brand_primary;
+    .clickable-tree-node {
+      color: $brand_primary;
+    }
+  }
+}
+
 section #title {
   margin: 0;
 }
@@ -117,7 +126,12 @@ section #title {
   .jstree-anchor {
     color: white;
   }
+  .jstree-anchor.clickable-tree-node {
+    color: $brand_primary;
+  }
 }
+
+
 
 
 
