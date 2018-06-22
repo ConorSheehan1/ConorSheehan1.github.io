@@ -84,6 +84,21 @@ section #title {
   }
 }
 
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+.push {
+  height: 50px;
+}
+#footer {
+  height: 50px;
+  float:right,
+}
+
 // keep even space between objects in header
 .container {
   display: flex;
@@ -129,6 +144,11 @@ section #title {
   .jstree-anchor.clickable-tree-node {
     color: $brand_primary;
   }
+}
+
+.back-to {
+  float:right;
+  font-size: 20px;
 }
 
 
