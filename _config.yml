@@ -21,3 +21,4 @@ exclude:
   - vendor/*
 
 jstree_theme: "default-dark"
+# jstree_theme: "proton"
