@@ -3,7 +3,6 @@ ruby ">= 2.3.0"
 source 'https://rubygems.org'
 
 group :development, :test do
-  # gem 'bootstrap-sass', '~> 3.3.7'
   gem "jekyll-paginate"
   gem "rack-jekyll"
   gem "pry"
