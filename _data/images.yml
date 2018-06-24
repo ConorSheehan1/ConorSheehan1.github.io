@@ -8,3 +8,6 @@ restimator:
     alt: occupancy
   - src: assets/images/restimator/sign_up.png
     alt: sign_up
+chrome_compare:
+  - src: assets/images/chrome_compare/so_use.png
+    alt: chrome-compare-stack-overflow-example
