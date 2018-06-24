@@ -4,11 +4,17 @@
 //@import "bootstrap";
 @import "{{ site.theme }}";
 
-$header_height: 60px;
+// colors 
+$brand_primary: #ffcc00;
+
+
+$header_height: 90px;
+$header_internal_height: 60px;
+$header_padding: 10px;
+
 $icon_size: 32px;
 $wide_screen: 700px;
 $small_screen: 480px;
-$brand_primary: #ffcc00;
 
 @mixin setLinkSelectorStyle {
   &:hover, &:active, &:focus{
@@ -31,8 +37,17 @@ $brand_primary: #ffcc00;
   }
 }
 
+@mixin containerish {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: $wide_screen;
+}
+
 section #title {
   margin: 0;
+  // account for header bottom pad
+  margin-top: $header_padding;
 }
 
 #header {
@@ -59,20 +74,19 @@ section #title {
     }
   }
 
-  // 5 items in header: 3 * .col, 2 * .cs-header-link
-  // 95% taken up, 5% left for margin auto to center items
+  // 4 items in header: 3 * .col, 1 * .cs-header-link
+  // 85% taken up, 15% left for margin auto to center items
   .col {
     width: 15%;
     margin: 0 auto;
     text-align: center;
   }
 
-  .cs-header-link {
-    width: 25%;
-    margin: 0 auto;
-    text-align: center;
-    // align link with text under icons
-    margin-top: 37px;
+  .header-left {
+    float: left;
+  }
+  .header-right {
+    float: right;
   }
 
   .text-truncate {
@@ -82,7 +96,21 @@ section #title {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
+  // header container with adjusted height
+  .container {
+    @include containerish;
+    height: $header_internal_height;
+  }
+
 }
+
+// normal container
+.container {
+  height: 100%;
+  @include containerish;
+}
+
 
 .wrapper {
   min-height: 100%;
@@ -99,24 +127,11 @@ section #title {
   float:right,
 }
 
-// keep even space between objects in header
-.container {
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-  margin: 0 auto;
-  max-width: $wide_screen;
-}
-
 @media (max-width: $wide_screen) {
   #header{
     // hide the text under icons 
     span {
       display: none;
-    }
-    // stop aligning other link text with text underneath icons
-    .cs-header-link {
-      margin: 0;
     }
   } 
 }
@@ -149,6 +164,18 @@ section #title {
 .back-to {
   float:right;
   font-size: 20px;
+  padding-left: 30px;
+}
+
+
+.back-to:before {
+  //content: url(../dist/lightbox/images/prev.png);
+  content: "";
+  display: block;
+  background: url(../dist/lightbox/images/prev.png) right 50% no-repeat;
+  width: 30px;
+  height: 25px;
+  float: left;
 }
 
 
