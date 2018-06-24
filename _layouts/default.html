@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% seo %}
+    {% seo %}
+
+    <link rel="stylesheet" href="
+      {{ '/assets/dist/jstree/themes/' | append: site.jstree_theme | append: '/style.min.css' | relative_url }}
+    " />
+    <link href="{{ '/assets/dist/lightbox/css/lightbox.min.css' | relative_url }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <link rel="shortcut icon" type="image/x-ico" href="{{ "/favicon.ico" | prepend: site.baseurl }}" >
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
-    <![endif]-->
+    <link rel="shortcut icon" type="image/x-ico" href="{{ '/assets/images/icons/favicon.ico' | prepend: site.baseurl }}" >
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="{{ '/assets/dist/lightbox/js/lightbox.min.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
   </head>
@@ -24,10 +25,14 @@
       {% include header.html %}
       <section>
         <div id="title">
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+          <h1><a href="/">{{ site.title | default: site.github.repository_name }}</a></h1>
           <hr>
         </div>
+
         {{ content }}
+
+        <div class="push"></div>
+        {% include footer.html %}
       </section>
     </div>
 
@@ -43,5 +48,39 @@
       </script>
     {% endif %}
 
+
+    <script src="{{ '/assets/dist/jstree/jstree.min.js' | relative_url }}"></script>
+    <script type="text/javascript">
+            // js tree config and activation
+      $('#projects_tree').jstree({
+        'core' : {
+           "themes": {
+              "name": "{{site.jstree_theme}}",
+              "dots": true,
+              "icons": true
+          },
+        },
+        "plugins": ['theme', "html_data", "types", "search"],
+        "search": {
+          "case_insensitive": true,
+          "show_only_matches" : true
+        },
+      });
+
+      $('#projects_tree').bind("select_node.jstree", function (e, data) {
+        $('#jstree').jstree('save_state');
+       }) ;
+
+      $('#projects_tree').on("activate_node.jstree", function(e,data){
+         window.location.href = data.node.a_attr.href;
+       })
+
+      // $('#btn-search').click(function(){
+      //   $('#projects_tree').jstree('search', $('#search').val());
+      // })
+      $('#projects-search').keyup(function(){
+        $('#projects_tree').jstree('search', $(this).val());
+      });
+    </script>
   </body>
 </html>

@@ -1,24 +1,18 @@
 <div id="header">
   <div class="container">
-      <div class="cs-header-link">
-        <a href="{{ site.github.repository_url }}">
-          <p class="text-tuncate">View Source on GitHub</p>
-        </a>
-      </div>
-
       <div class="col">
         <a href="https://github.com/ConorSheehan1">
           <div class="header-icon">
-            {% include _github.svg %}
+            <img src="{{ '/assets/images/icons/github.svg' | relative_url }}" />
           </div>
           <span>GitHub</span>
         </a>
       </div>
 
       <div class="col">
-        <a href="https://www.linkedin.com/in/conor-sheehan-403358106/">
+        <a href="https://www.linkedin.com/in/conor-s-403358106/">
           <div class="header-icon">
-            {% include _linkedin.svg %}
+            <img src="{{ '/assets/images/icons/linkedin.svg' | relative_url }}" />
           </div>
           <span>Linked In</span>
         </a>
@@ -27,16 +21,13 @@
       <div class="col">
         <a href="https://stackoverflow.com/users/6305204/con?tab=profile">
           <div class="header-icon">
-            {% include _stackoverflow.svg %}
+            <img src="{{ '/assets/images/icons/stackoverflow.svg' | relative_url }}" />
           </div>
           <span>Stack Overflow</span>
         </a>
       </div>
-
-      <div class="cs-header-link">
-        <a href="https://twitter.com/michigangraham">
-          <p class="text-tuncate">Theme by mattgraham</p>
-        </a>
-      </div>
+  </div>
+  <div class="container-sm">
+    {% include projects_menu.html %}
   </div>
 </div>
