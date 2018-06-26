@@ -26,12 +26,8 @@ describe 'projects search on home page', type: :feature, js: true do
   end
 
   context 'when the root projects node is open' do
-    before do
-      @root_node_toggle_icon.click
-    end
-    after do
-      @root_node_toggle_icon.click
-    end
+    before { @root_node_toggle_icon.click }
+    after { @root_node_toggle_icon.click }
     it 'should have project categories' do
       categories = ['College', 'Personal', 'Open source']
       categories.each do |category|
@@ -40,15 +36,14 @@ describe 'projects search on home page', type: :feature, js: true do
         expect(page).to have_xpath(category_xpath)
       end
     end
-  end
-
-  xit 'should have project categories' do
-  end
-
-  xit 'should have projects under each category' do
-  end
-
-  xit 'should link to the project when clicked' do
+    context 'when a category node is opened' do
+      # before do
+      #   icon_css = '.jstree-node.jstree-closed > i'
+      #   category_toggle_icon = page.all(:css, icon_css)
+      # end
+      xit 'should have nodes with links to each project' do
+      end
+    end
   end
 
   xit 'should show relevant results when searched' do
