@@ -3,12 +3,16 @@
 ## Local setup
 1. install dependencies
     ```
-    bundle
+    bundle install
     ```
 1. run server
     ```
     bundle exec jekyll serve
     ```  
+    Currently _config.yml is only loded on the initial jekyll serve command.  
+    If you change config, restart the jekyll server to read the updated data. 
+
+
 You may need to run ```bundle update``` to get the latest version of jekyll used by live github pages.  
 https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
 
@@ -22,6 +26,7 @@ https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-
     ```
     bundle exec rspec
     ```
+
 
 ## Configuration
 1. All pages should use the default layout or a layout which inherits from the default layout.  
