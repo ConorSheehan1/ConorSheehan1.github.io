@@ -15,4 +15,13 @@ shared_examples 'base' do
     header_text = page.find(:css, header_css).text
     social_links.each { |l| expect(header_text).to include(l) }
   end
+
+  it 'should have a footer with the theme link' do
+    # footer link is in div, in anchor, in paragraph
+    # select paragraph by text, then get link as parent
+    theme_link_xpath = "//div[@id='footer']//a" \
+      "/p[text()='Theme by mattgraham']/parent::*"
+    footer_link = page.find(:xpath, theme_link_xpath)
+    expect(footer_link[:href]).to eq @theme_link
+  end
 end

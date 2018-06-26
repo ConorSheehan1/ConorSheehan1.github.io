@@ -17,6 +17,7 @@ RSpec.configure do |config|
 
   config.before :all do
     @home_page_regex = %r{http\:\/\/127\.0\.0\.1\:(\d+)\/}
+    @theme_link = 'https://twitter.com/michigangraham'
   end
 
   config.mock_with :rspec do |mocks|

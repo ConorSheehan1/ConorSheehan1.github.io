@@ -9,6 +9,4 @@ describe 'home page', type: :feature, js: true do
 
   xit 'should paginate projects' do
   end
-
-  xit 'should '
 end
