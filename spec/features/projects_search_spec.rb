@@ -5,21 +5,41 @@
 describe 'projects search on home page', type: :feature, js: true do
   before(:each) do
     visit '/'
+    @root_node = page.find(:css, '.jstree-anchor')
+    icon_css = '#projects_tree .jstree-icon.jstree-ocl'
+    # get root node toggle icon in advance to easily open and close
+    # the entire js tree
+    @root_node_toggle_icon = page.find(:css, icon_css)
   end
 
   it 'should start collapsed' do
     expect(page.all(:css, '.jstree-closed').count).to be 1
-    root_node = page.find(:css, '.jstree-anchor')
-    expect(root_node.text).to eq 'Projects'
+    expect(@root_node.text).to eq 'Projects'
   end
 
   it 'should have a root node that links to the projects page' do
-    root_node = page.find(:css, '.jstree-anchor')
     projects_page_regex = Regexp.new(@home_page_regex.source + 'projects')
-    expect(root_node[:href]).to match projects_page_regex
+    expect(@root_node[:href]).to match projects_page_regex
+    # actuall visit the link to make sure it's working (no jstree bugs)
+    @root_node.click
+    expect(current_url).to match projects_page_regex
   end
 
-  xit 'should have an openable root node' do
+  context 'when the root projects node is open' do
+    before do
+      @root_node_toggle_icon.click
+    end
+    after do
+      @root_node_toggle_icon.click
+    end
+    it 'should have project categories' do
+      categories = ['College', 'Personal', 'Open source']
+      categories.each do |category|
+        category_xpath = "//a[contains(@class, 'jstree-anchor')" \
+          " and contains(text(), '#{category}')]"
+        expect(page).to have_xpath(category_xpath)
+      end
+    end
   end
 
   xit 'should have project categories' do
