@@ -11,8 +11,8 @@ describe "projects search on home page", type: :feature, js: true do
     expect(root_node.text).to eq "Projects"
   end
 
-  # it 'should have a root node that links to the projects page' do
-  #   root_node = page.find(:css, ".jstree-anchor")
-  #   expect(root_node[:href]).to eq ""
-  # end
+  it 'should have a root node that links to the projects page' do
+    root_node = page.find(:css, ".jstree-anchor")
+    expect(root_node[:href]).to match Regexp.new(@home_page_regex.source + 'projects')
+  end
 end

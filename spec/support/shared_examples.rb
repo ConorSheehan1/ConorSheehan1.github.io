@@ -3,7 +3,7 @@ shared_examples 'base' do
     home_page_xpath = "//h1/a[text()='Conor Sheehan']"
     expect(page).to have_xpath(home_page_xpath)
     home_page_link = page.find(:xpath, home_page_xpath)
-    expect(home_page_link[:href].to_s).to match /http\:\/\/127\.0\.0\.1\:(\d+)\//
+    expect(home_page_link[:href].to_s).to match @home_page_regex
   end
 
   it 'should have a header with social links' do

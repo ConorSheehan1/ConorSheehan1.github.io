@@ -13,6 +13,11 @@ RSpec.configure do |config|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
+  config.before :all do
+    # @local_host = 'http://127.0.0.1'
+    @home_page_regex =/http\:\/\/127\.0\.0\.1\:(\d+)\//
+  end
+
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
   end
