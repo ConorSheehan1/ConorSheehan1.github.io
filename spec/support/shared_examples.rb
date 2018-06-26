@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 shared_examples 'base' do
-  it 'should have a link to the homepage' do 
+  it 'should have a link to the homepage' do
     home_page_xpath = "//h1/a[text()='Conor Sheehan']"
     expect(page).to have_xpath(home_page_xpath)
     home_page_link = page.find(:xpath, home_page_xpath)
@@ -7,7 +9,7 @@ shared_examples 'base' do
   end
 
   it 'should have a header with social links' do
-    header_css = "#header"
+    header_css = '#header'
     expect(page).to have_css(header_css)
     social_links = ['GitHub', 'Linked In', 'Stack Overflow']
     header_text = page.find(:css, header_css).text

@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'rspec'
 require 'capybara/rspec'
 require 'rack/jekyll'
 require 'rack/test'
 require 'pry'
 require 'yaml'
-require "faraday"
+require 'faraday'
 
 Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }
 
@@ -14,8 +16,7 @@ RSpec.configure do |config|
   end
 
   config.before :all do
-    # @local_host = 'http://127.0.0.1'
-    @home_page_regex =/http\:\/\/127\.0\.0\.1\:(\d+)\//
+    @home_page_regex = %r{http\:\/\/127\.0\.0\.1\:(\d+)\/}
   end
 
   config.mock_with :rspec do |mocks|
@@ -23,7 +24,7 @@ RSpec.configure do |config|
   end
 
   Capybara.register_driver :selenium do |app|
-    Capybara::Selenium::Driver.new(app, :browser => :chrome)
+    Capybara::Selenium::Driver.new(app, browser: :chrome)
   end
 
   # Configure Capybara to load the website through rack-jekyll.
