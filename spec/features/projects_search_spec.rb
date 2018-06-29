@@ -36,16 +36,38 @@ describe 'projects search on home page', type: :feature, js: true do
         expect(page).to have_xpath(category_xpath)
       end
     end
-    context 'when a category node is opened' do
-      # before do
-      #   icon_css = '.jstree-node.jstree-closed > i'
-      #   category_toggle_icon = page.all(:css, icon_css)
-      # end
-      xit 'should have nodes with links to each project' do
+    context 'when the first category node is opened' do
+      before do
+        # icon_css = '#j1_2 > i'
+        # @college_category_toggle_icon = page.find(:css, icon_css)
+        college_folder_xpath = "//a[contains(@class, 'jstree-anchor')"\
+          " and contains(text(), 'College')]"
+        college_icon_xpath = "#{college_folder_xpath}/preceding-sibling::i"
+        @college_category_toggle_icon = page.find(:xpath, college_icon_xpath)
+        @college_category_toggle_icon.click
       end
+      after do
+        @college_category_toggle_icon.click
+      end
+      it 'should have nodes with links to each project' do
+        clickable_nodes = page.all('.clickable-tree-node')
+        # more than just the root should be clickable
+        expect(clickable_nodes.count).to be > 1
+      end
+
+      # specific tests for projects
+      # (testing config/data rather than functionality)
+      # could possibly be in it's own test category / folder / test file
+      xit 'should have a dublin bikes project'
+      xit 'should have a Restimator project'
     end
   end
 
-  xit 'should show relevant results when searched' do
+  it 'should show relevant results when searched' do
+    search_input = page.find(:css, '#projects-search')
+    search_input.send_keys('dublin bikes')
+    results = page.all('.jstree-search')
+    expect(results.count).to eq 1
+    expect(results[0].text).to eq 'Dublin Bikes'
   end
 end
