@@ -3,7 +3,7 @@ layout: default
 ---
 
 <h1>{{ page.title }} 
-  <span class="back-to">
+  <span class="back-to-projects">
     <a href="{{'/projects' | relative_url }}">&larr; Back to projects</a>
   </span>
 </h1>
@@ -12,8 +12,8 @@ layout: default
 {{content}}
 
 <ul>
-  <li><a href="{{ page.live }}">View Site</a></li>  
-  <li><a href="{{ page.src }}">View Source Code</a></li>  
+  <li id='live-site-link'><a href="{{ page.live }}">View Site</a></li>  
+  <li id='source-code-link'><a href="{{ page.src }}">View Source Code</a></li>  
 </ul>
 
 <div id="images">

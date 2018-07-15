@@ -1,0 +1,6 @@
+# Style/RegexpLiteral:
+#   Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*.rb"

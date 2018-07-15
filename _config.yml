@@ -7,10 +7,6 @@ plugins:
 paginate: 3
 paginate_path: "/projects/page:num/"
 
-sass:
-  sass_dir: "_sass/bootstrap-sass-3.3.7/assets/stylesheets"
-  style: :compressed
-
 exclude: 
   - README.md
   - LICENSE.md

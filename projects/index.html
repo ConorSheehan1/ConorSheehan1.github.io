@@ -4,22 +4,16 @@ pagination:
   enabled: true
 ---
 
-<!-- Just some nice to have styles for the pager buttons -->
-<style>
-  ul.pager { text-align: center; list-style: none; }
-  ul.pager li {display: inline;border: 1px solid black; padding: 10px; margin: 5px;}
-</style>
-
 <div class="projects">
   <h1 class="page-heading">Projects</h1>
   <ul class="post-list">
     {% for post in paginator.posts %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h2>
+        <h2 class='post-heading'>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
-        <p>Categories: <span class="badge"> {{ post.categories }} </span></p>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <div class='category-badge'>Categories: <span class="badge"> {{ post.categories }} </span></div>
       </li>
     {% endfor %}
   </ul>

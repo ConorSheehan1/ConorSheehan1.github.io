@@ -1,23 +1,24 @@
-ruby ">= 2.3.0"
+# frozen_string_literal: true
+
+ruby '>= 2.3.0'
 
 source 'https://rubygems.org'
 
 group :development, :test do
-  # gem 'bootstrap-sass', '~> 3.3.7'
-  gem "jekyll-paginate"
-  gem "rack-jekyll"
-  gem "pry"
+  gem 'pry'
+  gem 'rack-jekyll'
+  gem 'rubocop', '~> 0.57.2'
 end
 
 group :test do
-  gem "rspec"
-  gem "capybara"
-  gem "faraday"
-  gem "selenium-webdriver"
-  gem "chromedriver-helper"
+  gem 'capybara'
+  gem 'chromedriver-helper'
+  gem 'faraday'
+  gem 'rspec'
+  gem 'selenium-webdriver'
 end
 
 group :jekyll_plugins do
   gem 'github-pages'
-  gem "jekyll-paginate"
+  gem 'jekyll-paginate'
 end
