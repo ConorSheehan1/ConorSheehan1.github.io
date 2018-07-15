@@ -23,17 +23,37 @@ https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-
     https://github.com/bry4n/rack-jekyll/issues/8
 
 1. **Run**  
+
     ```
+    # all
     bundle exec rspec
+
+    # feature tests
+    bundle exec rspec --tag type:feature
+
+    # data tests (for links etc)
+    bundle exec rspec --tag type:data
     ```
 
 
 ## Configuration
 1. All pages should use the default layout or a layout which inherits from the default layout.  
 This is because the default layout loads all css/js required by pages.
-1. Lightbox.min.css is customized to look for images in /images/lightbox/ instead of /images/
-1. Pagination only works from index.html pages, hence the need for projects/index.html
-1. For jekyll plugins on github pages, the plugin must be included in both _config.yml and Gemfile
+1. Pagination only works from index.html pages, hence the need for projects/index.html.
+1. For jekyll plugins on github pages, the plugin must be included in both _config.yml -and Gemfile.
+
+## project structure
+1. ```_data/```contains custom data accessable by jekyll e.g. urls, image paths, etc.
+1. ```_includes/``` contains partials which can be included in templates.  
+1. ```_layouts/``` contains html templates which can be reused in multiple pages.  
+1. ```_posts/``` actually contains projects, in markdown format.  
+  This is to take advantage of jekylls project pagination plugin.  
+  It also means projects must include a date in their file name to be a valid post.  
+1. ```_site/``` contains the compiled static pages jekyll renders.  
+1. ```assets/``` contains css, js, images, and third party plugins e.g. lightbox, jstree etc.  
+1. ```projects/``` contains the html template for rendering the projects home page.   
+1. ```scripts/``` contains ruby scripts.     
+1. ```spec/``` contains rspec selenium tests.  
 
 
 ## Credit

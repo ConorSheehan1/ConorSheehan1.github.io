@@ -1,16 +1,18 @@
-# frozen_string_literal: true
+# describe 'links' do
+#   @root_path = File.dirname(File.dirname(__dir__))
+#   @links = YAML.load_file("#{@root_path}/_data/links.yml")
 
-describe 'home page', type: :feature, js: true do
-  before(:each) do
-    visit '/'
-  end
+#   @links.each do |link_name, link|
+#     it "#{link_name} should have a valid link", type: :data do
+#       # expect(Faraday.head(link).status).to eq 200
+#       puts link_name, link
+#       puts Faraday.head(link)
+#     end
+#   end
+# end
 
-  include_examples 'base'
 
-  it 'should have a title' do
-    expect(page).to have_title 'Conor Sheehan'
-  end
-
+  # # original test for links
   # it "should not throw 400/500 errors for any link" do
   #   within(".wrapper") do
   #     exclude_links = ['more','View Source on GitHub']
@@ -28,4 +30,3 @@ describe 'home page', type: :feature, js: true do
   #     end
   #   end
   # end
-end
