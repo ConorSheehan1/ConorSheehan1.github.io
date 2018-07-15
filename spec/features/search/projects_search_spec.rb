@@ -58,11 +58,12 @@ describe 'projects search on home page', type: :feature, js: true do
       # specific tests for projects
       # (testing config/data rather than functionality)
       # could possibly be in it's own test category / folder / test file
-      xit 'should have a dublin bikes project'
-      xit 'should have a Restimator project'
+      # xit 'should have a dublin bikes project'
+      # xit 'should have a Restimator project'
     end
   end
 
+  # TODO: relies on dublin bikes project, stub later?
   it 'should show relevant results when searched' do
     search_input = page.find(:css, '#projects-search')
     search_input.send_keys('dublin bikes')

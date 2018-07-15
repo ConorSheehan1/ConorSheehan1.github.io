@@ -1,32 +1,15 @@
-# describe 'links' do
-#   @root_path = File.dirname(File.dirname(__dir__))
-#   @links = YAML.load_file("#{@root_path}/_data/links.yml")
+# frozen_string_literal: true
 
-#   @links.each do |link_name, link|
-#     it "#{link_name} should have a valid link", type: :data do
-#       # expect(Faraday.head(link).status).to eq 200
-#       puts link_name, link
-#       puts Faraday.head(link)
-#     end
-#   end
-# end
-
-
-  # # original test for links
-  # it "should not throw 400/500 errors for any link" do
-  #   within(".wrapper") do
-  #     exclude_links = ['more','View Source on GitHub']
-  #     links = all('a').select do |l|
-  #       !exclude_links.any? { |word| l.text.include?(word) }
-  #     end
-
-  #     links.each do |link|
-  #       http_status = Faraday.head(link[:href].to_s).status
-  #       puts "#{link.text}, #{http_status}"
-  #       # linkedin returns 999 code (possibly filter by user agent)
-  #       # to account for redirects and cases where bots are refused,
-  #       # only check for typical client and server side errors
-  #       expect((400..500)).not_to include(http_status)
-  #     end
-  #   end
-  # end
+describe 'links data file' do
+  context 'when the data is loaded', type: :data do
+    # Dir.pwd will be root of this project since rspec must be run from root
+    YAML.load_file("#{Dir.pwd}/_data/links.yml").each do |link_name, href|
+      # linkedin returns 999 code (possibly filter by user agent)
+      # to account for redirects and cases where bots are refused,
+      # only check for typical client and server side errors
+      it "#{link_name} href should not throw a 400/500 error", type: :data do
+        expect((400..599)).not_to include(Faraday.head(href).status)
+      end
+    end
+  end
+end

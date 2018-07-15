@@ -9,11 +9,11 @@ pagination:
   <ul class="post-list">
     {% for post in paginator.posts %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h2>
+        <h2 class='post-heading'>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
-        <p>Categories: <span class="badge"> {{ post.categories }} </span></p>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <div class='category-badge'>Categories: <span class="badge"> {{ post.categories }} </span></div>
       </li>
     {% endfor %}
   </ul>

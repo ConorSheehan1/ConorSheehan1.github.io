@@ -24,4 +24,9 @@ shared_examples 'base' do
     footer_link = page.find(:xpath, theme_link_xpath)
     expect(footer_link[:href]).to eq @theme_link
   end
+
+  it 'should have a projects search option' do
+    expect(page).to have_css('#projects-search')
+    expect(page).to have_css('.jstree-icon')
+  end
 end
