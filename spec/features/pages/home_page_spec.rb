@@ -2,8 +2,6 @@
 
 describe 'home page', type: :feature, js: true do
   before(:each) do
-    # require 'byebug'
-    # byebug
     visit '/'
   end
 

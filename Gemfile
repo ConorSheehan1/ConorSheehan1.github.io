@@ -5,7 +5,7 @@ ruby '>= 2.3.0'
 source 'https://rubygems.org'
 
 group :development, :test do
-  gem 'puma', '~> 3.12'
+  gem 'byebug', '~> 10.0'
   gem 'rack', '>= 2.0.6'
   # https://github.com/adaoraul/rack-jekyll/issues/56
   gem 'rack-jekyll', git: 'https://github.com/adaoraul/rack-jekyll',
@@ -14,7 +14,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'byebug', '~> 10.0'
   gem 'capybara', '~> 2.17.0'
   gem 'chromedriver-helper', '~> 1.1.0'
   gem 'faraday', '~> 0.13.1'
@@ -23,6 +22,6 @@ group :test do
 end
 
 group :jekyll_plugins do
-  gem 'github-pages', '172'
+  gem 'github-pages'
   gem 'jekyll-paginate', '~> 1.1'
 end

@@ -32,18 +32,4 @@ RSpec.configure do |config|
   # (force_build: true) builds the site before the tests are run,
   # so the tests are always running against the latest version of the site.
   Capybara.app = Rack::Jekyll.new(force_build: true)
-
-  # Capybara.server = :webrick
-  # Capybara.run_server = false
-  # Capybara.register_server :jekyll do |app, port, host|
-  #   Rack::Jekyll.new(force_build: true)
-  # end
-  # Capybara.server = :jekyll
-  # Capybara.register_server :puma do |app, port, host|
-  #   # require 'rack/handler/webrick'
-  #   # Rack::Handler::WEBrick.run(Capybara.app)
-  #   require 'puma'
-  #   Puma.run(Rack::Jekyll.new(force_build: true))
-  # end
-  Capybara.server = :webrick
 end

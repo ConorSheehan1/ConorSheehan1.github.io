@@ -237,7 +237,6 @@ GEM
       forwardable-extended (~> 2.6)
     powerpack (0.1.2)
     public_suffix (2.0.5)
-    puma (3.12.0)
     rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -302,9 +301,8 @@ DEPENDENCIES
   capybara (~> 2.17.0)
   chromedriver-helper (~> 1.1.0)
   faraday (~> 0.13.1)
-  github-pages (= 172)
+  github-pages
   jekyll-paginate (~> 1.1)
-  puma (~> 3.12)
   rack (>= 2.0.6)
   rack-jekyll!
   rspec (~> 3.7.0)
