@@ -4,7 +4,6 @@ require 'rspec'
 require 'capybara/rspec'
 require 'rack/jekyll'
 require 'rack/test'
-require 'pry'
 require 'yaml'
 require 'faraday'
 
@@ -28,6 +27,7 @@ RSpec.configure do |config|
     Capybara::Selenium::Driver.new(app, browser: :chrome)
   end
 
+  # https://gist.github.com/deanmarano/aeae5cd2d357fec1b06e30ead397d4e3
   # Configure Capybara to load the website through rack-jekyll.
   # (force_build: true) builds the site before the tests are run,
   # so the tests are always running against the latest version of the site.
