@@ -1,0 +1,64 @@
+#header {
+  width:100%;
+  height: $header_height;
+  margin: 0 auto;
+  padding-top: 10px;
+  z-index: 100;
+  position:fixed;
+  top: 0;
+
+  background: url(../images/nav-bg.gif) #353535; 
+  border-top: 4px solid #434343; 
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+
+  // center svgs and text in header
+  .header-icon {
+    width: 100%;
+    text-align: center;
+
+    svg {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  // 4 items in header: 3 * .col, 1 * .cs-header-link
+  // 85% taken up, 15% left for margin auto to center items
+  .col {
+    width: 15%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .header-left {
+    float: left;
+  }
+  .header-right {
+    float: right;
+  }
+
+  .text-truncate {
+    display: block;
+    max-width: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // header container with adjusted height
+  .container {
+    height: $header_height_internal;
+    @include containerish;
+  }
+
+  .container-sm {
+    @include containerish;
+    height: $header_height_internal_sm;
+  }
+
+  .header-center {
+    // align with section
+    margin-left: 22px;
+  }
+
+}

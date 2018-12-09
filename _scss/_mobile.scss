@@ -1,0 +1,18 @@
+@media (max-width: $wide_screen) {
+  #header{
+    // hide the text under icons 
+    span {
+      display: none;
+    }
+  } 
+}
+
+/* 
+  fix issue with header rendering over content
+  now that header is taller, to account for icons
+*/
+@media (max-width: $small_screen) {
+  section {
+    margin-top: $header_height;
+  }
+}
