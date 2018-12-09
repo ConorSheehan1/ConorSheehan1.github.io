@@ -1,0 +1,13 @@
+// colors 
+$brand_primary: #ffcc00;
+
+// head height vars
+$header_height: 90px;
+$header_height_internal_sm: 30px;
+//$header_height_internal: unquote("#{$header_height} - #{$header_height_internal_sm}");
+$header_height_internal: 60px;
+$header_padding: 10px;
+
+$icon_size: 32px;
+$wide_screen: 700px;
+$small_screen: 480px;
