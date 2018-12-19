@@ -3,11 +3,7 @@ os: linux
 env: DISPLAY=':99.0'
 dist: xenial
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+  chrome: stable
 
 language: ruby
 cache: bundler
@@ -18,5 +14,5 @@ before_script:
   - bundle install
 
 script:
-  - bundle exec rspec
+  - bundle exec rspec spec
   - bundle exec rubocop

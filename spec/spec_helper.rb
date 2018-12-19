@@ -26,7 +26,7 @@ RSpec.configure do |config|
 
   Capybara.register_driver :headless_chrome do |app|
     capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-      chromeOptions: { args: %w[headless disable-gpu] }
+      chromeOptions: { args: %w[headless disable-gpu no-sandbox] }
     )
 
     Capybara::Selenium::Driver.new app,

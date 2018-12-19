@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/ConorSheehan1/ConorSheehan1.github.io.svg?branch=master)](https://travis-ci.org/ConorSheehan1/ConorSheehan1.github.io)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Local setup
 1. install dependencies
