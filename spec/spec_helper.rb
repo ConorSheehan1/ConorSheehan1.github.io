@@ -2,8 +2,6 @@
 
 require 'rspec'
 require 'capybara/rspec'
-require 'rack/jekyll'
-require 'rack/test'
 require 'yaml'
 require 'faraday'
 require 'selenium/webdriver'
@@ -26,7 +24,7 @@ RSpec.configure do |config|
 
   Capybara.register_driver :headless_chrome do |app|
     capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-      chromeOptions: { args: %w[headless disable-gpu no-sandbox] }
+      chromeOptions: { args: %w[headless disable-gpu no-sandbox port=4000] }
     )
 
     Capybara::Selenium::Driver.new app,
@@ -34,7 +32,13 @@ RSpec.configure do |config|
                                    desired_capabilities: capabilities
   end
 
-  Capybara.javascript_driver = :headless_chrome
+  Capybara.configure do |cap|
+    cap.current_driver = :headless_chrome
+    cap.javascript_driver = :headless_chrome
+    cap.run_server = false
+    cap.app_host   = 'http://127.0.0.1:4000'
+  end
+
 
   # rubocop:disable Metrics/LineLength
   # https://gist.github.com/deanmarano/aeae5cd2d357fec1b06e30ead397d4e3
@@ -46,6 +50,4 @@ RSpec.configure do |config|
   # force build not reading _config.yml? raising exception
   # cannot load such file -- ConorSheehan1.github.io/_layouts/spec/data/images_spec.rb
   # rubocop:enable Metrics/LineLength
-
-  Capybara.app = Rack::Jekyll.new
 end
