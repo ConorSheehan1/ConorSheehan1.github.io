@@ -39,7 +39,6 @@ RSpec.configure do |config|
     cap.app_host   = 'http://127.0.0.1:4000'
   end
 
-
   # rubocop:disable Metrics/LineLength
   # https://gist.github.com/deanmarano/aeae5cd2d357fec1b06e30ead397d4e3
   # Configure Capybara to load the website through rack-jekyll.

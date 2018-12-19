@@ -17,5 +17,15 @@ before_script:
   - sleep 3 # give Web server some time to bind to sockets, etc
 
 script:
-  - bundle exec rspec spec
-  - bundle exec rubocop
+  - bundle exec rspec
+
+matrix:
+  # finish build even if rubocop is still running
+  fast_finish: true
+  include:
+    - rvm: 2.4.4
+      script: 
+        - bundle exec rubocop
+  # allow rubocop to fail
+  allow_failures:
+    - rvm: 2.4.4
