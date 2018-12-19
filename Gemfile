@@ -6,11 +6,7 @@ source 'https://rubygems.org'
 
 group :development, :test do
   gem 'byebug', '~> 10.0'
-  gem 'jekyll', '>= 3.6.3'
-  gem 'rack', '>= 2.0.6'
-  # https://github.com/adaoraul/rack-jekyll/issues/56
-  gem 'rack-jekyll', git: 'https://github.com/adaoraul/rack-jekyll',
-                     ref: 'e6ae4a588c2d881bccc35368e9cc81fe745a2b99'
+  gem 'jekyll', '~> 3.7.4'
   gem 'rubocop', '~> 0.57.2'
 end
 

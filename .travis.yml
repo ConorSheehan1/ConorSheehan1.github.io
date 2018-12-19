@@ -1,22 +1,29 @@
+# match https://pages.github.com/versions/
 os: linux
-sudo: required
-env: DISPLAY=':99.0'
-dist: trusty
+dist: xenial
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+  chrome: stable
 
 language: ruby
 cache: bundler
-rvm:
-  - 2.4.4
+
+install:
+  - bundle install # install dependencies
  
 before_script:
-  - bundle install
+  - bundle exec jekyll serve &  # start a Web server (use & to start in new process)
+  - sleep 3 # give Web server some time to bind to sockets, etc
 
-script:
-  - bundle exec rspec
-  - bundle exec rubocop
+matrix:
+  # finish build even if rubocop is still running
+  fast_finish: true
+  include:
+    - rvm: 2.5.3
+      script:
+        - bundle exec rspec
+    - rvm: 2.4.4
+      script: 
+        - bundle exec rubocop
+  # allow rubocop to fail
+  allow_failures:
+    - rvm: 2.4.4
