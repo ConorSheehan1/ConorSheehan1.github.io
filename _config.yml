@@ -17,7 +17,6 @@ exclude:
   - vendor/*
 
 jstree_theme: "default-dark"
-# jstree_theme: "proton"
 
 sass:
-  sass_dir: ./_scss
+  sass_dir: _scss
