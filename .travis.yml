@@ -22,7 +22,7 @@ matrix:
       script:
         - bundle exec rspec
     - rvm: 2.4.4
-      script: 
+      script:
         - bundle exec rubocop
   # allow rubocop to fail
   allow_failures:

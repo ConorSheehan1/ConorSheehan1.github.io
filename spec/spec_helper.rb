@@ -32,8 +32,9 @@ RSpec.configure do |config|
                                    desired_capabilities: capabilities
   end
 
+  Capybara.current_driver = :headless_chrome
+
   Capybara.configure do |cap|
-    cap.current_driver = :headless_chrome
     cap.javascript_driver = :headless_chrome
     cap.run_server = false
     cap.app_host   = 'http://127.0.0.1:4000'
