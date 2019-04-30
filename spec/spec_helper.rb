@@ -4,6 +4,7 @@ require 'rspec'
 require 'capybara/rspec'
 require 'yaml'
 require 'faraday'
+require 'webdrivers'
 require 'selenium/webdriver'
 
 Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }

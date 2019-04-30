@@ -10,9 +10,8 @@ cache: bundler
 
 install:
   - bundle install # install dependencies
- 
+
 before_script:
-  - chromedriver-update 73.0.3683.68 # revert to older version of chrome until
   - bundle exec jekyll serve &  # start a Web server (use & to start in new process)
   - sleep 3 # give Web server some time to bind to sockets, etc
 
