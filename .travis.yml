@@ -21,10 +21,14 @@ matrix:
   include:
     - stage: Tests
       script:
-        - bundle exec rspec
+        - bundle exec rspec -t ~allow_failure
+    - stage: SupportTests
+      script:
+        - bundle exec rspec -t allow_failure
     - stage: Lint
       script:
         - bundle exec rubocop
-  # allow rubocop to fail
+  # allow rubocop and link checks to fail
   allow_failures:
+    - stage: SupportTests
     - stage: Lint

@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # TODO: load data from jekyll site.data rather than using yaml directly
-describe 'images data file' do
-  context 'when the data is loaded', type: :data do
+describe 'images data file', type: :data do
+  context 'when the data is loaded' do
     # Dir.pwd will be root of this project since rspec must be run from root
     YAML.load_file("#{Dir.pwd}/_data/images.yml").each do |project, images|
       context project do
