@@ -4,11 +4,13 @@ ruby '>= 2.3.0'
 
 source 'https://rubygems.org'
 
+# https://pages.github.com/versions/
 group :development, :test do
   gem 'byebug', '~> 10.0'
-  gem 'jekyll', '~> 3.7.4'
+  gem 'jekyll', '~> 3.9'
   gem 'rubocop', '~> 0.57.2'
   gem 'webdrivers', '~> 3.8'
+  gem 'kramdown', '>= 2.3.0' # sec
 end
 
 group :test do
