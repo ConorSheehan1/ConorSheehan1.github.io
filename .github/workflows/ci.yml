@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+  schedule:
+      - cron: '0 0 * * 1' # Every monday at midnight
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby 2.5.3
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.5.3
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install
+    - name: Tests
+      run: |
+        bundle exec rspec -t ~allow_failure
+    - name: Tests allowable failures
+      run: |
+        bundle exec rspec -t allow_failure
+    - name: Lint
+      run: |
+        bundle exec rubocop

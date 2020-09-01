@@ -20,3 +20,6 @@ jstree_theme: "default-dark"
 
 sass:
   sass_dir: _scss
+
+# https://github.com/github/pages-gem/issues/399
+github: [metadata]
