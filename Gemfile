@@ -11,11 +11,11 @@ group :development, :test do
   gem 'jekyll', '~> 3.9.0'
   gem 'kramdown', '>= 2.3.0' # sec
   gem 'rubocop', '~> 0.90.0'
-  gem 'webdrivers', '~> 3.8'
+  gem 'webdrivers', '~> 4.4'
 end
 
 group :test do
-  gem 'capybara', '~> 2.17.0'
+  gem 'capybara', '~> 3.32.0'
   gem 'faraday', '~> 1.0.1'
   gem 'rspec', '~> 3.7.0'
   gem 'selenium-webdriver', '~> 3.8'

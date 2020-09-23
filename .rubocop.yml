@@ -3,6 +3,7 @@
 
 AllCops:
   TargetRubyVersion: 2.7.1
+  NewCops: enable # remove if this causes problems
 
 Metrics/BlockLength:
   Exclude:
