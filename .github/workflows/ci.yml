@@ -27,10 +27,16 @@ jobs:
         gem install bundler
         bundle config path vendor/bundle
         bundle install
+    - name: Start jekyll
+      run: |
+        bundle exec jekyll serve & # start a Web server (use & to start in new process)
+        sleep 3 # give Web server some time to bind to sockets, etc
     - name: Tests
       run: |
         bundle exec rspec -t ~allow_failure
     - name: Tests allowable failures
+      id: allowable_failures
+      continue-on-error: true
       run: |
         bundle exec rspec -t allow_failure
     - name: Lint
