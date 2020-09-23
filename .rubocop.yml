@@ -1,6 +1,9 @@
 # Style/RegexpLiteral:
 #   Enabled: false
 
+AllCops:
+  TargetRubyVersion: 2.7.1
+
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*.rb"

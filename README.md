@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ConorSheehan1/ConorSheehan1.github.io.svg?branch=master)](https://travis-ci.org/ConorSheehan1/ConorSheehan1.github.io)
+[![Build Status](https://github.com/ConorSheehan1/ConorSheehan1.github.io/workflows/ci/badge.svg)](https://github.com/ConorSheehan1/ConorSheehan1.github.io/actions/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Local setup
