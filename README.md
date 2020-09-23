@@ -8,10 +8,10 @@
     ```
 1. run server
     ```bash
-    bundle exec jekyll serve
+    bundle exec jekyll serve --livereload
     ```
 
-    Currently \_config.yml is only loded on the initial jekyll serve command.  
+    Currently \_config.yml is only loaded on the initial jekyll serve command.  
     If you change config, restart the jekyll server to read the updated data.
 
 You may need to run `bundle update` to get the latest version of jekyll used by live github pages.  
@@ -44,7 +44,7 @@ This is because the default layout loads all css/js required by pages.
 1. For jekyll plugins on github pages, the plugin must be included in both \_config.yml -and Gemfile.
 
 ## project structure
-1. `_data/`contains custom data accessable by jekyll e.g. urls, image paths, etc.
+1. `_data/`contains custom data accessible by jekyll e.g. urls, image paths, etc.
 1. `_includes/` contains partials which can be included in templates.  
 1. `_layouts/` contains html templates which can be reused in multiple pages.  
 1. `_posts/` actually contains projects, in markdown format.  
