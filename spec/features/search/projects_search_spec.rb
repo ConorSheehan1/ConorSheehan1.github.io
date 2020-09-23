@@ -18,7 +18,7 @@ describe 'projects search on home page', type: :feature, js: true do
   end
 
   it 'should have a root node that links to the projects page' do
-    projects_page_regex = Regexp.new(@home_page_regex.source + 'projects')
+    projects_page_regex = Regexp.new("#{@home_page_regex.source}projects")
     expect(@root_node[:href]).to match projects_page_regex
     # actuall visit the link to make sure it's working (no jstree bugs)
     @root_node.click

@@ -36,6 +36,14 @@ https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-
     bundle exec rspec --tag type:data
     ```
 
+## Linting
+```bash
+# run linter
+bundle exec rubocop
+
+# update sourcecode if possible
+bundle exec rubocop --autocorrect
+```
 
 ## Configuration
 1. All pages should use the default layout or a layout which inherits from the default layout.  

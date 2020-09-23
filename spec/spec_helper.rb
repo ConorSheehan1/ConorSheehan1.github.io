@@ -15,7 +15,7 @@ RSpec.configure do |config|
   end
 
   config.before :all do
-    @home_page_regex = %r{http\:\/\/127\.0\.0\.1\:(\d+)\/}
+    @home_page_regex = %r{http://127\.0\.0\.1:(\d+)/}
     @theme_link = 'https://twitter.com/michigangraham'
   end
 
@@ -23,10 +23,11 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
+  Capybara.current_driver = :selenium_chrome_headless
   Capybara.configure do |cap|
-    cap.current_driver = :selenium_chrome_headless
+    # Calling current_driver= from Capybara.configure is deprecated
     cap.javascript_driver = :selenium_chrome_headless
     cap.run_server = false
-    cap.app_host   = 'http://127.0.0.1:4000'
+    cap.app_host = 'http://127.0.0.1:4000'
   end
 end
