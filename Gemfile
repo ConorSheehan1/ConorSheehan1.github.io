@@ -9,7 +9,7 @@ group :development, :test do
   gem 'byebug', '~> 10.0'
   gem 'ffi', '~> 1.12.0' # 1.13.0 has issues https://github.com/ffi/ffi/issues/773
   gem 'jekyll', '~> 3.9.0'
-  gem 'kramdown', '>= 2.3.0' # sec
+  gem 'kramdown', '>= 2.3.1' # sec
   gem 'rubocop', '~> 0.90.0'
   gem 'webdrivers', '~> 4.4'
 end
