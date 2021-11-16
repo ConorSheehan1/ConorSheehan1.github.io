@@ -18,8 +18,4 @@ describe 'project page', type: :feature, js: true do
   it 'should have a source code link' do
     expect(page).to have_css('#source-code-link')
   end
-  # this may change: support projetcts without live site links?
-  it 'should have a live site link' do
-    expect(page).to have_css('#live-site-link')
-  end
 end

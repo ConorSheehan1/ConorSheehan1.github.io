@@ -8,6 +8,7 @@
 @import 'mixins';
 @import 'mobile';
 @import 'header';
+@import 'footer';
 
 section #title {
   margin: 0;
@@ -27,13 +28,6 @@ section #title {
   /* Equal to height of footer */
   /* But also accounting for potential margin-bottom of last child */
   margin-bottom: -50px;
-}
-.push {
-  height: 50px;
-}
-#footer {
-  height: 50px;
-  float:right,
 }
 
 // overrides for jstree style
@@ -57,18 +51,13 @@ section #title {
   padding-left: 30px;
 }
 
-ul.pager { 
-  text-align: center; 
-  list-style: none; 
-  li {
-    display: inline;
-    border: 1px solid black; 
-    padding: 10px; 
-    margin: 5px;
-  }
-}
-
 .post-heading {
   margin: 0;
   margin-top: 20px;
+}
+
+.excerpt {
+  font-size: 15px;
+  opacity: 70%;
+  margin-top: 0.5em;
 }

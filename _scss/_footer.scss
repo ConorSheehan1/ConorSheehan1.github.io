@@ -1,0 +1,32 @@
+
+footer {
+  @include headerFooter;
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+
+  .container {
+    display: flex;
+  }
+  .fixed {
+    width: 200px;
+  }
+  .flex-item {
+    flex-grow: 1;
+  }
+
+  .pagination {
+    text-align: center;
+    list-style: none;
+    a, span {
+      padding: 0.5em;
+    }
+  }
+
+  #credit-footer {
+    margin-left: auto;
+    order: 2;
+  }
+}
+
+
