@@ -17,12 +17,10 @@ shared_examples 'base' do
   end
 
   it 'should have a footer with the theme link' do
-    # footer link is in div, in anchor, in paragraph
-    # select paragraph by text, then get link as parent
-    theme_link_xpath = "//div[@id='footer']//a" \
-      "/p[text()='Theme by mattgraham']/parent::*"
-    footer_link = page.find(:xpath, theme_link_xpath)
-    expect(footer_link[:href]).to eq @theme_link
+    theme_link_xpath = "//div[@id='credit-footer']//a"
+    footer_links = page.find_all(:xpath, theme_link_xpath)
+    expect(footer_links[0][:href]).to eq @theme_github_link
+    expect(footer_links[1][:href]).to eq @theme_twitter_link
   end
 
   it 'should have a projects search option' do
