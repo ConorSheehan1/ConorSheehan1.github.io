@@ -1,6 +1,6 @@
 ---
 layout: default
-pagination: 
+pagination:
   enabled: true
 ---
 
@@ -11,13 +11,14 @@ pagination:
       <li>
         <h2 class='post-heading'>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          <div class="excerpt">{{ post.excerpt }}</div>
         </h2>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
         <div class='category-badge'>Categories: <span class="badge"> {{ post.categories }} </span></div>
       </li>
     {% endfor %}
   </ul>
-  
+
   <!-- next prev nav -->
   {% if paginator.total_pages > 1 %}
   <ul class="pager">

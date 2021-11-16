@@ -57,13 +57,13 @@ section #title {
   padding-left: 30px;
 }
 
-ul.pager { 
-  text-align: center; 
-  list-style: none; 
+ul.pager {
+  text-align: center;
+  list-style: none;
   li {
     display: inline;
-    border: 1px solid black; 
-    padding: 10px; 
+    border: 1px solid black;
+    padding: 10px;
     margin: 5px;
   }
 }
@@ -71,4 +71,10 @@ ul.pager {
 .post-heading {
   margin: 0;
   margin-top: 20px;
+}
+
+.excerpt {
+  font-size: 15px;
+  opacity: 70%;
+  margin-top: 0.5em;
 }
