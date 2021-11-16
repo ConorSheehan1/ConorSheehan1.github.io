@@ -1,5 +1,6 @@
 # work
-ucd: https://www.cs.ucd.ie
+# issue with ucd ssl cert, use http for now, should redirect
+ucd: http://www.cs.ucd.ie
 nli: https://www.nli.ie
 dri: https://www.dri.ie
 ow:  https://labs.oliverwyman.com
