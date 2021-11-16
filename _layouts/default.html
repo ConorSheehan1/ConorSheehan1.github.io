@@ -28,14 +28,10 @@
           <h1><a href="/">{{ site.title | default: site.github.repository_name }}</a></h1>
           <hr>
         </div>
-
         {{ content }}
-
-        <div class="push"></div>
-        {% include footer.html %}
       </section>
     </div>
-
+    {% include footer.html %}
 
     {% if site.google_analytics %}
       <script type="text/javascript">

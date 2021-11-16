@@ -16,13 +16,14 @@ layout: default
 # What I can do
 
 * Full Stack Web Development
-* Data Science
 * DevOps
+* Data Science
 
 
 # What I'm interested in
 
 * Python
 * Ruby
+* JavaScript
 * Data Science
 * Web Development
