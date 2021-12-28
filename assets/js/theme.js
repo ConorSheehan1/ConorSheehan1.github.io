@@ -1,6 +1,6 @@
 
-$(document).ready(function(){
-// Based on [joshwcomeau.com/gatsby/dark-mode/]
+$(document).ready(() => {
+  // Based on [joshwcomeau.com/gatsby/dark-mode/]
   const getSavedTheme = () => {
     const theme = window.localStorage.getItem("theme");
     // If the user has explicitly chosen light or dark,
@@ -46,6 +46,7 @@ $(document).ready(function(){
     if (theme == null) theme = mediaTheme();
     html.setAttribute("data-theme", theme);
     html.classList.add(theme);
+    $("#theme-toggle").show();
 
     // If a user changes overall system theme, update site theme as well,
     // but don't save the change in local storage
@@ -64,6 +65,7 @@ $(document).ready(function(){
         saveTheme(theme);
       });
   } catch (e) {
+    $("#theme-toggle").hide();
     console.warn("Theming isn't available on this browser.", e);
   }
 });
