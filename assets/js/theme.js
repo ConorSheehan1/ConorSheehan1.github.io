@@ -1,23 +1,24 @@
+// https://dev.to/okikio/psa-add-dark-mode-to-your-sites-or-at-least-let-the-browsers-do-it-for-you-18hi ->
+// https://codesandbox.io/s/add-dark-theme-using-color-scheme-48pl0?from-embed=&file=/index.html:643-690 ->
+// Based on [joshwcomeau.com/gatsby/dark-mode/]
+const getSavedTheme = () => {
+  const theme = window.localStorage.getItem("theme");
+  // If the user has explicitly chosen light or dark,
+  // let's use it. Otherwise, this value will be null.
+  if (typeof theme === "string") return theme;
+
+  // If they are using a browser/OS that doesn't support
+  // color themes, let's not do anything.
+  return null;
+};
+
+const saveTheme = (theme) => {
+  // If the user has explicitly chosen light or dark, store the default theme
+  if (typeof theme === "string")
+    window.localStorage.setItem("theme", theme);
+};
 
 $(document).ready(() => {
-  // Based on [joshwcomeau.com/gatsby/dark-mode/]
-  const getSavedTheme = () => {
-    const theme = window.localStorage.getItem("theme");
-    // If the user has explicitly chosen light or dark,
-    // let's use it. Otherwise, this value will be null.
-    if (typeof theme === "string") return theme;
-
-    // If they are using a browser/OS that doesn't support
-    // color themes, let's not do anything.
-    return null;
-  };
-
-  const saveTheme = (theme) => {
-    // If the user has explicitly chosen light or dark, store the default theme
-    if (typeof theme === "string")
-      window.localStorage.setItem("theme", theme);
-  };
-
   const mediaTheme = () => {
     // If they haven't been explicitly set, let's check the media query
     const mql = matchMedia("(prefers-color-scheme: dark)");
@@ -39,6 +40,8 @@ $(document).ready(() => {
   const applyTheme = (theme) => {
     html.className = theme;
     html.setAttribute("data-theme", theme);
+    const jsTreeTheme = theme === "light" ? "default" : "default-dark";
+    $('#projects_tree').jstree("set_theme", jsTreeTheme);
   };
 
   try {
