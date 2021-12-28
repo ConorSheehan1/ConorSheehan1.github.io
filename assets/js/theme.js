@@ -18,6 +18,13 @@ const saveTheme = (theme) => {
     window.localStorage.setItem("theme", theme);
 };
 
+const getThemeIcons = (theme) => {
+  // https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free
+  const classes = ["fa-sun", "fa-moon"];
+  // returns [theme-to-remove, theme-to-add]
+  return theme === "light" ? classes : classes.reverse();
+}
+
 $(document).ready(() => {
   const mediaTheme = () => {
     // If they haven't been explicitly set, let's check the media query
@@ -40,8 +47,12 @@ $(document).ready(() => {
   const applyTheme = (theme) => {
     html.className = theme;
     html.setAttribute("data-theme", theme);
+    const [iconToRemove, iconToAdd] = getThemeIcons(theme);
+    console.log({iconToRemove, iconToAdd});
+    $('#theme-toggle i').removeClass(iconToRemove);
+    $('#theme-toggle i').addClass(iconToAdd);
     const jsTreeTheme = theme === "light" ? "default" : "default-dark";
-    $('#projects_tree').jstree("set_theme", jsTreeTheme);
+    $('#projects-tree').jstree("set_theme", jsTreeTheme);
   };
 
   try {
@@ -49,7 +60,7 @@ $(document).ready(() => {
     if (theme == null) theme = mediaTheme();
     html.setAttribute("data-theme", theme);
     html.classList.add(theme);
-    $("#theme-toggle").show();
+    $("#theme-toggle-container").show();
 
     // If a user changes overall system theme, update site theme as well,
     // but don't save the change in local storage
@@ -68,7 +79,7 @@ $(document).ready(() => {
         saveTheme(theme);
       });
   } catch (e) {
-    $("#theme-toggle").hide();
+    $("#theme-toggle-container").hide();
     console.warn("Theming isn't available on this browser.", e);
   }
 });

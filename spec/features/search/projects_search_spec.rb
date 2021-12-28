@@ -6,7 +6,7 @@ describe 'projects search on home page', type: :feature, js: true do
   before(:each) do
     visit '/'
     @root_node = page.find(:css, '.jstree-anchor')
-    icon_css = '#projects_tree .jstree-icon.jstree-ocl'
+    icon_css = '#projects-tree .jstree-icon.jstree-ocl'
     # get root node toggle icon in advance to easily open and close
     # the entire js tree
     @root_node_toggle_icon = page.find(:css, icon_css)
@@ -65,7 +65,7 @@ describe 'projects search on home page', type: :feature, js: true do
 
   # TODO: relies on dublin bikes project, stub later?
   it 'should show relevant results when searched' do
-    search_input = page.find(:css, '#projects-search')
+    search_input = page.find(:css, '#projects-search-input')
     search_input.send_keys('dublin bikes')
     results = page.all('.jstree-search')
     expect(results.count).to eq 1

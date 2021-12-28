@@ -24,7 +24,7 @@ shared_examples 'base' do
   end
 
   it 'should have a projects search option' do
-    expect(page).to have_css('#projects-search')
+    expect(page).to have_css('#projects-search-input')
     expect(page).to have_css('.jstree-icon')
   end
 end
