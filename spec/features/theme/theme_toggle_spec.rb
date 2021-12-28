@@ -13,8 +13,8 @@ describe 'theme toggle', type: :feature, js: true do
     page.execute_script "window.localStorage.setItem('theme', 'dark');"
     page.driver.browser.navigate.refresh
     @theme_toggle = page.find(:css, '#theme-toggle')
-    @dark_background = "rgba(37, 37, 37, 1)" #252525
-    @light_background = "rgba(242, 242, 242, 1)" #f2f2f2
+    @dark_background = 'rgba(37, 37, 37, 1)' # 252525
+    @light_background = 'rgba(242, 242, 242, 1)' # f2f2f2
   end
 
   describe 'initial page load' do
@@ -24,7 +24,7 @@ describe 'theme toggle', type: :feature, js: true do
       expect(color).to eq @dark_background
     end
     it 'should have a default-dark js-tree theme' do
-      expect(page).to have_css("#projects-tree.jstree-default-dark")
+      expect(page).to have_css('#projects-tree.jstree-default-dark')
     end
   end
 
@@ -36,7 +36,7 @@ describe 'theme toggle', type: :feature, js: true do
       expect(color).to eq @light_background
     end
     it 'should have a default js-tree theme' do
-      expect(page).to have_css("#projects-tree.jstree-default")
+      expect(page).to have_css('#projects-tree.jstree-default')
     end
   end
 
@@ -52,7 +52,7 @@ describe 'theme toggle', type: :feature, js: true do
       expect(color).to eq @dark_background
     end
     it 'should have a default-dark js-tree theme' do
-      expect(page).to have_css("#projects-tree.jstree-default-dark")
+      expect(page).to have_css('#projects-tree.jstree-default-dark')
     end
   end
 end
