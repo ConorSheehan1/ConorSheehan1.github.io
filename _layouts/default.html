@@ -7,9 +7,7 @@
 
     {% seo %}
 
-    <link rel="stylesheet" href="
-      {{ '/assets/dist/jstree/themes/' | append: site.jstree_theme | append: '/style.min.css' | relative_url }}
-    " />
+    <link rel="stylesheet" href="{{ '/assets/dist/jstree/themes/' | append: site.jstree_theme | append: '/style.min.css' | relative_url }}" />
     <link href="{{ '/assets/dist/lightbox/css/lightbox.min.css' | relative_url }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="shortcut icon" type="image/x-ico" href="{{ '/assets/images/icons/favicon.ico' | prepend: site.baseurl }}" >
@@ -17,7 +15,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
     <script src="{{ '/assets/dist/lightbox/js/lightbox.min.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
   </head>
   <body>
@@ -32,18 +31,6 @@
       </section>
     </div>
     {% include footer.html %}
-
-    {% if site.google_analytics %}
-      <script type="text/javascript">
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', '{{ site.google_analytics }}', 'auto');
-        ga('send', 'pageview');
-      </script>
-    {% endif %}
-
 
     <script src="{{ '/assets/dist/jstree/jstree.min.js' | relative_url }}"></script>
     <script type="text/javascript">
@@ -65,11 +52,11 @@
 
       $('#projects_tree').bind("select_node.jstree", function (e, data) {
         $('#jstree').jstree('save_state');
-       }) ;
+      });
 
       $('#projects_tree').on("activate_node.jstree", function(e,data){
          window.location.href = data.node.a_attr.href;
-       })
+      })
 
       // $('#btn-search').click(function(){
       //   $('#projects_tree').jstree('search', $('#search').val());

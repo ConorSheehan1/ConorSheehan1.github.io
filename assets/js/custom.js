@@ -8,11 +8,6 @@ $(document).ready(function(){
     'resizeDuration': 200,
     'wrapAround': true
   });
-
-  // $(".clickable-tree-node").on("click",function() {
-  //   console.log(this.href);
-  //   window.location.href = this.href;
-  // });
 });
 
 
