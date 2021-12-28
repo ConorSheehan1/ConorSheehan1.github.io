@@ -13,20 +13,30 @@ describe 'theme toggle', type: :feature, js: true do
     page.execute_script "window.localStorage.setItem('theme', 'dark');"
     page.driver.browser.navigate.refresh
     @theme_toggle = page.find(:css, '#theme-toggle')
+    @dark_background = "rgba(37, 37, 37, 1)" #252525
+    @light_background = "rgba(242, 242, 242, 1)" #f2f2f2
   end
 
   describe 'initial page load' do
-    it 'should set the dark theme' do
-      theme_xpath = "//html[contains(@class, 'dark')]"
-      expect(page).to have_xpath(theme_xpath)
+    it_should_behave_like 'theme', 'dark'
+    it 'should have a dark background' do
+      color = page.find('body').native.css_value('background-color')
+      expect(color).to eq @dark_background
+    end
+    it 'should have a default-dark js-tree theme' do
+      expect(page).to have_css("#projects-tree.jstree-default-dark")
     end
   end
 
   describe 'single toggle' do
     before { @theme_toggle.click }
-    it 'should set the light theme' do
-      theme_xpath = "//html[contains(@class, 'light')]"
-      expect(page).to have_xpath(theme_xpath)
+    it_should_behave_like 'theme', 'light'
+    it 'should have a light background' do
+      color = page.find('body').native.css_value('background-color')
+      expect(color).to eq @light_background
+    end
+    it 'should have a default js-tree theme' do
+      expect(page).to have_css("#projects-tree.jstree-default")
     end
   end
 
@@ -36,9 +46,13 @@ describe 'theme toggle', type: :feature, js: true do
         @theme_toggle.click
       end
     end
-    it 'should set the dark theme' do
-      theme_xpath = "//html[contains(@class, 'dark')]"
-      expect(page).to have_xpath(theme_xpath)
+    it_should_behave_like 'theme', 'dark'
+    it 'should have a dark background' do
+      color = page.find('body').native.css_value('background-color')
+      expect(color).to eq @dark_background
+    end
+    it 'should have a default-dark js-tree theme' do
+      expect(page).to have_css("#projects-tree.jstree-default-dark")
     end
   end
 end
