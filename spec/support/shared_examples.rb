@@ -28,3 +28,10 @@ shared_examples 'base' do
     expect(page).to have_css('.jstree-icon')
   end
 end
+
+shared_examples_for 'theme' do |theme|
+  it 'should have the theme' do
+    theme_xpath = "//html[contains(@class, '#{theme}')]"
+    expect(page).to have_xpath(theme_xpath)
+  end
+end
