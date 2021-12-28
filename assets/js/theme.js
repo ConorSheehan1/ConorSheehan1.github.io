@@ -18,13 +18,6 @@ const saveTheme = (theme) => {
     window.localStorage.setItem("theme", theme);
 };
 
-const getThemeIcons = (theme) => {
-  // https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free
-  const classes = ["fa-sun", "fa-moon"];
-  // returns [theme-to-remove, theme-to-add]
-  return theme === "light" ? classes : classes.reverse();
-}
-
 $(document).ready(() => {
   const mediaTheme = () => {
     // If they haven't been explicitly set, let's check the media query
@@ -47,10 +40,6 @@ $(document).ready(() => {
   const applyTheme = (theme) => {
     html.className = theme;
     html.setAttribute("data-theme", theme);
-    const [iconToRemove, iconToAdd] = getThemeIcons(theme);
-    console.log({iconToRemove, iconToAdd});
-    $('#theme-toggle i').removeClass(iconToRemove);
-    $('#theme-toggle i').addClass(iconToAdd);
     const jsTreeTheme = theme === "light" ? "default" : "default-dark";
     $('#projects-tree').jstree("set_theme", jsTreeTheme);
   };

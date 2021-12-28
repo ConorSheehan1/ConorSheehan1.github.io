@@ -17,12 +17,22 @@ html.dark {
   #projects-search-input {
     background-color: $brand_background;
   }
+  #theme-toggle-background {
+    background-color: $brand_background;
+  }
 }
 
 html.light {
   color-scheme: light;
   #projects-search-input {
     background-color: $brand_background_light;
+  }
+  #theme-toggle-background {
+    background-color: $brand_background_light;
+  }
+  // TODO: once footer image changed, remove text color change
+  footer {
+    color: $text_dark
   }
   body {
     background-color: $brand_background_light;
@@ -31,6 +41,9 @@ html.light {
   }
   a {
     color: $brand_primary_light;
+    &:hover {
+      color: lighten($brand_primary_light, 10%);
+    }
   }
   h1, h2, h3, h4, h5, h6 {
     color: $text_light;
@@ -83,7 +96,9 @@ html.light {
   }
 }
 // end themes
-
+#theme-toggle-background {
+  border-radius: 4px;
+}
 #projects-tree, #projects-search-input {
   border-radius: 2px;
   border: 1px solid $text_light;
