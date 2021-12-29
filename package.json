@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/ConorSheehan1/ConorSheehan1.github.io#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
     "jquery": "^3.6.0",
     "jstree": "^3.3.12",
     "lightbox2": "^2.11.3"

@@ -24,4 +24,6 @@ end
 group :jekyll_plugins do
   gem "github-pages"
   gem "jekyll-paginate", "~> 1.1"
+  gem "jekyll-font-awesome-sass", "~> 0.1.1"
 end
+
