@@ -35,6 +35,7 @@ html.light {
     color: $text_dark
   }
   body {
+    background: $brand_background_light;  // overridden when deployed with background: linear-gradient(#2a2a29, #1c1c1c);
     background-color: $brand_background_light;
     background: linear_gradient(#e4e4de, #cfcccc);
     color: $text_light;
@@ -97,6 +98,8 @@ html.light {
 }
 // end themes
 #theme-toggle-background {
+  width: $icon_size;
+  height: $icon_size;
   border-radius: 4px;
 }
 #projects-tree, #projects-search-input {

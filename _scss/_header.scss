@@ -30,6 +30,7 @@
   #theme-toggle-container {
     // override col width
     width: 5%;
+    min-width: $icon_size;
   }
 
   .header-left {
