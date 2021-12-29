@@ -4,21 +4,6 @@
   }
 }
 
-@mixin jstreeSearch {
-  .jstree-search {
-    color: $brand_primary
-  }
-}
-
-@mixin jstreeClickable {
-  .jstree-anchor {
-    color: $brand_primary;
-    .clickable-tree-node {
-      color: $brand_primary;
-    }
-  }
-}
-
 @mixin containerish {
   display: flex;
   justify-content: space-between;

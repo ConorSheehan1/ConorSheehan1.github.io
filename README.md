@@ -42,7 +42,7 @@ https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-
 bundle exec rubocop
 
 # update sourcecode if possible
-bundle exec rubocop --autocorrect
+bundle exec rubocop --auto-correct
 ```
 
 ## Configuration

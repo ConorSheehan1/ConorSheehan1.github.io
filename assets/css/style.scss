@@ -10,6 +10,108 @@
 @import 'header';
 @import 'footer';
 
+// themes
+html.dark {
+  // jekyll-theme-midnight handles most of this. just override with light.
+  color-scheme: dark;
+  #projects-search-input {
+    background-color: $brand_background;
+  }
+  #theme-toggle-background {
+    background-color: $brand_background;
+  }
+}
+
+html.light {
+  color-scheme: light;
+  #projects-search-input {
+    background-color: $brand_background_light;
+  }
+  #theme-toggle-background {
+    background-color: $brand_background_light;
+  }
+  // TODO: once footer image changed, remove text color change
+  footer {
+    color: $text_dark
+  }
+  body {
+    background-color: $brand_background_light;
+    background: linear_gradient(#e4e4de, #cfcccc);
+    color: $text_light;
+  }
+  a {
+    color: $brand_primary_light;
+    &:hover {
+      color: lighten($brand_primary_light, 10%);
+    }
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: $text_light;
+  }
+  th {
+    color: #464646;
+  }
+  blockquote {
+    border-left: 3px solid $brand_primary_light;
+  }
+  ul, ol {
+    list-style-image: none;
+  }
+  // // TODO: create own images for light-theme
+  // ul {
+  //   list-style-image:
+  // }
+  // // same for footer
+  // #header {
+  //   background: url(../images/nav-bg.gif, $some_light_color)
+  // }
+  // hr {
+  //   backaground: url(../images/hr.gif)
+  // }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    color-scheme: dark;
+  }
+}
+
+// overrides for jstree style
+.jstree-default {
+  background-color: $brand_background_light;
+  .jstree-anchor {
+    color: black;
+  }
+  .jstree-anchor.clickable-tree-node {
+    color: $brand_primary_light;
+  }
+}
+.jstree-default-dark {
+  background-color: $brand_background;
+  .jstree-anchor {
+    color: white;
+  }
+  .jstree-anchor.clickable-tree-node {
+    color: $brand_primary;
+  }
+}
+// end themes
+#theme-toggle-background {
+  border-radius: 4px;
+}
+#projects-tree, #projects-search-input {
+  border-radius: 2px;
+  border: 1px solid $text_light;
+}
+
+#projects-tree {
+  padding-right: 1em;
+}
+
+#projects-search-input {
+  padding: 4px;
+}
+
 section #title {
   margin: 0;
   // account for header bottom pad
@@ -30,21 +132,6 @@ section #title {
   margin-bottom: -50px;
 }
 
-// overrides for jstree style
-.jstree-default {
-  @include jstreeSearch;
-}
-
-.jstree-default-dark {
-  @include jstreeSearch;
-  .jstree-anchor {
-    color: white;
-  }
-  .jstree-anchor.clickable-tree-node {
-    color: $brand_primary;
-  }
-}
-
 .back-to-projects {
   float:right;
   font-size: 20px;
@@ -60,4 +147,8 @@ section #title {
   font-size: 15px;
   opacity: 70%;
   margin-top: 0.5em;
+}
+
+.icon-size {
+  font-size: 32px;
 }

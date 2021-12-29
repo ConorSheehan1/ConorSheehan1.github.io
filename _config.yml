@@ -1,22 +1,20 @@
 theme: jekyll-theme-midnight
 title: Conor Sheehan
 
-plugins: 
+plugins:
   - jekyll-paginate
 
 paginate: 3
 paginate_path: "/projects/page:num/"
 
-exclude: 
+exclude:
   - README.md
   - LICENSE.md
-  - Gemfile 
+  - Gemfile
   - Gemfile.lock
   - scripts/*
   - spec/*
   - vendor/*
-
-jstree_theme: "default-dark"
 
 sass:
   sass_dir: _scss

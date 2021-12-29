@@ -3,3 +3,4 @@ _site
 .byebug_history
 .rspec-local
 TODO.md
+*.bak

@@ -27,6 +27,11 @@
     text-align: center;
   }
 
+  #theme-toggle-container {
+    // override col width
+    width: 5%;
+  }
+
   .header-left {
     float: left;
   }
