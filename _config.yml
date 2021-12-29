@@ -7,6 +7,16 @@ plugins:
 paginate: 3
 paginate_path: "/projects/page:num/"
 
+include:
+  - node_modules/@fortawesome/fontawesome-free/svgs/
+  - node_modules/@fortawesome/fontawesome-free/css/all.min.cs
+  - node_modules/jquery/dist/jquery.min.js
+  - node_modules/lightbox2/dist/css/lightbox.min.css
+  - node_modules/lightbox2/dist/js/lightbox.min.js
+  - node_modules/jstree/dist/jstree.min.js
+  - node_modules/jstree/dist/themes/
+
+
 exclude:
   - README.md
   - LICENSE.md
