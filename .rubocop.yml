@@ -8,3 +8,61 @@ AllCops:
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*.rb"
+
+# add indent after access modifier e.g. private
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods # previously rails style
+
+# Use double quotes by default, common in large projects including rails
+# https://anti-pattern.com/always-use-double-quoted-strings-in-ruby
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+Style/ColonMethodCall:
+  Enabled: false
+
+# use %r for long expressions e.g shared_constants acronym_regex
+Style/RegexpLiteral:
+  Enabled: false
+
+# prefer parens for method calls with args
+# exceptions for Gmefile, spec, require, etc. type methods
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+  IgnoredMethods:
+    - expect
+    - gem
+    - include
+    - load
+    - require
+    - require_relative
+    - raise
+    - ruby
+    - source
+    - to
+    - to_not
+    - not_to
+    - be
+    - eq
+    - have_title
+    - have_css
+    - have_xpath
+    - match
+
+
+# don't like .zero? instead of == 0
+Style/NumericPredicate:
+  Enabled: false
+
+# preferred method aliases
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    collect:   map
+    collect!:  map!
+    inject:    reduce
+    detect:    find
+    find_all:  select
+    # TODO: prefer length / size to count when no args ar present for performance (count O(n), length o(1))
+    # https://stackoverflow.com/questions/53480273/are-there-performance-reasons-to-prefer-size-over-length-or-count-in-ruby
