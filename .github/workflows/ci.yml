@@ -33,11 +33,16 @@ jobs:
         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gems-
-    - name: Install dependencies
+    - name: Install ruby dependencies
       run: |
         gem install bundler
         bundle config path vendor/bundle
         bundle install
+    - name: Install js dependencies
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - run: npm install
     - name: Start jekyll
       run: |
         bundle exec jekyll serve & # start a Web server (use & to start in new process)
