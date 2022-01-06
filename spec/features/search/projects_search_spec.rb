@@ -29,7 +29,7 @@ describe "projects search on home page", type: :feature, js: true do
     before { @root_node_toggle_icon.click }
     after { @root_node_toggle_icon.click }
     it "should have project categories" do
-      categories = ["College", "Personal", "Open source"]
+      categories = ["Blog", "College", "Open source", "Personal"]
       categories.each do |category|
         category_xpath = "//a[contains(@class, 'jstree-anchor')" \
           " and contains(text(), '#{category}')]"

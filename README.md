@@ -45,13 +45,13 @@ bundle exec rubocop
 bundle exec rubocop --auto-correct
 ```
 
-## Configuration
+### Configuration
 1. All pages should use the default layout or a layout which inherits from the default layout.  
 This is because the default layout loads all css/js required by pages.
 1. Pagination only works from index.html pages, hence the need for projects/index.html.
 1. For jekyll plugins on github pages, the plugin must be included in both \_config.yml -and Gemfile.
 
-## project structure
+### project structure
 1. `_data/`contains custom data accessible by jekyll e.g. urls, image paths, etc.
 1. `_includes/` contains partials which can be included in templates.  
 1. `_layouts/` contains html templates which can be reused in multiple pages.  
@@ -64,6 +64,12 @@ This is because the default layout loads all css/js required by pages.
 1. `scripts/` contains ruby scripts.     
 1. `spec/` contains rspec selenium tests.  
 
+### Debugging
+```jekyll
+<pre>
+  {{ some_variable | inspect }}
+</pre>
+```
 
-## Credit
+### Credit
 Jekyll theme: https://github.com/pages-themes/midnight
