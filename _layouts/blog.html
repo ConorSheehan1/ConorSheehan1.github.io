@@ -8,11 +8,10 @@ layout: default
   </span>
 </h1>
 
-
-{{content}}
-
-{% if page.live %}
+{% if page.dev_to %}
 <ul>
-  <li id='live-site-link'><a href="{{ page.live }}">View Site</a></li>
+  <li id='live-site-link'><a href="{{ page.dev_to }}">View on dev.to</a></li>
 </ul>
 {% endif %}
+
+{{content}}
