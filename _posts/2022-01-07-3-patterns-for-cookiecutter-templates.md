@@ -5,6 +5,7 @@ dev_to: https://dev.to/conorsheehan1/3-patterns-for-cookiecutter-templates-aha
 ---
 <!-- Original Post on dev.to was 2021-07-27 -->
 
+
 ## Intro
 If you've heard of [cookiecutter](https://github.com/cookiecutter/cookiecutter) you can skip this part.
 
@@ -39,23 +40,23 @@ There are a few ways to test cookiecutters.
 This approach has the advantage that when someone generates a project using your template, they already have tests set up. e.g.
  
 ```python
-# {{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}.py
+# {% raw %}{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}{% endraw %}.py
 __version__ = "0.1.0"
 
 
-def {{cookiecutter.repo_name}}(version=False):
+def {% raw %}{{cookiecutter.repo_name}}{% endraw %}(version=False):
     if version:
         return __version__
     else:
         # do some cli stuff
 ```
 ```python
-# {{cookiecutter.repo_name}}/tests/test_{{cookiecutter.repo_name}}.py 
+# {% raw %}{{cookiecutter.repo_name}}/tests/test_{{cookiecutter.repo_name}}{% endraw %}.py 
 import unittest
 
-class Test{{cookiecutter.repo_name}}(unittest.TestCase):
+class Test{% raw %}{{cookiecutter.repo_name}}{% endraw %}(unittest.TestCase):
     def test_version(self):
-        assert {{cookiecutter.repo_name}}(version=True) == "0.1.0"
+        assert {% raw %}{{cookiecutter.repo_name}}{% endraw %}(version=True) == "0.1.0"
 ```
 
 Here's an [example in a cookiecutter I made](https://github.com/ConorSheehan1/cookiecutter-fire-cli/blob/621b635c23407b9704bcce322390dbebbc544ca3/%7B%7Bcookiecutter.repo_name%7D%7D/tests/test_%7B%7Bcookiecutter.repo_name%7D%7D.py#L1).
@@ -79,13 +80,13 @@ cookiecutter . --no-input project_name="foo"
 I've used this approach when creating cookiecutters that contain scripts rather than full projects. To test the scripts I generate a project, import and run functions from the scripts, and test the output. e.g.
 
 ```bash
-# cookiecutter-$your-project/{{cookiecutter.project_name|lower}}/script.sh
+# cookiecutter-$your-project/{% raw %}{{cookiecutter.project_name|lower}}{% endraw %}/script.sh
 #!/bin/bash
 
-{{cookiecutter.project_name|lower}}_repo_dir="{{cookiecutter.repo_dir}}"
+{% raw %}{{cookiecutter.project_name|lower}}_repo_dir="{{cookiecutter.repo_dir}}{% endraw %}"
 
-goto_{{cookiecutter.project_name|lower}}_repo() {
-  cd "${{cookiecutter.project_name|lower}}_repo_dir" || return 1
+goto_{% raw %}{{cookiecutter.project_name|lower}}{% endraw %}_repo() {
+  cd "${% raw %}{{cookiecutter.project_name|lower}}{% endraw %}_repo_dir" || return 1
 }
 ```
 ```bash
@@ -135,10 +136,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Set up Python ${{ matrix.python }}
+      - name: Set up Python ${% raw %}{{ matrix.python }}{% endraw %}
         uses: actions/setup-python@v1
         with:
-          python-version: ${{ matrix.python }}
+          python-version: ${% raw %}{{ matrix.python }}{% endraw %}
       - name: Install Poetry
         run: |
           python -m pip install --upgrade pip
