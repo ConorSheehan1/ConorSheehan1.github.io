@@ -1,6 +1,7 @@
 ---
 layout: blog
 categories: blog
+tags: devto
 dev_to: https://dev.to/conorsheehan1/3-patterns-for-cookiecutter-templates-aha
 ---
 <!-- Original Post on dev.to was 2021-07-27 -->

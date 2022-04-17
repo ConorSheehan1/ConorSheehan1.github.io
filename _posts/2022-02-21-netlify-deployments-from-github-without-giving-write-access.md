@@ -1,6 +1,7 @@
 ---
 layout: blog
 categories: blog
+tags: devto
 dev_to: https://dev.to/conorsheehan1/netlify-deployments-from-github-without-giving-write-access-m3f
 ---
 
