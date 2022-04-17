@@ -3,7 +3,7 @@
 describe "home page", type: :feature, js: true do
   before(:each) do
     visit "/projects"
-    @pagination_num = 3
+    @pagination_num = 5
   end
 
   include_examples "base"
