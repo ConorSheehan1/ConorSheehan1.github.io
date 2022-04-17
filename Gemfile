@@ -25,3 +25,5 @@ group :jekyll_plugins do
   gem "github-pages"
   gem "jekyll-paginate", "~> 1.1"
 end
+
+gem "jekyll-feed", "~> 0.15.1"

@@ -1,6 +1,7 @@
 ---
 layout: blog
 categories: blog
+tags: devto
 dev_to: https://dev.to/conorsheehan1/add-bootstrapvue-to-vuepress-3h7g
 ---
 
