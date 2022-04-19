@@ -11,7 +11,7 @@ group :development, :test do
   gem "jekyll", "~> 3.9.0"
   gem "kramdown", ">= 2.3.1" # sec
   gem "rubocop", "~> 0.90.0"
-  gem "webdrivers", "~> 4.4"
+  gem "webdrivers", "~> 4.6.0" # 4.7.0 execute_script to reset local storage for theme tests fails
 end
 
 group :test do
