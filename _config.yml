@@ -21,6 +21,7 @@ exclude:
   - scripts/*
   - spec/*
   - vendor/*
+  - dev.md
 
 sass:
   sass_dir: _scss

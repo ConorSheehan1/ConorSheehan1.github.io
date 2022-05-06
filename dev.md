@@ -76,3 +76,6 @@ this can be done in vscode with a find and replace regex:
 find: \{\{(.*)\}\}
 replace: {% raw %}{{$1}}{% endraw %}
 ```
+
+### Scripts
+run `bundle exec ruby scripts/build_images_yml.rb` to generate output for `data/images.yml`
