@@ -1,6 +1,7 @@
 ---
 layout: post
 categories: college
+tags: python college
 
 project_title: "Restimator"
 project_id: restimator

@@ -2,13 +2,17 @@
   <input id="projects-search-input" type="text" class="form-control header-left" placeholder="Search projects ..">
   <div id="projects-tree" class="header-right">
     <ul>
-      <li data-jstree='{ "opened" : false }'><a class='clickable-tree-node' href="/projects">Projects</a>
+      <li data-jstree='{ "opened" : false }'>
+        <a class='clickable-tree-node' href="/projects">Projects</a>
         <ul>
           {% assign categories=site.categories | sort %}
           {% for c in categories %}
             {% assign category=c[0] %}
+            {% assign category_url = 'categories#' | append: category %}
             <li>
-              {{ category | replace: "_", " " | capitalize }}
+              <a class='clickable-tree-node' href="{{ category_url | relative_url }}">
+                {{ category | replace: "_", " " | capitalize }}
+              </a>
               <ul>
                 {% assign posts = site.categories[category] | sort: 'date' | reverse %}
                 {% for post in posts %}

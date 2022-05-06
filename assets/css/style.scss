@@ -155,3 +155,10 @@ section #title {
 .icon-size {
   font-size: 32px;
 }
+
+#tag-cloud {
+  a {
+    // put each tag on new line
+    display: block;
+  }
+}

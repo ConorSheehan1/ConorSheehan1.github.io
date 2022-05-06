@@ -1,0 +1,24 @@
+<div>
+  <div class='category-badge'>
+    Categories:
+    <span class="badge">
+      {% for category in page.categories %}
+        {% assign category_url = 'categories#' | append: category %}
+        <span class="badge">
+          <a href="{{ category_url | relative_url }}">{{ category }}</a>
+        </span>
+      {% endfor %}
+    </span>
+  </div>
+  {% if page.tags %}
+  <div class='category-badge'>Tags:
+    {% for tag in page.tags %}
+      {% assign tag_url = 'tag/' | append: tag %}
+      <span class="badge">
+        <a href="{{ tag_url | relative_url }}">{{ tag }}</a>
+      </span>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+<hr></hr>

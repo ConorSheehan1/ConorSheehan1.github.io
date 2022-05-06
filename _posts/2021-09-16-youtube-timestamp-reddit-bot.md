@@ -1,6 +1,7 @@
 ---
 layout: post
 categories: personal
+tags: python bot reddit
 
 project_title: "YouTubeTimestampRedditBot"
 src: https://github.com/ConorSheehan1/YouTubeTimestampRedditBot

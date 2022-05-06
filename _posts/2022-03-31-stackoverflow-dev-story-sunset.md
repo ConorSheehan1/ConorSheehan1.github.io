@@ -1,6 +1,7 @@
 ---
 layout: blog
 categories: blog
+tag: webarchive
 ---
 
 Sadly [stackoverflow](https://stackoverflow.com) is [sunsetting](https://meta.stackoverflow.com/questions/415293/sunsetting-jobs-developer-story) multiple services including jobs and developer story tomorrow.
