@@ -16,11 +16,11 @@ shared_examples "base" do
     social_links.each { |l| expect(header_text).to include(l) }
   end
 
-  it "should have a footer with the theme link" do
-    theme_link_xpath = "//div[@id='credit-footer']//a"
-    footer_links = page.find_all(:xpath, theme_link_xpath)
-    expect(footer_links[0][:href]).to eq @theme_github_link
-    expect(footer_links[1][:href]).to eq @theme_twitter_link
+  it "should have a footer with the credits link" do
+    credits_regex = Regexp.new("#{@home_page_regex.source}credits")
+    footer_link_xpath = "//div[@id='credit-footer']//a"
+    footer_links = page.find_all(:xpath, footer_link_xpath)
+    expect(footer_links[0][:href]).to match credits_regex
   end
 
   it "should have a projects search option" do

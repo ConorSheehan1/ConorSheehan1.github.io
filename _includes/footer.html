@@ -1,5 +1,3 @@
-
-
 <footer>
   <div class="container">
     {% if paginator.total_pages > 1 %}
@@ -27,10 +25,8 @@
       {% endif %}
     </div>
     {% endif %}
-    <div class="fixed" id="credit-footer">
-      <p class="text-tuncate">
-        <a href="{{ site.data.links.themeGithub }}">Theme</a> by <a href="{{ site.data.links.themeTwitter }}">mattgraham</a>
-      </p>
+    <div id="credit-footer">
+      <a href="{{ '/credits' | relative_url }}"> Credits </a>
     </div>
   </div>
 </footer>
