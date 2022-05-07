@@ -1,5 +1,9 @@
 theme: jekyll-theme-midnight
 title: Conor Sheehan
+# https://talk.jekyllrb.com/t/error-your-site-could-not-be-built-no-repo-name-found/5688/3
+repository: ConorSheehan1/ConorSheehan1.github.io
+url: https://conorsheehan1.github.io
+baseurl: ""
 
 plugins:
   - jekyll-paginate
