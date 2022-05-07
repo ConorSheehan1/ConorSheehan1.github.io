@@ -112,7 +112,7 @@ html.light {
 }
 
 #projects-search-input {
-  padding: 4px;
+  padding: 3.5px;
 }
 
 section #title {
@@ -154,4 +154,11 @@ section #title {
 
 .icon-size {
   font-size: 32px;
+}
+
+#tag-cloud {
+  a {
+    // put each tag on new line
+    display: block;
+  }
 }

@@ -1,6 +1,7 @@
 ---
 layout: post
 categories: personal
+tags: python osx mac cli
 
 project_title: "osxdocker"
 src: https://github.com/ConorSheehan1/osxdocker

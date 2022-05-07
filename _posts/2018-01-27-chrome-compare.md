@@ -1,6 +1,7 @@
 ---
 layout: post
 categories: personal
+tags: javascript browser-extension
 
 project_title: "Chrome Compare"
 project_id: chrome_compare

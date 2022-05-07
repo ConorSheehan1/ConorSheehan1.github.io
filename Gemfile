@@ -23,7 +23,8 @@ end
 
 group :jekyll_plugins do
   gem "github-pages"
+  gem "jekyll-feed", "~> 0.15.1"
   gem "jekyll-paginate", "~> 1.1"
+  gem "jekyll-sitemap", "~> 1.4"
+  gem "jekyll-tagging", "~> 1.1"
 end
-
-gem "jekyll-feed", "~> 0.15.1"

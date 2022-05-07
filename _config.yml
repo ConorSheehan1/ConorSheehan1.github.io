@@ -4,6 +4,8 @@ title: Conor Sheehan
 plugins:
   - jekyll-paginate
   - jekyll-feed
+  - jekyll-tags
+  - jekyll-sitemap
 
 paginate: 5
 paginate_path: "/projects/page:num/"
@@ -25,6 +27,11 @@ exclude:
 
 sass:
   sass_dir: _scss
+
+tag_page_layout: tag_page
+tag_page_dir: tag
+# required or tag cloud doesn't work
+safe: false
 
 # https://github.com/github/pages-gem/issues/399
 github: [metadata]

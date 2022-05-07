@@ -7,6 +7,7 @@ layout: default
     <a href="{{'/projects' | relative_url }}">&larr; Back to projects</a>
   </span>
 </h1>
+{% include category_and_tag.html %}
 
 {{content}}
 
@@ -25,3 +26,4 @@ layout: default
     <br>
   {% endfor %}
 </div>
+

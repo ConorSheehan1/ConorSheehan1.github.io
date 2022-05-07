@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<div class="category-titles">
+  {% assign categories = site.categories | sort %}
+  {% for category in categories %}
+  <a href="#{{ category[0] | slugify }}" class="btn btn-default">
+    <span class="fa fa-folder-open" aria-hidden="true" style="padding-right: 10px">
+      {{ category[0] }} <i class="badge">({{ category | last | size }})</i>
+    </span>
+  </a>
+  {% endfor %}
+</div>
+<hr/>
+<div class="post-preview">
+  {% for category in categories %}
+  <h2 id="{{ category[0] | slugify }}"> {{ category[0] | capitalize }} </h2>
+  <ul>
+    {% for post in category[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }} | Tags: {{ post | tags }})</li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</div>
