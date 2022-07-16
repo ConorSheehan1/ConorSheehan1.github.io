@@ -4,6 +4,7 @@ title: Conor Sheehan
 repository: ConorSheehan1/ConorSheehan1.github.io
 
 url: "https://conorsheehan1.github.io"
+baseurl: ""
 
 plugins:
   - jekyll-paginate
