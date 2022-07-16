@@ -4,7 +4,7 @@ layout: default
 
 <h1>{{ page.title }}
   <span class="back-to-projects">
-    <a href="{{'/projects' | relative_url }}">&larr; Back to projects</a>
+    <a href="{{'/projects' | absolute_url }}">&larr; Back to projects</a>
   </span>
 </h1>
 {% include category_and_tag.html %}
@@ -20,8 +20,8 @@ layout: default
 
 <div id="images">
   {% for image in site.data.images[page.project_id] %}
-    <a href="{{ image.src | relative_url }}" data-lightbox="roadtrip">
-      <img src="{{ image.src | relative_url }}" alt="{{ image.alt }}"/>
+    <a href="{{ image.src | absolute_url }}" data-lightbox="roadtrip">
+      <img src="{{ image.src | absolute_url }}" alt="{{ image.alt }}"/>
     </a>
     <br>
   {% endfor %}

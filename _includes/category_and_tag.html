@@ -5,7 +5,7 @@
       {% for category in page.categories %}
         {% assign category_url = 'categories#' | append: category %}
         <span class="badge">
-          <a href="{{ category_url | relative_url }}">{{ category }}</a>
+          <a href="{{ category_url | absolute_url }}">{{ category }}</a>
         </span>
       {% endfor %}
     </span>
@@ -15,7 +15,7 @@
     {% for tag in page.tags %}
       {% assign tag_url = 'tag/' | append: tag %}
       <span class="badge">
-        <a href="{{ tag_url | relative_url }}">{{ tag }}</a>
+        <a href="{{ tag_url | absolute_url }}">{{ tag }}</a>
       </span>
     {% endfor %}
   </div>

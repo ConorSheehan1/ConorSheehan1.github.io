@@ -3,7 +3,7 @@
     {% if paginator.total_pages > 1 %}
     <div class="pagination flex-item">
       {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+        <a href="{{ paginator.previous_page_path | absolute_url }}">&laquo; Prev</a>
       {% else %}
         <span>&laquo; Prev</span>
       {% endif %}
@@ -12,21 +12,21 @@
         {% if page == paginator.page %}
           <em>{{ page }}</em>
         {% elsif page == 1 %}
-          <a href="{{ '/projects' | relative_url }}">{{ page }}</a>
+          <a href="{{ '/projects' | absolute_url }}">{{ page }}</a>
         {% else %}
-          <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+          <a href="{{ site.paginate_path | absolute_url | replace: ':num', page }}">{{ page }}</a>
         {% endif %}
       {% endfor %}
 
       {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+        <a href="{{ paginator.next_page_path | absolute_url }}">Next &raquo;</a>
       {% else %}
         <span>Next &raquo;</span>
       {% endif %}
     </div>
     {% endif %}
     <div id="credit-footer">
-      <a href="{{ '/credits' | relative_url }}"> Credits </a>
+      <a href="{{ '/credits' | absolute_url }}"> Credits </a>
     </div>
   </div>
 </footer>

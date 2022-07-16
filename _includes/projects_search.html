@@ -10,7 +10,7 @@
             {% assign category=c[0] %}
             {% assign category_url = 'categories#' | append: category %}
             <li>
-              <a class='clickable-tree-node' href="{{ category_url | relative_url }}">
+              <a class='clickable-tree-node' href="{{ category_url | absolute_url }}">
                 {{ category | replace: "_", " " | capitalize }}
               </a>
               <ul>
