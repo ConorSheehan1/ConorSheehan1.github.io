@@ -15,7 +15,7 @@ RSpec.configure do |config|
   end
 
   config.before(:all) do
-    @home_page_regex = %r{http://127\.0\.0\.1:(\d+)/}
+    @home_page_regex = %r{http://(127\.0\.0\.1|localhost):(\d+)/}
   end
 
   config.mock_with(:rspec) do |mocks|
