@@ -22,8 +22,12 @@ layout: default
 
 # What I'm interested in
 
-* Python
+* [Python]({{ '/tag/python' | absolute_url }})
 * Ruby
-* JavaScript
+* [JavaScript]({{ '/tag/javascript' | absolute_url }})
 * Data Science
 * Web Development
+
+### Other Stuff
+* [Stuff I use](./uses)
+* [Find me on the internet (linktree)]({{site.data.links.linktree}})

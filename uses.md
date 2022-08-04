@@ -10,7 +10,7 @@
 
 ### Terminal
 * [iterm2](https://iterm2.com)
-* gnome-terminal
+* [gnome-terminal](https://help.gnome.org/users/gnome-terminal/stable/)
 
 ### Other
 * window manager: [rectangle](https://rectangleapp.com)
