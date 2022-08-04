@@ -29,5 +29,6 @@ layout: default
 * Web Development
 
 ### Other Stuff
-* [Stuff I use](./uses)
+* [Technology I use](./uses)
+* [Bookmarks (stuff I like on the internet)](./bookmarks)
 * [Find me on the internet (linktree)]({{site.data.links.linktree}})

@@ -1,7 +1,7 @@
 ---
 layout: blog
 categories: blog
-tags: devto networking
+tags: devto
 imagedir: /assets/images/beach_litriochta
 ---
 
