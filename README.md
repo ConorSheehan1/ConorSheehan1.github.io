@@ -6,4 +6,4 @@ Personal website built with [jekyll](https://jekyllrb.com/).
 See [dev.md](./dev.md)
 
 ### Credit
-Jekyll theme: https://github.com/pages-themes/midnight
+[credits.md](./credits.md)

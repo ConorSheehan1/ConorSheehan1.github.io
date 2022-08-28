@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer">
   <div class="container">
     {% if paginator.total_pages > 1 %}
     <div class="pagination flex-item">
@@ -27,6 +27,11 @@
     {% endif %}
     <div id="credit-footer">
       <a href="{{ '/credits' | absolute_url }}"> Credits </a>
+    </div>
+    <div id="rss-footer">
+      <a href="{{ '/feed.xml' | absolute_url }}">
+        <i class="fa-solid fa-rss" aria-hidden="true"></i>
+      </a>
     </div>
   </div>
 </footer>
