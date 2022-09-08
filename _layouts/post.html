@@ -15,7 +15,9 @@ layout: default
   {% if page.live %}
   <li id='live-site-link'><a href="{{ page.live }}">View Site</a></li>
   {% endif %}
+  {% if page.src %}
   <li id='source-code-link'><a href="{{ page.src }}">View Source Code</a></li>
+  {% endif %}
 </ul>
 
 <div id="images">
