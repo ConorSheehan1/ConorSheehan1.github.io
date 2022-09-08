@@ -1,14 +1,20 @@
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    color-scheme: dark;
+  }
+}
+
 html.dark {
   // jekyll-theme-midnight handles most of this. just override with light.
   color-scheme: dark;
   #projects-search-input {
     background-color: $brand_background;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme]) {
-    color-scheme: dark;
+  .header-icon {
+    filter: invert(70%);
+    &:hover {
+      filter: invert(90%);
+    }
   }
 }
 
@@ -22,6 +28,12 @@ html.light {
   }
   #header {
     border-bottom: 4px solid $brand_background_light;
+    .header-icon {
+      filter: invert(20%);
+      &:hover {
+        filter: invert(0%);
+      }
+    }
   }
   hr {
     background: linear-gradient(rgba(255,255,255,.75), rgba(255,255,255,.75)), url("../images/hr.gif") center center repeat-x;
