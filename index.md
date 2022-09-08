@@ -23,7 +23,7 @@ layout: default
 # What I'm interested in
 
 * [Python]({{ '/tag/python' | absolute_url }})
-* Ruby
+* [Ruby]({{ '/tag/ruby' | absolute_url }})
 * [JavaScript]({{ '/tag/javascript' | absolute_url }})
 * Data Science
 * Web Development
