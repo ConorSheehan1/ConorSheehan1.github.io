@@ -96,3 +96,22 @@ section #title {
     display: block;
   }
 }
+
+// https://stackoverflow.com/questions/5379752/css-style-external-links
+// https://stackoverflow.com/questions/20782368/use-font-awesome-icon-as-css-content
+a[href]:not(:where(
+  /* exclude hash only links */
+  [href^="#"],
+  /* exclude relative but not double slash only links */
+  [href^="/"]:not([href^="//"]),
+  /* domains to exclude */
+  [href*="//localhost"],
+  [href*="//conorsheehan1.github.io"],
+  [href*="//conorsheehan1.is-a.dev"],
+)):after {
+  font-family: "Font Awesome 6 Free";
+  content: "\f08e";
+  display: inline-block;
+  padding-left: 3px;
+  font-weight: 900;
+}
