@@ -23,7 +23,7 @@ layout: default
 # What I'm interested in
 
 * [Python]({{ '/tag/python' | absolute_url }})
-* Ruby
+* [Ruby]({{ '/tag/ruby' | absolute_url }})
 * [JavaScript]({{ '/tag/javascript' | absolute_url }})
 * Data Science
 * Web Development
@@ -31,4 +31,5 @@ layout: default
 ### Other Stuff
 * [Technology I use](./uses)
 * [Bookmarks (stuff I like on the internet)](./bookmarks)
-* [Find me on the internet (linktree)]({{site.data.links.linktree}})
+* [Linktree (links to other stuff)]({{site.data.links.linktree}})
+* [ko-fi (donations)]({{site.data.links.kofi}})
