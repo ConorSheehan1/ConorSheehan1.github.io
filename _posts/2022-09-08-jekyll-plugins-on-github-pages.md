@@ -12,4 +12,4 @@ To get the build working I had to use the [jekyll-deploy-action](https://github.
  
 I had [some issues](https://github.com/jeffreytse/jekyll-deploy-action/issues/48) along the way. I had the usual problems with browser cache where I wasn't sure if my css was really broken or just cached. What ended up working for me was adding `baseurl: ""` to `_config.yml`.
 
-You can see the [tags](./tags) and [categories](./categories) pages here.
+You can see the [tags]({{ '/tags' | absolute_url }}) and [categories]({{ '/categories' | absolute_url }}) pages here.
