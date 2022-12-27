@@ -23,10 +23,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Ruby 2.7
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.7
+    - name: Set up Ruby (using .ruby-version file)
+      uses: ruby/setup-ruby@v1
     - uses: actions/cache@v2
       with:
         path: vendor/bundle
