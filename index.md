@@ -29,7 +29,7 @@ layout: default
 * Web Development
 
 ### Other Stuff
-* [Technology I use](./uses)
-* [Bookmarks (stuff I like on the internet)](./bookmarks)
+* [Technology I use]({{ '/uses' | absolute_url }})
+* [Bookmarks (stuff I like on the internet)]({{ '/bookmarks' | absolute_url }})
 * [Linktree (links to other stuff)]({{site.data.links.linktree}})
 * [ko-fi (donations)]({{site.data.links.kofi}})
