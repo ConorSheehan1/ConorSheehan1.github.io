@@ -19,6 +19,7 @@ Hi, I'm Conor! I'm a software engineer with about {{ site.time | date: '%Y' | mi
 * [JavaScript]({{ '/tag/javascript' | absolute_url }})
 * Data Science
 * Web Development
+* Free Open Source Software
 
 ### Other Stuff
 * [Technology I use]({{ '/uses' | absolute_url }})
