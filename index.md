@@ -2,15 +2,7 @@
 layout: default
 ---
 
-
-# Experience
-
-| Title                  | Organisation                    | Time        |
-|:-----------------------|:--------------------------------|:------------|
-| Software Engineer      | [OW]({{site.data.links.ow}})    | 2019 - now  |
-| Linked Data Researcher | [DRI]({{site.data.links.dri}})  | 2018 - 2019 |
-| Software Developer     | [NLI]({{site.data.links.nli}})  | 2017 - 2018 |
-| Demonstrator           | [UCD]({{site.data.links.ucd}})  | 2016 - 2017 |
+Hi, I'm Conor! I'm a software engineer with about {{ site.time | date: '%Y' | minus:2017 }} years of [experience]({{ '/experience' | absolute_url }}). This site is mostly a [blog]({{ '/categories#blog' | absolute_url }}), with some [project notes]({{'/projects' | absolute_url}}) and a little [web archiving]({{ '/static' | absolute_url }}). Please take a look around.
 
 
 # What I can do
