@@ -78,5 +78,6 @@ replace: {% raw %}{{$1}}{% endraw %}
 ```
 
 ### Scripts
-run `bundle exec ruby scripts/build_images_yml.rb` to generate output for `data/images.yml`.
+run `bundle exec ruby scripts/build_images_yml.rb` to generate output for `_data/images.yml`.
+e.g. `bundle exec ruby scripts/build_images_yml.rb > _data/images.yml`.  
 required so tests know image path and can check they render.
