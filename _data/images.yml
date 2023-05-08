@@ -1,14 +1,14 @@
 ---
 chrome_compare:
-- src: "/assets/images/chrome_compare/so_use.png"
+- src: assets/images/chrome_compare/so_use.png
   alt: so_use
 dublin_bikes:
-- src: "/assets/images/dublin_bikes/chart.png"
+- src: assets/images/dublin_bikes/chart.png
   alt: chart
-- src: "/assets/images/dublin_bikes/map.png"
+- src: assets/images/dublin_bikes/map.png
   alt: map
 restimator:
-- src: "/assets/images/restimator/occupancy.png"
+- src: assets/images/restimator/occupancy.png
   alt: occupancy
-- src: "/assets/images/restimator/sign_up.png"
+- src: assets/images/restimator/sign_up.png
   alt: sign_up

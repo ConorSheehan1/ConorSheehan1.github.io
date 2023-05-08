@@ -7,7 +7,7 @@ require "pp"
 def image_dir_to_yml(root_dir, glob_path, ext, excluded_projects)
   yml = {}
   Dir.glob("#{root_dir}/#{glob_path}#{ext}").each do |file|
-    relative_path = file.gsub(root_dir, "")
+    relative_path = file.gsub("#{root_dir}/", "")
     project_name = File.basename(File.dirname(relative_path))
     file_name = File.basename(file).sub(ext, "")
 
