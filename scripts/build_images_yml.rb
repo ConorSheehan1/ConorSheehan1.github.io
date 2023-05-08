@@ -21,7 +21,7 @@ def image_dir_to_yml(root_dir, glob_path, ext, excluded_projects)
   yml
 end
 
-projects = image_dir_to_yml(File.dirname(__dir__), "assets/images/*/*", ".png", ["beach_litriochta", "uhabits"])
+projects = image_dir_to_yml(File.dirname(__dir__), "assets/images/*/*", ".png", %w[beach_litriochta uhabits])
 
 # pp projects
 puts projects.to_yaml
