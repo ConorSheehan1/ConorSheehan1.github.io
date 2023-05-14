@@ -7,6 +7,9 @@
 html.dark {
   // jekyll-theme-midnight handles most of this. just override with light.
   color-scheme: dark;
+  body {
+    background-color: $brand_background;
+  }
   #projects-search-input {
     background-color: $brand_background;
   }

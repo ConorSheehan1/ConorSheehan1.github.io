@@ -22,10 +22,10 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  Capybara.current_driver = :selenium_chrome_headless
+  Capybara.current_driver = :selenium_headless
   Capybara.configure do |cap|
     # Calling current_driver= from Capybara.configure is deprecated
-    cap.javascript_driver = :selenium_chrome_headless
+    cap.javascript_driver = :selenium_headless
     cap.run_server = false
     cap.app_host = "http://127.0.0.1:4000"
   end

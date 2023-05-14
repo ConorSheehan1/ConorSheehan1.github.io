@@ -69,6 +69,9 @@ This is because the default layout loads all css/js required by pages.
 </pre>
 ```
 
+To debug tests, can switch to non-healdess browser. e.g. `:selenium_headless` -> `:selenium`
+in spec/spec_helper.rb
+
 ### blog posts
 jekyll has issues with curly braces, so copying raw markdown from dev.to may cause formatting errors.
 to fix this use the {% raw %}...{% endraw %} syntax.
