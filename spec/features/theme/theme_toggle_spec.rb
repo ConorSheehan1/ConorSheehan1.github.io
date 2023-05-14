@@ -13,15 +13,16 @@ describe "theme toggle", type: :feature, js: true do
     page.execute_script("window.localStorage.setItem('theme', 'dark');")
     page.driver.browser.navigate.refresh
     @theme_toggle = page.find(:css, "#theme-toggle")
-    @dark_background = "rgba(37, 37, 37, 1)" # 252525
-    @light_background = "rgba(242, 242, 242, 1)" # f2f2f2
+    # native.css_value interface is incosistent across browsers. may return rgb or rgba
+    @dark_backgrounds = ["rgba(55, 55, 55, 1)", "rgb(55, 55, 55)"] # #373737
+    @light_backgrounds = ["rgba(242, 242, 242, 1)", "rgb(242, 242, 242)"] # #f2f2f2
   end
 
   describe "initial page load" do
     it_should_behave_like "theme", "dark"
     it "should have a dark background" do
       color = page.find("body").native.css_value("background-color")
-      expect(color).to eq @dark_background
+      expect(@dark_backgrounds).to include(color)
     end
     it "should have a default-dark js-tree theme" do
       expect(page).to have_css("#projects-tree.jstree-default-dark")
@@ -33,7 +34,7 @@ describe "theme toggle", type: :feature, js: true do
     it_should_behave_like "theme", "light"
     it "should have a light background" do
       color = page.find("body").native.css_value("background-color")
-      expect(color).to eq @light_background
+      expect(@light_backgrounds).to include(color)
     end
     it "should have a default js-tree theme" do
       expect(page).to have_css("#projects-tree.jstree-default")
@@ -49,7 +50,7 @@ describe "theme toggle", type: :feature, js: true do
     it_should_behave_like "theme", "dark"
     it "should have a dark background" do
       color = page.find("body").native.css_value("background-color")
-      expect(color).to eq @dark_background
+      expect(@dark_backgrounds).to include(color)
     end
     it "should have a default-dark js-tree theme" do
       expect(page).to have_css("#projects-tree.jstree-default-dark")

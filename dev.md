@@ -47,6 +47,7 @@ bundle exec rubocop --auto-correct
 This is because the default layout loads all css/js required by pages.
 1. Pagination only works from index.html pages, hence the need for projects/index.html.
 1. For jekyll plugins on github pages, the plugin must be included in both \_config.yml -and Gemfile.
+1. Dependencies should be compatible with github pages. see https://pages.github.com/versions/
 
 ### project structure
 1. `_data/`contains custom data accessible by jekyll e.g. urls, image paths, etc.
@@ -67,6 +68,9 @@ This is because the default layout loads all css/js required by pages.
   {{ some_variable | inspect }}
 </pre>
 ```
+
+To debug tests, can switch to non-healdess browser. e.g. `:selenium_headless` -> `:selenium`
+in spec/spec_helper.rb
 
 ### blog posts
 jekyll has issues with curly braces, so copying raw markdown from dev.to may cause formatting errors.
