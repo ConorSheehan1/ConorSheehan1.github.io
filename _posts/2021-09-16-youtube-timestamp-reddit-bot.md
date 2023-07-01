@@ -9,6 +9,8 @@ live: https://www.reddit.com/user/YouTubeTimestampBot
 status: archived
 ---
 
+Update 2023-07-01: this project has been archived. See [this blog post]({{site.url}}/blog/2023/07/01/archiving-youtube-timestamp-reddit-bot.html).
+
 I recently created [YouTubeTimestampRedditBot](https://github.com/ConorSheehan1/YouTubeTimestampRedditBot). It's a bot that checks reddit for posts which:
 1. link to YouTube
 1. reference a timestamp in the title
