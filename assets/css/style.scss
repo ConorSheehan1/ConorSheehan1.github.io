@@ -49,10 +49,19 @@
   padding: 3.5px;
 }
 
-section #title {
-  margin: 0;
-  // account for header bottom pad
-  padding-top: $header_padding + 5px;;
+// // TODO: increase font size in header without breaking layout
+// body {
+//   // make site font larger, I'm too old to read tiny text
+//   font-size: 16px;
+// }
+
+section {
+  // font-size: 16px;
+  #title {
+    margin: 0;
+    // account for header bottom pad
+    padding-top: $header_padding + 5px;;
+  }
 }
 
 // normal container

@@ -6,6 +6,7 @@ tags: python bot reddit
 project_title: "YouTubeTimestampRedditBot"
 src: https://github.com/ConorSheehan1/YouTubeTimestampRedditBot
 live: https://www.reddit.com/user/YouTubeTimestampBot
+status: archived
 ---
 
 I recently created [YouTubeTimestampRedditBot](https://github.com/ConorSheehan1/YouTubeTimestampRedditBot). It's a bot that checks reddit for posts which:
