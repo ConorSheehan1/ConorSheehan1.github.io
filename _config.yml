@@ -17,12 +17,9 @@ plugins:
 paginate: 5
 paginate_path: "/projects/page:num/"
 
-# TODO: add separate feed to dev.to using tag
-# Generate entire feed at /feed.xml
+# Generate feed/by_tag/devto.xml for dev.to to consume
 feed:
-  tags:
-    only:
-      - devto
+  tags: true
 
 exclude:
   - README.md
