@@ -1,5 +1,7 @@
 theme: jekyll-theme-midnight
 title: Conor Sheehan
+author: ConorSheehan1
+description: Mostly a tech blog with some project notes and a little web archiving
 # https://talk.jekyllrb.com/t/error-your-site-could-not-be-built-no-repo-name-found/5688/3
 repository: ConorSheehan1/ConorSheehan1.github.io
 
@@ -15,6 +17,8 @@ plugins:
 paginate: 5
 paginate_path: "/projects/page:num/"
 
+# TODO: add separate feed to dev.to using tag
+# Generate entire feed at /feed.xml
 feed:
   tags:
     only:
