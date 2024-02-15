@@ -30,7 +30,7 @@ jobs:
         bundler-cache: true
     - name: Install dependencies
       run: |
-        gem install bundler
+        gem install bundler -v 2.1.4
         bundle config path vendor/bundle
         bundle install
     - name: Start jekyll
