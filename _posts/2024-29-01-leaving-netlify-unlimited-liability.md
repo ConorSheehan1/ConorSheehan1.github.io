@@ -49,42 +49,6 @@ They do ask for write acces to metdata so they can put status messages on PRs, b
 I only had 2 tiny issues:
 1. I needed to set an environment variable `YARN_VERSION` to get the build to work
   (the default yarn version was too high, so I got failures like this)
-  ```log
-  2024-02-28T22:24:19.701473Z	Cloning repository...
-  2024-02-28T22:24:28.46573Z	From https://github.com/ConorSheehan1/spelling-bee
-  2024-02-28T22:24:28.466263Z	 * branch            a72414e9e37afb211cb252f735def0699c7afde6 -> FETCH_HEAD
-  2024-02-28T22:24:28.466389Z	
-  2024-02-28T22:24:28.779843Z	HEAD is now at a72414e bump to node 20
-  2024-02-28T22:24:28.78036Z	
-  2024-02-28T22:24:28.872254Z	
-  2024-02-28T22:24:28.872724Z	Using v2 root directory strategy
-  2024-02-28T22:24:28.901935Z	Success: Finished cloning repository files
-  2024-02-28T22:24:29.685291Z	Detected the following tools from environment: nodejs@20.5.1, yarn@3.6.3
-  2024-02-28T22:24:29.686191Z	Installing nodejs 20.5.1
-  2024-02-28T22:24:29.767353Z	nodejs 20.5.1 is already installed
-  2024-02-28T22:24:30.711917Z	Preparing yarn@3.6.3 for immediate activation...
-  2024-02-28T22:24:31.208933Z	Installing project dependencies: yarn
-  2024-02-28T22:24:31.840021Z	➤ YN0070: Migrating from Yarn 1; automatically enabling the compatibility node-modules linker 👍
-  2024-02-28T22:24:31.840655Z	
-  2024-02-28T22:24:31.881868Z	➤ YN0000: ┌ Resolution step
-  2024-02-28T22:24:32.695791Z	➤ YN0032: │ fsevents@npm:2.3.3: Implicit dependencies on node-gyp are discouraged
-  2024-02-28T22:24:33.259218Z	➤ YN0061: │ loupe@npm:2.3.4 is deprecated: Please upgrade to 2.3.7 which fixes GHSA-4q6p-r6v2-jvc5
-  2024-02-28T22:24:33.806219Z	➤ YN0061: │ sourcemap-codec@npm:1.4.8 is deprecated: Please use @jridgewell/sourcemap-codec instead
-  2024-02-28T22:24:36.317302Z	➤ YN0002: │ spelling-bee@workspace:. doesn't provide @types/node (p56c66), requested by ts-node
-  2024-02-28T22:24:36.317601Z	➤ YN0000: │ Some peer dependencies are incorrectly met; run yarn explain peer-requirements <hash> for details, where <hash> is the six-letter p-prefixed code
-  2024-02-28T22:24:36.320472Z	➤ YN0000: └ Completed in 4s 439ms
-  2024-02-28T22:24:36.344236Z	➤ YN0000: ┌ Post-resolution validation
-  2024-02-28T22:24:36.3445Z	➤ YN0028: │ The lockfile would have been modified by this install, which is explicitly forbidden.
-  2024-02-28T22:24:36.344679Z	➤ YN0000: └ Completed
-  2024-02-28T22:24:36.344842Z	➤ YN0000: Failed with errors in 4s 464ms
-  2024-02-28T22:24:36.39492Z	Error: Exit with error code: 1
-  2024-02-28T22:24:36.395219Z	    at ChildProcess.<anonymous> (/snapshot/dist/run-build.js)
-  2024-02-28T22:24:36.395441Z	    at Object.onceWrapper (node:events:652:26)
-  2024-02-28T22:24:36.395598Z	    at ChildProcess.emit (node:events:537:28)
-  2024-02-28T22:24:36.39575Z	    at ChildProcess._handle.onexit (node:internal/child_process:291:12)
-  2024-02-28T22:24:36.404411Z	Failed: build command exited with code: 1
-  2024-02-28T22:24:37.390394Z	Failed: error occurred while running build command
-  ```
 2. I had to delete and recreate a site to change the pages.dev url
   https://developers.cloudflare.com/pages/platform/known-issues/#build-configuration
   > If you need to change your *.pages.dev subdomain, delete your project and create a new one.
