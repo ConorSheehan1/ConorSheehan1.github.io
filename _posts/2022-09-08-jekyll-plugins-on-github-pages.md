@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: personal
-tags: jekyll ruby github-pages
+tags: jekyll ruby github-pages hosting
 ---
 
 I finally got tags and categories pages working for this website!
