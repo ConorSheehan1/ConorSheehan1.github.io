@@ -38,3 +38,7 @@ See also [blogroll]({{ '/blogroll' | absolute_url }})
 * [no vehicles in the park](https://novehiclesinthepark.com/)
 * [Productivity pitfalls](https://waivek.github.io/website/tooltip.html)
 * [Fast Machines, Slow Machines](https://jmmv.dev/2023/06/fast-machines-slow-machines.html)
+* [File over app (design philosophy)](https://stephango.com/file-over-app)
+* [POSSE](https://indieweb.org/POSSE)
+    * Publish (on your) Own Site, Syndicate Elsewhere. I've been doing this for a little while, e.g. devto tag. But I'd like to get better at it.
+
