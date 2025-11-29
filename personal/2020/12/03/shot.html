@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- rss auto-discovery https://www.rssboard.org/rss-autodiscovery -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://conorsheehan1.github.io/feed.xml">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Shot | Conor Sheehan</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Shot" />
+<meta name="author" content="ConorSheehan1" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I recently published shot, which stands for: Screenshot Helper for OSX Terminal. It a python CLI that I use day to day to copy / move / rename screenshots and videos. I also created a much smaller bash implementation first." />
+<meta property="og:description" content="I recently published shot, which stands for: Screenshot Helper for OSX Terminal. It a python CLI that I use day to day to copy / move / rename screenshots and videos. I also created a much smaller bash implementation first." />
+<link rel="canonical" href="https://conorsheehan1.github.io/personal/2020/12/03/shot.html" />
+<meta property="og:url" content="https://conorsheehan1.github.io/personal/2020/12/03/shot.html" />
+<meta property="og:site_name" content="Conor Sheehan" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-03T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Shot" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ConorSheehan1"},"dateModified":"2020-12-03T00:00:00+00:00","datePublished":"2020-12-03T00:00:00+00:00","description":"I recently published shot, which stands for: Screenshot Helper for OSX Terminal. It a python CLI that I use day to day to copy / move / rename screenshots and videos. I also created a much smaller bash implementation first.","headline":"Shot","mainEntityOfPage":{"@type":"WebPage","@id":"https://conorsheehan1.github.io/personal/2020/12/03/shot.html"},"url":"https://conorsheehan1.github.io/personal/2020/12/03/shot.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="https://conorsheehan1.github.io/assets/dist/jstree/themes/default/style.min.css" />
+    <link rel="stylesheet" href="https://conorsheehan1.github.io/assets/dist/jstree/themes/default-dark/style.min.css" />
+    <link href="https://conorsheehan1.github.io/assets/dist/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+    <link rel="stylesheet" href="https://conorsheehan1.github.io/assets/dist/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="https://conorsheehan1.github.io/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/x-ico" href="https://conorsheehan1.github.io/assets/images/icons/favicon.ico" >
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="https://conorsheehan1.github.io/assets/dist/lightbox/js/lightbox.min.js"></script>
+    <!-- order matters here. e.g. jstree depends on theme being loaded to provied getSavedTheme -->
+    <script src="https://conorsheehan1.github.io/assets/js/theme.js"></script>
+    <script src="https://conorsheehan1.github.io/assets/js/lightbox_custom.js"></script>
+    <script src="https://conorsheehan1.github.io/assets/js/jstree_custom.js"></script>
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header id="header">
+  <div class="container">
+      <div class="col">
+        <a href="https://github.com/ConorSheehan1">
+          <div class="header-icon">
+            <img src="https://conorsheehan1.github.io/assets/images/icons/github.svg" alt="github" />
+          </div>
+          <span>GitHub</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="https://www.linkedin.com/in/conor-s-403358106">
+          <div class="header-icon">
+            <img src="https://conorsheehan1.github.io/assets/images/icons/linkedin.svg" alt="linkedin" />
+          </div>
+          <span>Linked In</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="https://stackoverflow.com/users/6305204/con?tab=profile">
+          <div class="header-icon">
+            <img src="https://conorsheehan1.github.io/assets/images/icons/stackoverflow.svg" alt="stackoverflow" />
+          </div>
+          <span>Stack Overflow</span>
+        </a>
+      </div>
+
+      <div class="col" id="theme-toggle-container">
+        <div id="theme-toggle-background">
+          <a id="theme-toggle" title="Switch Theme">
+            <i class="fa-solid fa-adjust icon-size" aria-hidden="true" size="32px"></i>
+          </a>
+        </div>
+      </div>
+  </div>
+  <div class="container-sm">
+    <div class="header-center">
+  <input id="projects-search-input" type="text" class="form-control header-left" placeholder="Search projects ..">
+  <div id="projects-tree" class="header-right">
+    <ul>
+      <li data-jstree='{ "opened" : false }'>
+        <a class='clickable-tree-node' href="/projects">Projects</a>
+        <ul>
+          
+          
+            
+            
+            <li>
+              <a class='clickable-tree-node' href="https://conorsheehan1.github.io/categories#blog">
+                Blog
+              </a>
+              <ul>
+                
+                
+                  <li><a class='clickable-tree-node' href="/blog/2024/03/07/leaving-netlify-free-tier.html">Leaving Netlify Free Tier</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2023/07/01/archiving-youtube-timestamp-reddit-bot.html">Archiving Youtube Timestamp Reddit Bot</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/08/04/buying-and-configuring-my-first-domain.html">Buying And Configuring My First Domain</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/04/18/reverse-engineering-uhabits-datamodel.html">Reverse Engineering Uhabits Datamodel</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/03/31/stackoverflow-dev-story-sunset.html">Stackoverflow Dev Story Sunset</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/02/21/netlify-deployments-from-github-without-giving-write-access.html">Netlify Deployments From Github Without Giving Write Access</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/01/25/add-bootstrap-vue-to-vuepress.html">Add Bootstrap Vue To Vuepress</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/01/07/3-patterns-for-cookiecutter-templates.html">3 Patterns For Cookiecutter Templates</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/01/06/dev.to.html">Dev.to</a></li>
+                
+              </ul>
+            </li>
+          
+            
+            
+            <li>
+              <a class='clickable-tree-node' href="https://conorsheehan1.github.io/categories#college">
+                College
+              </a>
+              <ul>
+                
+                
+                  <li><a class='clickable-tree-node' href="/college/2016/08/31/dublin-bikes.html">Dublin Bikes</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/college/2016/07/21/restimator.html">Restimator</a></li>
+                
+              </ul>
+            </li>
+          
+            
+            
+            <li>
+              <a class='clickable-tree-node' href="https://conorsheehan1.github.io/categories#open_source">
+                Open source
+              </a>
+              <ul>
+                
+                
+                  <li><a class='clickable-tree-node' href="/open_source/2018/05/28/vufind.html">Vufind</a></li>
+                
+              </ul>
+            </li>
+          
+            
+            
+            <li>
+              <a class='clickable-tree-node' href="https://conorsheehan1.github.io/categories#personal">
+                Personal
+              </a>
+              <ul>
+                
+                
+                  <li><a class='clickable-tree-node' href="/personal/2022/09/08/jekyll-plugins-on-github-pages.html">Jekyll Plugins On Github Pages</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/personal/2021/09/16/youtube-timestamp-reddit-bot.html">Youtube Timestamp Reddit Bot</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/personal/2020/12/03/shot.html">Shot</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/personal/2020/09/21/osxdocker.html">Osxdocker</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/personal/2018/01/27/chrome-compare.html">Chrome Compare</a></li>
+                
+              </ul>
+            </li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+  </div>
+</header>
+
+      <section>
+        <div id="title">
+          <h1><a href="/">Conor Sheehan</a></h1>
+          <hr>
+        </div>
+        <h1>Shot
+  <span class="back-to-projects">
+    <a href="https://conorsheehan1.github.io/projects">&larr; Back to projects</a>
+  </span>
+</h1>
+<div>
+  <div class='category-badge'>
+    Categories:
+    <span class="badge">
+      
+        
+        <span class="badge">
+          <a href="https://conorsheehan1.github.io/categories#personal">personal</a>
+        </span>
+      
+    </span>
+  </div>
+  
+  <div class='tag-badge'>Tags:
+    
+      
+      <span class="badge">
+        <a href="https://conorsheehan1.github.io/tag/python">python</a>
+      </span>
+    
+      
+      <span class="badge">
+        <a href="https://conorsheehan1.github.io/tag/cli">cli</a>
+      </span>
+    
+      
+      <span class="badge">
+        <a href="https://conorsheehan1.github.io/tag/mac">mac</a>
+      </span>
+    
+      
+      <span class="badge">
+        <a href="https://conorsheehan1.github.io/tag/osx">osx</a>
+      </span>
+    
+  </div>
+  
+</div>
+<hr></hr>
+
+<p>I recently published <a href="https://github.com/ConorSheehan1/shot">shot</a>, which stands for: <strong>S</strong>creenshot <strong>H</strong>elper for <strong>O</strong>SX <strong>T</strong>erminal.<br />
+It a python CLI that I use day to day to copy / move / rename screenshots and videos.
+I also created a <a href="https://gist.github.com/ConorSheehan1/2a72b13fa530388dcaec93307f4f7b09">much smaller bash implementation</a> first.</p>
+
+<p>I learned a lot about python packaging from building <a href="/personal/2020/09/21/osxdocker.html">osxdocker</a>, and decided not to publish this package to pypi since it’s Mac/OSX specific. Instead I created <a href="https://github.com/ConorSheehan1/homebrew-ConorSheehan1">a homebrew tap</a> to make it easy to install on mac, like this:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">brew install conorsheehan1/conorsheehan1/shot</code></li>
+</ul>
+
+<p>It can still be installed via pip, just not from pypi. It can be pip installed from github like this:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">pip install https://github.com/ConorSheehan1/shot/releases/latest/download/shot.tar.gz</code></li>
+</ul>
+
+<p>All installation options are listed at <a href="https://github.com/ConorSheehan1/shot#install">https://github.com/ConorSheehan1/shot#install</a><br />
+I’ve found it fairly useful and I hope someone else will too.</p>
+
+
+<ul>
+  
+  
+  <li id='source-code-link'><a href="https://github.com/ConorSheehan1/shot">View Source Code</a></li>
+  
+</ul>
+
+<div id="images">
+  
+</div>
+
+
+      </section>
+    </div>
+    <footer id="footer">
+  <div class="container">
+    
+    <div id="credit-footer">
+      <a href="https://conorsheehan1.github.io/credits"> Credits </a>
+    </div>
+    <div id="rss-footer">
+      <a href="https://conorsheehan1.github.io/feed.xml">
+        <i class="fa-solid fa-rss" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://conorsheehan1.github.io/assets/dist/jstree/jstree.min.js"></script>
+  </body>
+</html>
