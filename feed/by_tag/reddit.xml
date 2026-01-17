@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://conorsheehan1.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="https://conorsheehan1.github.io/feed/by_tag/reddit.xml" rel="self" type="application/atom+xml" /><link href="https://conorsheehan1.github.io/" rel="alternate" type="text/html" /><updated>2026-01-17T22:30:13+00:00</updated><id>https://conorsheehan1.github.io/feed/by_tag/reddit.xml</id><title type="html">Conor Sheehan</title><subtitle>Mostly a tech blog with some project notes and a little web archiving</subtitle><author><name>ConorSheehan1</name></author><entry><title type="html">Archiving Youtube Timestamp Reddit Bot</title><link href="https://conorsheehan1.github.io/blog/2023/07/01/archiving-youtube-timestamp-reddit-bot.html" rel="alternate" type="text/html" title="Archiving Youtube Timestamp Reddit Bot" /><published>2023-07-01T00:00:00+00:00</published><updated>2023-07-01T00:00:00+00:00</updated><id>https://conorsheehan1.github.io/blog/2023/07/01/archiving-youtube-timestamp-reddit-bot</id><content type="html" xml:base="https://conorsheehan1.github.io/blog/2023/07/01/archiving-youtube-timestamp-reddit-bot.html">&lt;p&gt;I have been meaning to write another article about the &lt;a href=&quot;https://github.com/ConorSheehan1/YouTubeTimestampRedditBot&quot;&gt;YouTubeTimestampRedditBot&lt;/a&gt; I made for a while now. My &lt;a href=&quot;https://conorsheehan1.github.io/personal/2021/09/16/youtube-timestamp-reddit-bot.html&quot;&gt;last article&lt;/a&gt; was nearly 2 years ago!
+Unfortunately this post will mostly be about why I’m archiving it. But first, some interesting bits about it:&lt;/p&gt;
+
+&lt;h2 id=&quot;using-reddit-as-a-makeshift-database&quot;&gt;Using Reddit as a makeshift database&lt;/h2&gt;
+&lt;p&gt;I found lots of other bots used databases to keep track of things, like what threads they’d already seen or commented on. I managed to work around this by having the bot &lt;a href=&quot;https://github.com/ConorSheehan1/YouTubeTimestampRedditBot/blob/e51b976e2c772dcfcea622217b074030c82c2b8a/src/bot.py#L93&quot;&gt;pm itself&lt;/a&gt;, using Reddit itself as a makeshift database. I’d use these pms like logs to debug when things went wrong, and to generally keep track of posts the bot interacted with.
+&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/youtube_timestamp_redditbot/example_logs.png&quot; alt=&quot;example_logs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I thought this technique might benefit other bot developers and lower costs for hosting bots, but that seems a bit pointless now that Reddit is starting to charge quite a lot for API requests that were previously free. The API pricing has caused &lt;a href=&quot;https://www.reddit.com/r/redditisfun/comments/144gmfq/rif_will_shut_down_on_june_30_2023_in_response_to/&quot;&gt;a lot&lt;/a&gt; &lt;a href=&quot;https://www.reddit.com/r/apolloapp/comments/13ws4w3/had_a_call_with_reddit_to_discuss_pricing_bad/&quot;&gt;of controversy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;While the bot &lt;em&gt;could&lt;/em&gt; continue to use the API for free based on &lt;a href=&quot;https://www.redditinc.com/blog/apifacts&quot;&gt;https://www.redditinc.com/blog/apifacts&lt;/a&gt; I don’t really see any point in working to get it online again.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Effective July 1, 2023, the rate limits to use the Data API free of charge are 100 queries per minute per OAuth client id if you are using OAuth authentication and ten queries per minute if you are not using OAuth authentication.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;getting-into-the-top-100-ranked-bots&quot;&gt;Getting into the top 100 ranked bots&lt;/h2&gt;
+&lt;p&gt;Before the Heroku free tier shutdown the bot was running fairly regularly, and managed to just edge into the top 100 ranked bots on &lt;a href=&quot;https://botranks.com/?bot=YouTubeTimestampBot&quot;&gt;botranks.com&lt;/a&gt;!
+&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/youtube_timestamp_redditbot/crop_botrank-99_20220920.jpg&quot; alt=&quot;ranked_99&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I don’t remember exactly what rank it started at, but it was very low. The lowest screenshot I could find was ranked 350 on 2021-11-24.
+&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/youtube_timestamp_redditbot/crop_botrank-350_20211024.jpg&quot; alt=&quot;ranked_350&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It had climbed to 150 by 2022-05-10, and 99 by 2022-09-20. I think it kept a pretty good pace. By the end it had around 1k karma and 90 “good bot” votes.
+&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/youtube_timestamp_redditbot/YouTubeTimestampRedditBotRankGraph.png&quot; alt=&quot;bot_rank_graph&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Unfortunately the &lt;a href=&quot;ttps://botranks.com&quot;&gt;botranks&lt;/a&gt; site itself is in danger of shutting down, since it uses the &lt;a href=&quot;https://pushshift.io/&quot;&gt;Pushshift API&lt;/a&gt;, which is also &lt;a href=&quot;https://www.reddit.com/r/modnews/comments/134tjpe/reddit_data_api_update_changes_to_pushshift_access/&quot;&gt;probably shutting down&lt;/a&gt; &lt;a href=&quot;https://www.reddit.com/r/pushshift/comments/13mhuzq/api_has_been_taken_down/&quot;&gt;due to the API charges!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;decision-to-archive&quot;&gt;Decision to archive&lt;/h2&gt;
+&lt;p&gt;A few things have influenced my decision to archive the bot:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.heroku.com/next-chapter&quot;&gt;The Heroku free tier ending&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cnbc.com/2023/06/16/reddit-in-crisis-as-prominent-moderators-protest-api-price-increase.html&quot;&gt;Reddit API changing from free to expensive&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Lack of interest in working on the bot, and Reddit in general&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I was  a redditor for nearly a decade. I was even a moderator on a few small subreddits (just setting up automod and editing some CSS). Reddit has always had its problems but this really feels like a tipping point. As of today I won’t be using reddit, and I’m archiving this bot. Lots of third party reddit apps like RIF and Apollo stopped working today, so it seems like a fitting time to fully archive my reddit bot and move on. I’m going to go touch some grass.&lt;/p&gt;</content><author><name>ConorSheehan1</name></author><category term="blog" /><category term="python" /><category term="bot" /><category term="reddit" /><summary type="html">I have been meaning to write another article about the YouTubeTimestampRedditBot I made for a while now. My last article was nearly 2 years ago! Unfortunately this post will mostly be about why I’m archiving it. But first, some interesting bits about it:</summary></entry><entry><title type="html">Youtube Timestamp Reddit Bot</title><link href="https://conorsheehan1.github.io/personal/2021/09/16/youtube-timestamp-reddit-bot.html" rel="alternate" type="text/html" title="Youtube Timestamp Reddit Bot" /><published>2021-09-16T00:00:00+00:00</published><updated>2021-09-16T00:00:00+00:00</updated><id>https://conorsheehan1.github.io/personal/2021/09/16/youtube-timestamp-reddit-bot</id><content type="html" xml:base="https://conorsheehan1.github.io/personal/2021/09/16/youtube-timestamp-reddit-bot.html">&lt;p&gt;Update 2023-07-01: this project has been archived. See &lt;a href=&quot;https://conorsheehan1.github.io/blog/2023/07/01/archiving-youtube-timestamp-reddit-bot.html&quot;&gt;this blog post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I recently created &lt;a href=&quot;https://github.com/ConorSheehan1/YouTubeTimestampRedditBot&quot;&gt;YouTubeTimestampRedditBot&lt;/a&gt;. It’s a bot that checks reddit for posts which:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;link to YouTube&lt;/li&gt;
+  &lt;li&gt;reference a timestamp in the title&lt;/li&gt;
+  &lt;li&gt;don’t embed the timestamp in the link&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It comments on those posts with an updated link that has the timestamp embedded, hopefully saving people precious milliseconds navigating to the time in the video.&lt;/p&gt;
+
+&lt;h2 id=&quot;bot-ranking&quot;&gt;Bot ranking&lt;/h2&gt;
+&lt;p&gt;While building this bot I learned that there are multiple bot ranking pages for reddit.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://botrank.pastimes.eu/&quot;&gt;https://botrank.pastimes.eu&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://botranks.com/?bot=YouTubeTimestampBot&quot;&gt;https://botranks.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I prefer &lt;a href=&quot;https://botranks.com/?bot=YouTubeTimestampBot&quot;&gt;botranks.com&lt;/a&gt; because it’s &lt;a href=&quot;https://github.com/Brandawg93/Botranks&quot;&gt;open source on github&lt;/a&gt; and has &lt;a href=&quot;https://botranks.com/?bot=YouTubeTimestampBot&quot;&gt;my bot&lt;/a&gt; listed!&lt;/p&gt;
+
+&lt;p&gt;About a month into running my bot I found that there’s already a similar bot called &lt;a href=&quot;https://github.com/ankitgyawali/reddit-timestamp-bot&quot;&gt;reddit-timestamp-bot&lt;/a&gt;. 
+It checks for timestamps in comments rather than titles, and has a very different implementation, so I’m going to keep mine running for now.&lt;/p&gt;
+
+&lt;h2 id=&quot;hosting-heroku&quot;&gt;Hosting (heroku)&lt;/h2&gt;
+&lt;p&gt;I learned a lot about heroku while trying to host this bot, such as the fact that the free tier gives you &lt;a href=&quot;https://devcenter.heroku.com/articles/free-dyno-hours#free-dyno-hour-pool&quot;&gt;550 dyno hours per month&lt;/a&gt;. Given a month with 31 days has 744 hours, this leaves me short about 194 hours or ~8 days per month.
+I also learned heroku doesn’t accept revolute, so I can’t get the extra 450 dyno hours by adding a payment method. And that I can’t set up addons like heroku cron without adding a payment method, so I just have to deal with the ~8 days downtime per month.&lt;/p&gt;
+
+&lt;h2 id=&quot;reddit&quot;&gt;Reddit&lt;/h2&gt;
+&lt;p&gt;I got surprisingly positive responses on reddit.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Wow I am shocked. Someone made an actual fucking useful bot that isnt posting some stupid bullshit in shakespeare or yoda speak or giving me a pointless fact barely related to my comment.
+- &lt;a href=&quot;https://old.reddit.com/r/TheDickShow/comments/qglluu/1700_video_glitch_just_moments_before_1st_smurf/hiao375/&quot;&gt;u/The_lolrus_&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Wow! You are an intelligent bot! 🤖 
+- &lt;a href=&quot;https://old.reddit.com/r/donorconception/comments/q9tzkp/to_understand_what_epigenetics_is_watch_this/hgyk21r/&quot;&gt;u/feeedi&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Good bot, its sadly not possible to make timestamps on phone
+- &lt;a href=&quot;https://old.reddit.com/r/ADCMains/comments/q3eer6/at_525_they_talk_about_lethal_tempo_update_what/hfr660a/&quot;&gt;u/RayliOtter&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The last comment about not being able to make timestamps on a phone easily is one of the main reasons I made the bot.
+I remember there used to be an option to include the current time when sharing a YouTube video on any device, but that feature disappeared a while ago.&lt;/p&gt;
+
+&lt;p&gt;Of course there were a few bugs in the bot early on. And there’s probably still more. But generally I’m happy with the bot for now and I plan to maintain it.
+I hope it saves you precious milliseconds.&lt;/p&gt;</content><author><name>ConorSheehan1</name></author><category term="personal" /><category term="python" /><category term="bot" /><category term="reddit" /><summary type="html">Update 2023-07-01: this project has been archived. See this blog post.</summary></entry></feed>

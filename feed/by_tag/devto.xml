@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://conorsheehan1.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="https://conorsheehan1.github.io/feed/by_tag/devto.xml" rel="self" type="application/atom+xml" /><link href="https://conorsheehan1.github.io/" rel="alternate" type="text/html" /><updated>2026-01-17T22:30:13+00:00</updated><id>https://conorsheehan1.github.io/feed/by_tag/devto.xml</id><title type="html">Conor Sheehan</title><subtitle>Mostly a tech blog with some project notes and a little web archiving</subtitle><author><name>ConorSheehan1</name></author><entry><title type="html">Leaving Netlify Free Tier</title><link href="https://conorsheehan1.github.io/blog/2024/03/07/leaving-netlify-free-tier.html" rel="alternate" type="text/html" title="Leaving Netlify Free Tier" /><published>2024-03-07T00:00:00+00:00</published><updated>2024-03-07T00:00:00+00:00</updated><id>https://conorsheehan1.github.io/blog/2024/03/07/leaving-netlify-free-tier</id><content type="html" xml:base="https://conorsheehan1.github.io/blog/2024/03/07/leaving-netlify-free-tier.html">&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;I’ve had 3 sites on netlify since 2022.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;URL&lt;/th&gt;
+      &lt;th&gt;Date created&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;https://spelling-b.netlify.app&lt;/td&gt;
+      &lt;td&gt;2022-08-15&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;https://beach-litriochta.netlify.app&lt;/td&gt;
+      &lt;td&gt;2022-07-12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;https://conorscocktails.netlify.app&lt;/td&gt;
+      &lt;td&gt;2022-01-06&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;I liked the service, although I wasn’t thrilled with their default flow for deployments. I wrote a &lt;a href=&quot;https://conorsheehan1.github.io/blog/2022/02/21/netlify-deployments-from-github-without-giving-write-access.html&quot;&gt;blogpost&lt;/a&gt; about how to deploy without giving netlify &lt;strong&gt;read &lt;em&gt;and&lt;/em&gt; write access&lt;/strong&gt; to all of your &lt;strong&gt;public &lt;em&gt;and&lt;/em&gt; private repositories&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;leaving-netlify&quot;&gt;Leaving Netlify&lt;/h2&gt;
+
+&lt;p&gt;Then I read in the news last week that a random developer using the same supposedly free tier on netlify got hit with a &amp;gt;$100k bill due to a DDOS attack. &lt;a href=&quot;https://news.ycombinator.com/item?id=39520776&quot;&gt;https://news.ycombinator.com/item?id=39520776&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This is because the netlify free tier is not free. 
+&lt;a href=&quot;https://www.netlify.com/pricing&quot;&gt;https://www.netlify.com/pricing&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Their landing page says &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start for free&lt;/code&gt; but if you scroll down you’ll see there’s a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;100GB bandwidth&lt;/code&gt; limit, and a fee for any traffic over the limit.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/leaving_netlify/netlify-terms.png&quot; alt=&quot;netlify-terms&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Normally this would be fine, but when you hit their limit they don’t stop service. They might not even inform you that you’ve exceeded the free limit until you get a bill at the end of the month.&lt;/p&gt;
+
+&lt;p&gt;They also do not protect against DDOS. They just continue service with their high rate of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$55 per 100GB&lt;/code&gt;. For comparison AWS is around &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$9 per 100GB&lt;/code&gt;, and that’s still high IMO. &lt;a href=&quot;https://www.hostdime.com/blog/data-egress-fees-cloud&quot;&gt;https://www.hostdime.com/blog/data-egress-fees-cloud&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve been stretched thin lately and not working on personal projects, but the thought of a potentially infinite bill definitely kicked me into gear.
+Last week I copied all my netlify sites to cloudflare pages.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://conors-cocktails.pages.dev&quot;&gt;https://conors-cocktails.pages.dev&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://beach-litriochta.pages.dev&quot;&gt;https://beach-litriochta.pages.dev&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://spelling-bee-free.pages.dev&quot;&gt;https://spelling-bee-free.pages.dev&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Today I deleted all my netlify sites and my netlify account.
+I managed to run those 3 sites on netlify for the last 2 years with ~20Gb bandwidth usage, but I’m not willing to stay given the risk.&lt;/p&gt;
+
+&lt;h2 id=&quot;moving-to-cloudflare-pages&quot;&gt;Moving to cloudflare pages&lt;/h2&gt;
+
+&lt;p&gt;I found the dev experience really good moving to &lt;a href=&quot;https://pages.cloudflare.com/&quot;&gt;cloudflare pages&lt;/a&gt;.
+They give you preview sites based on pr builds for free.
+The github access is very easily controlled. They only ask for read access and you can choose the repositories they get access to.
+They do ask for write access to metadata so they can put status messages on PRs, but I like that.&lt;/p&gt;
+
+&lt;p&gt;I only had 2 tiny issues:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;I needed to set an environment variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YARN_VERSION&lt;/code&gt; to get the build to work&lt;/li&gt;
+  &lt;li&gt;I had to delete and recreate a site to change the pages.dev url
+  &lt;a href=&quot;https://developers.cloudflare.com/pages/platform/known-issues/#build-configuration]&quot;&gt;https://developers.cloudflare.com/pages/platform/known-issues/#build-configuration&lt;/a&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;If you need to change your *.pages.dev subdomain, delete your project and create a new one.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Other than that it was seamless. Definitely easier than the github action setup I needed for netlify.&lt;/p&gt;
+
+&lt;p&gt;Most importantly, on the free plan if you exceed their limits, they shutdown the service instead of continuing and charging you! &lt;a href=&quot;https://developers.cloudflare.com/pages/functions/pricing/#free-plan&quot;&gt;https://developers.cloudflare.com/pages/functions/pricing/#free-plan&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The icing on the cake is&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;On both free and paid plans, requests to static assets are free and unlimited&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/leaving_netlify/cloudflare-terms.png&quot; alt=&quot;cloudflare-terms&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This reminds me of the good old days on heroku, where you had a free limit on compute each month, and if you exceeded it the service just stopped.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Although the &lt;a href=&quot;https://news.ycombinator.com/item?id=39521986&quot;&gt;Netlify CEO said they’d waive this bill&lt;/a&gt;, I wouldn’t recommend you host any site on netlify, unless you’re absolutely sure 100Gb of requests will make you more than netlify charge. For me I don’t run ads or make money per request, so I’ll be leaving entirely.&lt;/p&gt;
+
+&lt;p&gt;It seems like this tactic of keeping service up no matter what and charging high fees later isn’t limited to netlify. Vercel do something similar. &lt;a href=&quot;https://serverlesshorrors.com/all/vercel-23k&quot;&gt;https://serverlesshorrors.com/all/vercel-23k&lt;/a&gt;
+Generally I think this pattern is very dangerous. As a &lt;a href=&quot;https://news.ycombinator.com/item?id=39520981&quot;&gt;commenter on hackernews pointed out&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;It’s unbounded liability. Not to mention the strong conflict of interest for netlify, who stands to gain from their customers being attacked.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If you’re looking for an alternative, I’d recommend &lt;a href=&quot;https://pages.cloudflare.com/&quot;&gt;cloudflare pages&lt;/a&gt;. I found it great so far.&lt;/p&gt;</content><author><name>ConorSheehan1</name></author><category term="blog" /><category term="devto" /><category term="hosting" /><category term="javascript" /><summary type="html">Background</summary></entry><entry><title type="html">Buying And Configuring My First Domain</title><link href="https://conorsheehan1.github.io/blog/2022/08/04/buying-and-configuring-my-first-domain.html" rel="alternate" type="text/html" title="Buying And Configuring My First Domain" /><published>2022-08-04T00:00:00+00:00</published><updated>2022-08-04T00:00:00+00:00</updated><id>https://conorsheehan1.github.io/blog/2022/08/04/buying-and-configuring-my-first-domain</id><content type="html" xml:base="https://conorsheehan1.github.io/blog/2022/08/04/buying-and-configuring-my-first-domain.html">&lt;p&gt;Recently I made an Irish version of the New York Times &lt;a href=&quot;https://www.nytimes.com/puzzles/spelling-bee&quot;&gt;spelling bee&lt;/a&gt; game. I wanted to host it on a domain that was easy to remember, but I’d never bought or configured a domain before. Here’s what I learned along the way.&lt;/p&gt;
+
+&lt;h2 id=&quot;buying-the-domain&quot;&gt;Buying the domain&lt;/h2&gt;
+&lt;p&gt;First I had to choose a company to buy the domain from. I wanted a ‘.ie’ domain since it’s an Irish game, so that limited the options anyway.
+Initially, I was thinking of using &lt;a href=&quot;https://www.godaddy.com&quot;&gt;GoDaddy&lt;/a&gt;, but they require a tax ID. The only Irish tax ID I know of is a PPSN, which you’re not meant to share with anyone but the government. After asking around on &lt;a href=&quot;https://www.reddit.com/r/DevelEire&quot;&gt;r/DevelEire&lt;/a&gt; I decided to go with &lt;a href=&quot;https://www.blacknight.com&quot;&gt;blacknight&lt;/a&gt;. It’s an Irish company so it was simpler to buy a ‘.ie’ domain from them, and they had similar prices anyway.&lt;/p&gt;
+
+&lt;p&gt;Next, I had to choose a domain. I named the game &lt;a href=&quot;https://beach-litriochta.netlify.app&quot;&gt;beach litríochta&lt;/a&gt;, which is a rough translation of spelling bee. Initially I wanted &lt;a href=&quot;https://beach.ie&quot;&gt;https://beach.ie&lt;/a&gt; because it’d be super easy to remember, makes sense in both English and Irish, and is kind of funny since “Beach” means bee in Irish.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/beach_litriochta/beach_meme.webp&quot; alt=&quot;beach-meme&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I thought the domain was free, but it just had a slow redirect. It resolves to &lt;a href=&quot;ttps://beachawards.ie&quot;&gt;https://beachawards.ie&lt;/a&gt;, so I couldn’t get it. Instead I went with &lt;a href=&quot;https://www.beacha.ie&quot;&gt;https://www.beacha.ie&lt;/a&gt;. Beacha is the plural of beach, and it’s still short and hopefully easy to remember.&lt;/p&gt;
+
+&lt;p&gt;Buying the domain was pretty straight forward. I had to upload a picture of my ID to blacknight to prove I’m an Irish citizen and that was it really.&lt;/p&gt;
+
+&lt;h2 id=&quot;configuring-the-domain&quot;&gt;Configuring the domain&lt;/h2&gt;
+&lt;p&gt;This is where I ran into some issues. Blacknight is changing it’s control panel, so a lot of its support forum FAQs won’t work for new customers.
+The old control panel is at &lt;a href=&quot;https://cp.blacknight.com&quot;&gt;https://cp.blacknight.com&lt;/a&gt;, but I was a new customer so I had to use &lt;a href=&quot;https://cp.blacknighthosting.com&quot;&gt;https://cp.blacknighthosting.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/beach_litriochta/blacknight_control_panel_update.png&quot; alt=&quot;blacknight-control-panel&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I already had my game hosted with Netlify, so all I needed was to forward the traffic from my new domain to Netlify.
+I found this &lt;a href=&quot;https://help.blacknight.com/hc/en-us/articles/212523009-Domain-Forwarding&quot;&gt;blacknight support article on domain forwarding&lt;/a&gt;, but it was using the old blacknight control panel so I couldn’t use it.&lt;/p&gt;
+
+&lt;p&gt;I managed to get things working by following the &lt;a href=&quot;https://docs.netlify.com/domains-https/netlify-dns/delegate-to-netlify/&quot;&gt;Netlify docs&lt;/a&gt;, some back and forth with blacknight support, and some trial and error. Here’s what I did to set up forwarding:&lt;/p&gt;
+
+&lt;h3 id=&quot;forwarding-traffic&quot;&gt;Forwarding traffic&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;Go to Netlify and select your site -&amp;gt; site settings -&amp;gt; domain management
+&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/beach_litriochta/netlify_domain_management.png&quot; alt=&quot;netlify_domain_management&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Add your custom domain(s)&lt;/li&gt;
+  &lt;li&gt;Click the options dropdown -&amp;gt; Go to DNS panel
+&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/beach_litriochta/netlify_dns_list.png&quot; alt=&quot;netlify_dns_list&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Copy the 4 DNS entries from Netlify&lt;/li&gt;
+  &lt;li&gt;Go to the &lt;a href=&quot;https://cp.blacknighthosting.com&quot;&gt;blacknight control panel&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Click the domains dropdown -&amp;gt; your domain
+&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/beach_litriochta/blacknight_domain.png&quot; alt=&quot;blacknight_domain&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Click Nameservers Management
+&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/beach_litriochta/blacknight_nameservers_management.png&quot; alt=&quot;blacknight_nameservers_management&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Select custom nameservers and paste in the values you copied from Netlify.
+&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/beach_litriochta/blacknight_custom_nameservers.png&quot; alt=&quot;blacknight_custom_nameservers&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Now you have to wait “/. I left it overnight, and in the morning my domain was redirecting correctly!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you’re interested in learning Irish or spelling games in general please check out &lt;a href=&quot;https://beacha.ie&quot;&gt;https://beacha.ie&lt;/a&gt;! It’s free and the code is open source &lt;a href=&quot;https://github.com/ConorSheehan1/beach-litriochta&quot;&gt;https://github.com/ConorSheehan1/beach-litriochta&lt;/a&gt;.&lt;/p&gt;</content><author><name>ConorSheehan1</name></author><category term="blog" /><category term="devto" /><category term="hosting" /><summary type="html">Recently I made an Irish version of the New York Times spelling bee game. I wanted to host it on a domain that was easy to remember, but I’d never bought or configured a domain before. Here’s what I learned along the way.</summary></entry><entry><title type="html">Reverse Engineering Uhabits Datamodel</title><link href="https://conorsheehan1.github.io/blog/2022/04/18/reverse-engineering-uhabits-datamodel.html" rel="alternate" type="text/html" title="Reverse Engineering Uhabits Datamodel" /><published>2022-04-18T00:00:00+00:00</published><updated>2022-04-18T00:00:00+00:00</updated><id>https://conorsheehan1.github.io/blog/2022/04/18/reverse-engineering-uhabits-datamodel</id><content type="html" xml:base="https://conorsheehan1.github.io/blog/2022/04/18/reverse-engineering-uhabits-datamodel.html">&lt;p&gt;OK, that title sounds fancy and complicated. What did I actually do?
+First I should probably explain why I did anything in the first place.&lt;/p&gt;
+
+&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
+&lt;p&gt;I’ve been using &lt;a href=&quot;https://github.com/iSoron/uhabits&quot;&gt;uhabits&lt;/a&gt; for years. I noticed a new &lt;a href=&quot;https://github.com/iSoron/uhabits/discussions/42&quot;&gt;numeric habit type&lt;/a&gt; was added in &lt;a href=&quot;https://github.com/iSoron/uhabits/releases/tag/v2.0.0-alpha&quot;&gt;v2.0.0&lt;/a&gt;. Previously you could only track habits in a boolean way. Now instead of a checkbox per day, you had a numeric input to track how many times per day you did something.&lt;/p&gt;
+
+&lt;p&gt;I had lots of habits in the old boolean format that would benefit from the new format. E.g. I was tracking my coffee and alcohol consumption using days per week, rather than number of units per week. I looked around, but couldn’t find a way to convert between the habit types. I found &lt;a href=&quot;https://github.com/iSoron/uhabits/discussions/934&quot;&gt;this feature request&lt;/a&gt;, but no replies yet. I had a quick look through the codebase, and realized it’d be a lot of work to make a pr since I didn’t know the main language, kotlin. So I decided to try and make my own little utility to convert between the habit types.&lt;/p&gt;
+
+&lt;p&gt;I know uhabits supports importing / exporting it’s internal sqlite database. I don’t know kotlin, but I do now SQL, so instead of trying to figure out the logic from the sourcecode, I created a few habits with the new numeric type, and exported everything. I opened up the exported db and compared the differences between the old and new habits.&lt;/p&gt;
+
+&lt;h3 id=&quot;reverse-engineering-the-datamodel&quot;&gt;Reverse engineering the datamodel&lt;/h3&gt;
+&lt;p&gt;I could see the tables and fields pretty easily, but that didn’t tell me what they were actually used for. I figured out that the habits and repetitions tables were what I needed to work on, because the others were either empty (events), or metadata tables (android_metadata, sqlite_sequence).
+&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/uhabits/tables.png&quot; alt=&quot;tables&quot; /&gt;
+&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/uhabits/table_schema.png&quot; alt=&quot;table_schema&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I needed to start messing with the data to see what would happen. I started with the habits table. 
+&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/uhabits/habit_data.png&quot; alt=&quot;habit_data&quot; /&gt;
+I noticed &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;type&lt;/code&gt; is 0 for boolean habits and 1 for numeric habits. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;freq_num&lt;/code&gt; only changes for boolean habits. For numeric habits, it’s always 1. That makes sense since &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;target_value&lt;/code&gt; is generally 0 for boolean habits, but can be any number for numeric habits. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;freq_den&lt;/code&gt; seems to refer to the time unit. e.g. If I make a boolean habit with a target of 5 times per week I’d get the following for each type:&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// boolean, aim to do something 5 days every 7 days&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;freq_den&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;freq_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;target_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// numeric, aim to do something 5 times every 7 days&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;freq_den&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;freq_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;target_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next I looked at the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;repetitions&lt;/code&gt; table. I noticed boolean habits generally got a value of 2 when checked, while numeric habits went up in multiples of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1000&lt;/code&gt;. It looks like 1000 is used to represent 1.00, so decimals can be added too. e.g. 1.5 would be 1500.
+&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/uhabits/repetitions_data.png&quot; alt=&quot;repetitions_data&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once I had identified the differences between habit types in the 2 main tables, I was able to create some python functions to convert from the old boolean type to the new numeric type.&lt;/p&gt;
+
+&lt;p&gt;After converting and re-importing my habits, I noticed that the graphs for boolean and numeric habits didn’t quite match. I decided to add 2 options; 1 to try to preserve the graphs, and another to preserve the data the way uhabits would generate it.&lt;/p&gt;
+
+&lt;h3 id=&quot;creating-a-cli-to-convert-between-types&quot;&gt;Creating a CLI to convert between types&lt;/h3&gt;
+&lt;p&gt;After I was confident my converter worked, I made a little CLI layer to call it from, and published it on github. &lt;a href=&quot;https://github.com/ConorSheehan1/uhabits_converter&quot;&gt;https://github.com/ConorSheehan1/uhabits_converter&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The end results look like this:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Before&lt;/th&gt;
+      &lt;th&gt;After&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/uhabits/coffee_bool.jpg&quot; width=&quot;500&quot; height=&quot;600&quot; alt=&quot;coffee_bool&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/uhabits/coffee_num.jpg&quot; width=&quot;500&quot; height=&quot;600&quot; alt=&quot;coffee_num&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>ConorSheehan1</name></author><category term="blog" /><category term="devto" /><summary type="html">OK, that title sounds fancy and complicated. What did I actually do? First I should probably explain why I did anything in the first place.</summary></entry><entry><title type="html">Netlify Deployments From Github Without Giving Write Access</title><link href="https://conorsheehan1.github.io/blog/2022/02/21/netlify-deployments-from-github-without-giving-write-access.html" rel="alternate" type="text/html" title="Netlify Deployments From Github Without Giving Write Access" /><published>2022-02-21T00:00:00+00:00</published><updated>2022-02-21T00:00:00+00:00</updated><id>https://conorsheehan1.github.io/blog/2022/02/21/netlify-deployments-from-github-without-giving-write-access</id><content type="html" xml:base="https://conorsheehan1.github.io/blog/2022/02/21/netlify-deployments-from-github-without-giving-write-access.html">&lt;p&gt;&lt;a href=&quot;https://www.netlify.com/&quot;&gt;Netlify&lt;/a&gt; is a great hosting service, but there’s one thing that bothers me about it. The default deployment path involves giving the service &lt;strong&gt;read &lt;em&gt;and&lt;/em&gt; write access&lt;/strong&gt; to all of your &lt;strong&gt;public &lt;em&gt;and&lt;/em&gt; private repositories&lt;/strong&gt; on GitHub :scream:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.netlify.com/site-deploys/create-deploys/#deploy-with-git&quot;&gt;https://docs.netlify.com/site-deploys/create-deploys/#deploy-with-git&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;They skip over the authorization step in the video on their docs, but here’s what it looks like.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dev-to-uploads.s3.amazonaws.com/uploads/articles/10y0xw8dha08edpfn6hy.png&quot; alt=&quot;Netlify OAuth&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I found &lt;a href=&quot;https://answers.netlify.com/t/why-do-you-need-write-permissions-to-my-repository/7897&quot;&gt;some&lt;/a&gt; &lt;a href=&quot;https://answers.netlify.com/t/new-github-permissions/37939&quot;&gt;questions&lt;/a&gt; on their forums asking about this. There’s even an open &lt;a href=&quot;https://github.com/netlify/netlify-cms/issues/4329&quot;&gt;issue&lt;/a&gt; on their GitHub about it. Despite all the links I visited, I didn’t find a clear way to automate deploys to Netlify without giving them full access to my GitHub, so here’s how I managed to do it.&lt;/p&gt;
+
+&lt;h2 id=&quot;initial-drag-and-drop-deploy&quot;&gt;Initial drag and drop deploy&lt;/h2&gt;
+&lt;p&gt;Before we can automate our deploys, we need a site ID. Netlify provides a drag and drop feature, so we can drag the output of a build, or even a folder with an empty &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt; to create a new site. &lt;a href=&quot;https://app.netlify.com/drop&quot;&gt;https://app.netlify.com/drop&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;github-action&quot;&gt;GitHub action&lt;/h2&gt;
+&lt;p&gt;Now that we have a Netlify site created, we can automate deploys to it. I used &lt;a href=&quot;https://github.com/jsmrcaga/action-netlify-deploy&quot;&gt;https://github.com/jsmrcaga/action-netlify-deploy&lt;/a&gt;, which requires an auth token and a site ID.&lt;/p&gt;
+
+&lt;h3 id=&quot;generate-auth-token&quot;&gt;Generate auth token&lt;/h3&gt;
+&lt;p&gt;We can generate a Netlify auth token by going to &lt;a href=&quot;https://app.netlify.com/user/applications#personal-access-tokens&quot;&gt;https://app.netlify.com/user/applications#personal-access-tokens&lt;/a&gt;. Click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;New Access Token&lt;/code&gt;, then give it a description and click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;generate&lt;/code&gt;. Copy the value, it won’t be displayed again.&lt;/p&gt;
+
+&lt;p&gt;To make the value accessible to the GitHub action, go to your GitHub repository and click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;settings&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;secrets&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;new repository secret&lt;/code&gt;. I named mine &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NETLIFY_AUTH_TOKEN&lt;/code&gt; and pasted in the value I copied from Netlify.&lt;/p&gt;
+
+&lt;h3 id=&quot;get-site-id&quot;&gt;Get site ID&lt;/h3&gt;
+&lt;p&gt;You can find your Netlify site ID by going to your Netlify site overview and clicking &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site settings&lt;/code&gt; and copying the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;APP ID&lt;/code&gt;. Again, to make it accessible to the GitHub action, click &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;settings&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;secrets&lt;/code&gt; -&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;new repository secret&lt;/code&gt;. I named mine &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NETLIFY_SITE_ID&lt;/code&gt; and pasted in the value I copied from Netlify.&lt;/p&gt;
+
+&lt;h3 id=&quot;github-action-1&quot;&gt;GitHub action&lt;/h3&gt;
+&lt;p&gt;Now that we have our secrets set up, we can create our GitHub action. Mine looks something like &lt;a href=&quot;https://github.com/ConorSheehan1/conors-cocktails/blob/master/.github/workflows/deploy.yml&quot;&gt;this&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# .github/workflows/deploy.yml&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;deploy&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# enable manual deploys&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;workflow_dispatch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# deploy tags and commits to master automatically&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;*&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;master&quot;&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ubuntu-latest&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Deploy&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Netlify&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;actions/checkout@v2&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jsmrcaga/action-netlify-deploy@v1.7.2&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;# pass secrets in to the action&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;NETLIFY_SITE_ID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;$&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;NETLIFY_AUTH_TOKEN&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;$&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;# add the GitHub ref to the deploy message so we can trace back what version is deployed from the Netlify side&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;NETLIFY_DEPLOY_MESSAGE&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Prod&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;v$&quot;&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;NETLIFY_DEPLOY_TO_PROD&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+          &lt;span class=&quot;c1&quot;&gt;# this bit should be custom to your project. I'm deploying a vuepress project that uses yarn, so these are my settings.&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;install_command&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;yarn install&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;build_command&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;yarn build&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;build_directory&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;src/.vuepress/dist&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;node_version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;14.18.2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;That’s it! Now you can deploy to Netlify automatically from your GitHub repo, and you haven’t given up any access rights.&lt;/p&gt;
+
+&lt;h2 id=&quot;example-site&quot;&gt;Example site&lt;/h2&gt;
+&lt;p&gt;I figured this out while building this project &lt;a href=&quot;https://github.com/ConorSheehan1/conors-cocktails&quot;&gt;https://github.com/ConorSheehan1/conors-cocktails&lt;/a&gt; which is deployed here &lt;a href=&quot;https://conorscocktails.netlify.app&quot;&gt;https://conorscocktails.netlify.app&lt;/a&gt; if you’re interested.&lt;/p&gt;</content><author><name>ConorSheehan1</name></author><category term="blog" /><category term="devto" /><summary type="html">Netlify is a great hosting service, but there’s one thing that bothers me about it. The default deployment path involves giving the service read and write access to all of your public and private repositories on GitHub :scream:</summary></entry><entry><title type="html">Add Bootstrap Vue To Vuepress</title><link href="https://conorsheehan1.github.io/blog/2022/01/25/add-bootstrap-vue-to-vuepress.html" rel="alternate" type="text/html" title="Add Bootstrap Vue To Vuepress" /><published>2022-01-25T00:00:00+00:00</published><updated>2022-01-25T00:00:00+00:00</updated><id>https://conorsheehan1.github.io/blog/2022/01/25/add-bootstrap-vue-to-vuepress</id><content type="html" xml:base="https://conorsheehan1.github.io/blog/2022/01/25/add-bootstrap-vue-to-vuepress.html">&lt;h2 id=&quot;create-a-vuepress-project&quot;&gt;Create a VuePress project&lt;/h2&gt;
+
+&lt;p&gt;The first thing we need to do is create a new &lt;a href=&quot;https://vuepress.vuejs.org/&quot;&gt;VuePress&lt;/a&gt; project. It’s really easy with the latest version of npm or yarn. From the &lt;a href=&quot;https://vuepress.vuejs.org/guide/getting-started.html#quick-start&quot;&gt;VuePress docs&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn create vuepress-site &lt;span class=&quot;nv&quot;&gt;$optionalDirectoryName&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;install-bootstrapvue&quot;&gt;Install BootstrapVue&lt;/h2&gt;
+
+&lt;p&gt;Next we install &lt;a href=&quot;https://bootstrap-vue.org&quot;&gt;BootstrapVue&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn add bootstrap bootstrap-vue
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;configuration&quot;&gt;Configuration&lt;/h2&gt;
+&lt;p&gt;Now we need to import BootstrapVue in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.vuepress/enhanceApp.js&lt;/code&gt;, where we have access to the vue instance.&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// .vuepress/enhanceApp.js&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;BootstrapVue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;IconsPlugin&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;bootstrap-vue&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;siteData&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Make BootstrapVue available throughout your project&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;BootstrapVue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Optionally install the BootstrapVue icon components plugin&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;Vue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;IconsPlugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Finally we need to load the bootstrap css. VuePress ships with &lt;a href=&quot;https://stylus-lang.com/&quot;&gt;stylus&lt;/a&gt; by default now, but we can still import css into our stylus file at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.vuepress/styles/index.styl&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-stylus&quot;&gt;/**
+ * Custom Styles here.
+ *
+ * ref：https://v1.vuepress.vuejs.org/config/#index-styl
+ */
+
+@require '~bootstrap/dist/css/bootstrap.css'
+@require '~bootstrap-vue/dist/bootstrap-vue.css'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That’s it! Now you can use BootstrapVue components in your VuePress app.&lt;/p&gt;
+
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;p&gt;Vuepress lets you embed components directly in markdown, so you can do something like this&lt;/p&gt;
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- src/index.md --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;gu&quot;&gt;## Hi from bootstrap-vue&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;b-button&amp;gt;&lt;/span&gt;Hello world!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/b-button&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here’s an example app I’ve deployed to netlify which uses various BootstrapVue components including &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b-carousel&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b-table&lt;/code&gt;: &lt;a href=&quot;https://conorscocktails.netlify.app/&quot;&gt;https://conorscocktails.netlify.app/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find the sourcecode here: &lt;a href=&quot;https://github.com/ConorSheehan1/conors-cocktails&quot;&gt;https://github.com/ConorSheehan1/conors-cocktails&lt;/a&gt;&lt;/p&gt;</content><author><name>ConorSheehan1</name></author><category term="blog" /><category term="devto" /><summary type="html">Create a VuePress project</summary></entry><entry><title type="html">3 Patterns For Cookiecutter Templates</title><link href="https://conorsheehan1.github.io/blog/2022/01/07/3-patterns-for-cookiecutter-templates.html" rel="alternate" type="text/html" title="3 Patterns For Cookiecutter Templates" /><published>2022-01-07T00:00:00+00:00</published><updated>2022-01-07T00:00:00+00:00</updated><id>https://conorsheehan1.github.io/blog/2022/01/07/3-patterns-for-cookiecutter-templates</id><content type="html" xml:base="https://conorsheehan1.github.io/blog/2022/01/07/3-patterns-for-cookiecutter-templates.html">&lt;!-- Original Post on dev.to was 2021-07-27 --&gt;
+
+&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;If you’ve heard of &lt;a href=&quot;https://github.com/cookiecutter/cookiecutter&quot;&gt;cookiecutter&lt;/a&gt; you can skip this part.&lt;/p&gt;
+
+&lt;p&gt;Cookiecutter is a command-line utility that creates projects from templates. There’s a list of &lt;a href=&quot;https://github.com/cookiecutter/cookiecutter#cookiecutter-specials&quot;&gt;templates maintained by the cookiecutter team&lt;/a&gt; and plenty of  &lt;a href=&quot;https://awesomeopensource.com/projects/cookiecutter&quot;&gt;community awesome lists&lt;/a&gt;. It’s built with &lt;a href=&quot;https://www.python.org/&quot;&gt;python&lt;/a&gt; and uses the &lt;a href=&quot;https://github.com/pallets/jinja&quot;&gt;jinja&lt;/a&gt; templating framework (found in python web frameworks like &lt;a href=&quot;https://flask.palletsprojects.com&quot;&gt;flask&lt;/a&gt;). You can use it to make a template for pretty much anything! All you need to get started is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip install cookiecutter&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;hooks&quot;&gt;Hooks&lt;/h2&gt;
+&lt;p&gt;Cookiecutter provides &lt;a href=&quot;https://cookiecutter.readthedocs.io/en/1.7.3/advanced/hooks.html&quot;&gt;pre and post generate scripts&lt;/a&gt;. They are Python or Shell scripts that run before and/or after your project is generated.&lt;/p&gt;
+
+&lt;p&gt;They can be really useful. For example, if you want to get the absolute path to the generated project, you can use a post generate script to replace a specific piece of text with the absolute path. e.g.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# cookiecutter-$your-project/hooks/post_gen_project.py 
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;abs_path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;getcwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;walk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;abs_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'replace_me.base_dir'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;abs_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'w'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here’s an &lt;a href=&quot;https://github.com/ConorSheehan1/cookiecutter-jira-project/blob/master/hooks/post_gen_project.py#L3&quot;&gt;example in a cookiecutter I made&lt;/a&gt;. 
+See https://github.com/cookiecutter/cookiecutter/issues/955#issuecomment-444864537&lt;/p&gt;
+
+&lt;h2 id=&quot;tests&quot;&gt;Tests&lt;/h2&gt;
+&lt;p&gt;There are a few ways to test cookiecutters.&lt;/p&gt;
+&lt;h3 id=&quot;putting-tests-inside-the-template&quot;&gt;Putting tests inside the template&lt;/h3&gt;
+&lt;p&gt;This approach has the advantage that when someone generates a project using your template, they already have tests set up. e.g.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# {{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}.py
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__version__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;0.1.0&quot;&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cookiecutter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;repo_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__version__&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# do some cli stuff
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# {{cookiecutter.repo_name}}/tests/test_{{cookiecutter.repo_name}}.py 
+&lt;/span&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;unittest&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookiecutter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;repo_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unittest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TestCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cookiecutter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;repo_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;0.1.0&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here’s an &lt;a href=&quot;https://github.com/ConorSheehan1/cookiecutter-fire-cli/blob/621b635c23407b9704bcce322390dbebbc544ca3/%7B%7Bcookiecutter.repo_name%7D%7D/tests/test_%7B%7Bcookiecutter.repo_name%7D%7D.py#L1&quot;&gt;example in a cookiecutter I made&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;putting-tests-outside-the-template&quot;&gt;Putting tests outside the template&lt;/h3&gt;
+&lt;p&gt;This approach is useful if it doesn’t make sense to include tests in the generated project, but you still want to test what is generated. Note: this doesn’t mean trying to test cookiecutter itself!&lt;/p&gt;
+
+&lt;p&gt;Normally Cookiecutter opens a prompt to get user input to be injected into your template. You can bypass this with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--no-input&lt;/code&gt; argument. It also allows you to &lt;a href=&quot;https://github.com/cookiecutter/cookiecutter/pull/666&quot;&gt;pass values required by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cookiecutter.json&lt;/code&gt; as arguments&lt;/a&gt;. e.g.&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;cookiecutter-$your-project/cookiecutter.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;project_name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;alphabet&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# this will generate a project named foo instead of alphabet&lt;/span&gt;
+cookiecutter &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-input&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;project_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;foo&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I’ve used this approach when creating cookiecutters that contain scripts rather than full projects. To test the scripts I generate a project, import and run functions from the scripts, and test the output. e.g.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# cookiecutter-$your-project/{{cookiecutter.project_name|lower}}/script.sh&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;{{&lt;/span&gt;cookiecutter.project_name|lower&lt;span class=&quot;o&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;_repo_dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;{{cookiecutter.repo_dir}}&quot;&lt;/span&gt;
+
+goto_&lt;span class=&quot;o&quot;&gt;{{&lt;/span&gt;cookiecutter.project_name|lower&lt;span class=&quot;o&quot;&gt;}}&lt;/span&gt;_repo&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{cookiecutter.project_name|lower&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;}_repo_dir&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return &lt;/span&gt;1
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# cookiecutter-$your-project/tests/test_helper.bash&lt;/span&gt;
+setup&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# we expect foo/script.sh to be generated&lt;/span&gt;
+    load &lt;span class=&quot;s2&quot;&gt;&quot;foo/script.sh&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# cookiecutter-$your-project/tests/script.bats&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bats&lt;/span&gt;
+
+load &lt;span class=&quot;s2&quot;&gt;&quot;test_helper&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# we expect a function named goto_foo_repo in foo/script.sh&lt;/span&gt;
+@test &lt;span class=&quot;s2&quot;&gt;&quot;goto_foo_repo&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  goto_foo_repo
+  assert_equal &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$foo_repo_dir&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here’s an &lt;a href=&quot;https://github.com/ConorSheehan1/cookiecutter-jira-project/blob/60e341060198a4d8937095b6c2e53f545d1ff58f/tests/utils.bats#L8&quot;&gt;example in a cookiecutter I made&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;ci&quot;&gt;CI&lt;/h3&gt;
+&lt;p&gt;Now that you have tests set up, you can set up continuous integration! The important bit of here is&lt;/p&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;cookiecutter&lt;/span&gt; 
+&lt;span class=&quot;s&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# create a project using the current directory as a template&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;--overwrite-if-exists&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# if the destination directory exists overwrite it&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;--no-input&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# don't prompt for user input. &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# since there are no other args, use default values from cookiecutter.json&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here’s an example with github actions&lt;/p&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# .github/workflows/ci.yml&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ci&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+
+    &lt;span class=&quot;na&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;macos-latest&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;strategy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;python&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;3.6&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;3.7&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;3.8&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+
+    &lt;span class=&quot;na&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;actions/checkout@v1&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Set up Python ${{ matrix.python }}&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;actions/setup-python@v1&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;python-version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${{ matrix.python }}&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Install Poetry&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;
+          &lt;span class=&quot;s&quot;&gt;python -m pip install --upgrade pip&lt;/span&gt;
+          &lt;span class=&quot;s&quot;&gt;pip install poetry&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Install python packages&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;
+          &lt;span class=&quot;s&quot;&gt;poetry install&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# here's the important bit!&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# generate a new project using the cookiecutter template&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# use the default values in cookiecutter.json with --no-input&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# if the directory already exists, overwrite it&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Generate package using cookiecutter&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;
+          &lt;span class=&quot;s&quot;&gt;poetry run cookiecutter . --overwrite-if-exists --no-input&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# now inside the generated project, install dependencies and run tests&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Install python packages (in cookiecutter dir)&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;working-directory&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;example_cli&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;
+          &lt;span class=&quot;s&quot;&gt;poetry install&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Run tests (in cookiecutter dir)&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;working-directory&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;example_cli&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;|&lt;/span&gt;
+          &lt;span class=&quot;s&quot;&gt;poetry run task tests&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here’s an &lt;a href=&quot;https://github.com/ConorSheehan1/cookiecutter-fire-cli/blob/621b635c23407b9704bcce322390dbebbc544ca3/.github/workflows/ci.yml#L1&quot;&gt;example in a cookiecutter I made&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;install-from-github&quot;&gt;Install from GitHub&lt;/h2&gt;
+&lt;p&gt;Cookiecutter provides a &lt;a href=&quot;https://cookiecutter.readthedocs.io/en/1.7.3/usage.html#works-directly-with-git-and-hg-mercurial-repos-too&quot;&gt;really easy way to use templates hosted on github&lt;/a&gt;. All you need is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cookiecutter gh:$username/$repo&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Hopefully now you should be able to create a Cookiecutter template with hooks, tests, and CI, all easily installable from GitHub!&lt;/p&gt;</content><author><name>ConorSheehan1</name></author><category term="blog" /><category term="devto" /><summary type="html"></summary></entry></feed>

@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- rss auto-discovery https://www.rssboard.org/rss-autodiscovery -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://conorsheehan1.github.io/feed.xml">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Youtube Timestamp Reddit Bot | Conor Sheehan</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Youtube Timestamp Reddit Bot" />
+<meta name="author" content="ConorSheehan1" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Update 2023-07-01: this project has been archived. See this blog post." />
+<meta property="og:description" content="Update 2023-07-01: this project has been archived. See this blog post." />
+<link rel="canonical" href="https://conorsheehan1.github.io/personal/2021/09/16/youtube-timestamp-reddit-bot.html" />
+<meta property="og:url" content="https://conorsheehan1.github.io/personal/2021/09/16/youtube-timestamp-reddit-bot.html" />
+<meta property="og:site_name" content="Conor Sheehan" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Youtube Timestamp Reddit Bot" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"ConorSheehan1"},"dateModified":"2021-09-16T00:00:00+00:00","datePublished":"2021-09-16T00:00:00+00:00","description":"Update 2023-07-01: this project has been archived. See this blog post.","headline":"Youtube Timestamp Reddit Bot","mainEntityOfPage":{"@type":"WebPage","@id":"https://conorsheehan1.github.io/personal/2021/09/16/youtube-timestamp-reddit-bot.html"},"url":"https://conorsheehan1.github.io/personal/2021/09/16/youtube-timestamp-reddit-bot.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="https://conorsheehan1.github.io/assets/dist/jstree/themes/default/style.min.css" />
+    <link rel="stylesheet" href="https://conorsheehan1.github.io/assets/dist/jstree/themes/default-dark/style.min.css" />
+    <link href="https://conorsheehan1.github.io/assets/dist/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+    <link rel="stylesheet" href="https://conorsheehan1.github.io/assets/dist/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="https://conorsheehan1.github.io/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/x-ico" href="https://conorsheehan1.github.io/assets/images/icons/favicon.ico" >
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script src="https://conorsheehan1.github.io/assets/dist/lightbox/js/lightbox.min.js"></script>
+    <!-- order matters here. e.g. jstree depends on theme being loaded to provied getSavedTheme -->
+    <script src="https://conorsheehan1.github.io/assets/js/theme.js"></script>
+    <script src="https://conorsheehan1.github.io/assets/js/lightbox_custom.js"></script>
+    <script src="https://conorsheehan1.github.io/assets/js/jstree_custom.js"></script>
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header id="header">
+  <div class="container">
+      <div class="col">
+        <a href="https://github.com/ConorSheehan1">
+          <div class="header-icon">
+            <img src="https://conorsheehan1.github.io/assets/images/icons/github.svg" alt="github" />
+          </div>
+          <span>GitHub</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="https://www.linkedin.com/in/conor-s-403358106">
+          <div class="header-icon">
+            <img src="https://conorsheehan1.github.io/assets/images/icons/linkedin.svg" alt="linkedin" />
+          </div>
+          <span>Linked In</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="https://stackoverflow.com/users/6305204/con?tab=profile">
+          <div class="header-icon">
+            <img src="https://conorsheehan1.github.io/assets/images/icons/stackoverflow.svg" alt="stackoverflow" />
+          </div>
+          <span>Stack Overflow</span>
+        </a>
+      </div>
+
+      <div class="col" id="theme-toggle-container">
+        <div id="theme-toggle-background">
+          <a id="theme-toggle" title="Switch Theme">
+            <i class="fa-solid fa-adjust icon-size" aria-hidden="true" size="32px"></i>
+          </a>
+        </div>
+      </div>
+  </div>
+  <div class="container-sm">
+    <div class="header-center">
+  <input id="projects-search-input" type="text" class="form-control header-left" placeholder="Search projects ..">
+  <div id="projects-tree" class="header-right">
+    <ul>
+      <li data-jstree='{ "opened" : false }'>
+        <a class='clickable-tree-node' href="/projects">Projects</a>
+        <ul>
+          
+          
+            
+            
+            <li>
+              <a class='clickable-tree-node' href="https://conorsheehan1.github.io/categories#blog">
+                Blog
+              </a>
+              <ul>
+                
+                
+                  <li><a class='clickable-tree-node' href="/blog/2024/03/07/leaving-netlify-free-tier.html">Leaving Netlify Free Tier</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2023/07/01/archiving-youtube-timestamp-reddit-bot.html">Archiving Youtube Timestamp Reddit Bot</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/08/04/buying-and-configuring-my-first-domain.html">Buying And Configuring My First Domain</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/04/18/reverse-engineering-uhabits-datamodel.html">Reverse Engineering Uhabits Datamodel</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/03/31/stackoverflow-dev-story-sunset.html">Stackoverflow Dev Story Sunset</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/02/21/netlify-deployments-from-github-without-giving-write-access.html">Netlify Deployments From Github Without Giving Write Access</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/01/25/add-bootstrap-vue-to-vuepress.html">Add Bootstrap Vue To Vuepress</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/01/07/3-patterns-for-cookiecutter-templates.html">3 Patterns For Cookiecutter Templates</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/blog/2022/01/06/dev.to.html">Dev.to</a></li>
+                
+              </ul>
+            </li>
+          
+            
+            
+            <li>
+              <a class='clickable-tree-node' href="https://conorsheehan1.github.io/categories#college">
+                College
+              </a>
+              <ul>
+                
+                
+                  <li><a class='clickable-tree-node' href="/college/2016/08/31/dublin-bikes.html">Dublin Bikes</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/college/2016/07/21/restimator.html">Restimator</a></li>
+                
+              </ul>
+            </li>
+          
+            
+            
+            <li>
+              <a class='clickable-tree-node' href="https://conorsheehan1.github.io/categories#open_source">
+                Open source
+              </a>
+              <ul>
+                
+                
+                  <li><a class='clickable-tree-node' href="/open_source/2018/05/28/vufind.html">Vufind</a></li>
+                
+              </ul>
+            </li>
+          
+            
+            
+            <li>
+              <a class='clickable-tree-node' href="https://conorsheehan1.github.io/categories#personal">
+                Personal
+              </a>
+              <ul>
+                
+                
+                  <li><a class='clickable-tree-node' href="/personal/2022/09/08/jekyll-plugins-on-github-pages.html">Jekyll Plugins On Github Pages</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/personal/2021/09/16/youtube-timestamp-reddit-bot.html">Youtube Timestamp Reddit Bot</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/personal/2020/12/03/shot.html">Shot</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/personal/2020/09/21/osxdocker.html">Osxdocker</a></li>
+                
+                  <li><a class='clickable-tree-node' href="/personal/2018/01/27/chrome-compare.html">Chrome Compare</a></li>
+                
+              </ul>
+            </li>
+          
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+  </div>
+</header>
+
+      <section>
+        <div id="title">
+          <h1><a href="/">Conor Sheehan</a></h1>
+          <hr>
+        </div>
+        <h1>Youtube Timestamp Reddit Bot
+  <span class="back-to-projects">
+    <a href="https://conorsheehan1.github.io/projects">&larr; Back to projects</a>
+  </span>
+</h1>
+<div>
+  <div class='category-badge'>
+    Categories:
+    <span class="badge">
+      
+        
+        <span class="badge">
+          <a href="https://conorsheehan1.github.io/categories#personal">personal</a>
+        </span>
+      
+    </span>
+  </div>
+  
+  <div class='tag-badge'>Tags:
+    
+      
+      <span class="badge">
+        <a href="https://conorsheehan1.github.io/tag/python">python</a>
+      </span>
+    
+      
+      <span class="badge">
+        <a href="https://conorsheehan1.github.io/tag/bot">bot</a>
+      </span>
+    
+      
+      <span class="badge">
+        <a href="https://conorsheehan1.github.io/tag/reddit">reddit</a>
+      </span>
+    
+  </div>
+  
+</div>
+<hr></hr>
+
+<p>Update 2023-07-01: this project has been archived. See <a href="https://conorsheehan1.github.io/blog/2023/07/01/archiving-youtube-timestamp-reddit-bot.html">this blog post</a>.</p>
+
+<p>I recently created <a href="https://github.com/ConorSheehan1/YouTubeTimestampRedditBot">YouTubeTimestampRedditBot</a>. It’s a bot that checks reddit for posts which:</p>
+<ol>
+  <li>link to YouTube</li>
+  <li>reference a timestamp in the title</li>
+  <li>don’t embed the timestamp in the link</li>
+</ol>
+
+<p>It comments on those posts with an updated link that has the timestamp embedded, hopefully saving people precious milliseconds navigating to the time in the video.</p>
+
+<h2 id="bot-ranking">Bot ranking</h2>
+<p>While building this bot I learned that there are multiple bot ranking pages for reddit.</p>
+<ol>
+  <li><a href="https://botrank.pastimes.eu/">https://botrank.pastimes.eu</a></li>
+  <li><a href="https://botranks.com/?bot=YouTubeTimestampBot">https://botranks.com</a></li>
+</ol>
+
+<p>I prefer <a href="https://botranks.com/?bot=YouTubeTimestampBot">botranks.com</a> because it’s <a href="https://github.com/Brandawg93/Botranks">open source on github</a> and has <a href="https://botranks.com/?bot=YouTubeTimestampBot">my bot</a> listed!</p>
+
+<p>About a month into running my bot I found that there’s already a similar bot called <a href="https://github.com/ankitgyawali/reddit-timestamp-bot">reddit-timestamp-bot</a>. 
+It checks for timestamps in comments rather than titles, and has a very different implementation, so I’m going to keep mine running for now.</p>
+
+<h2 id="hosting-heroku">Hosting (heroku)</h2>
+<p>I learned a lot about heroku while trying to host this bot, such as the fact that the free tier gives you <a href="https://devcenter.heroku.com/articles/free-dyno-hours#free-dyno-hour-pool">550 dyno hours per month</a>. Given a month with 31 days has 744 hours, this leaves me short about 194 hours or ~8 days per month.
+I also learned heroku doesn’t accept revolute, so I can’t get the extra 450 dyno hours by adding a payment method. And that I can’t set up addons like heroku cron without adding a payment method, so I just have to deal with the ~8 days downtime per month.</p>
+
+<h2 id="reddit">Reddit</h2>
+<p>I got surprisingly positive responses on reddit.</p>
+<blockquote>
+  <p>Wow I am shocked. Someone made an actual fucking useful bot that isnt posting some stupid bullshit in shakespeare or yoda speak or giving me a pointless fact barely related to my comment.
+- <a href="https://old.reddit.com/r/TheDickShow/comments/qglluu/1700_video_glitch_just_moments_before_1st_smurf/hiao375/">u/The_lolrus_</a></p>
+</blockquote>
+
+<blockquote>
+  <p>Wow! You are an intelligent bot! 🤖 
+- <a href="https://old.reddit.com/r/donorconception/comments/q9tzkp/to_understand_what_epigenetics_is_watch_this/hgyk21r/">u/feeedi</a></p>
+</blockquote>
+
+<blockquote>
+  <p>Good bot, its sadly not possible to make timestamps on phone
+- <a href="https://old.reddit.com/r/ADCMains/comments/q3eer6/at_525_they_talk_about_lethal_tempo_update_what/hfr660a/">u/RayliOtter</a></p>
+</blockquote>
+
+<p>The last comment about not being able to make timestamps on a phone easily is one of the main reasons I made the bot.
+I remember there used to be an option to include the current time when sharing a YouTube video on any device, but that feature disappeared a while ago.</p>
+
+<p>Of course there were a few bugs in the bot early on. And there’s probably still more. But generally I’m happy with the bot for now and I plan to maintain it.
+I hope it saves you precious milliseconds.</p>
+
+
+<ul>
+  
+  <li id='live-site-link'><a href="https://www.reddit.com/user/YouTubeTimestampBot">View Site</a></li>
+  
+  
+  <li id='source-code-link'><a href="https://github.com/ConorSheehan1/YouTubeTimestampRedditBot">View Source Code</a></li>
+  
+</ul>
+
+<div id="images">
+  
+</div>
+
+
+      </section>
+    </div>
+    <footer id="footer">
+  <div class="container">
+    
+    <div id="credit-footer">
+      <a href="https://conorsheehan1.github.io/credits"> Credits </a>
+    </div>
+    <div id="rss-footer">
+      <a href="https://conorsheehan1.github.io/feed.xml">
+        <i class="fa-solid fa-rss" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://conorsheehan1.github.io/assets/dist/jstree/jstree.min.js"></script>
+  </body>
+</html>

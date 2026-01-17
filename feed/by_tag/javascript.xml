@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://conorsheehan1.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="https://conorsheehan1.github.io/feed/by_tag/javascript.xml" rel="self" type="application/atom+xml" /><link href="https://conorsheehan1.github.io/" rel="alternate" type="text/html" /><updated>2026-01-17T22:30:13+00:00</updated><id>https://conorsheehan1.github.io/feed/by_tag/javascript.xml</id><title type="html">Conor Sheehan</title><subtitle>Mostly a tech blog with some project notes and a little web archiving</subtitle><author><name>ConorSheehan1</name></author><entry><title type="html">Leaving Netlify Free Tier</title><link href="https://conorsheehan1.github.io/blog/2024/03/07/leaving-netlify-free-tier.html" rel="alternate" type="text/html" title="Leaving Netlify Free Tier" /><published>2024-03-07T00:00:00+00:00</published><updated>2024-03-07T00:00:00+00:00</updated><id>https://conorsheehan1.github.io/blog/2024/03/07/leaving-netlify-free-tier</id><content type="html" xml:base="https://conorsheehan1.github.io/blog/2024/03/07/leaving-netlify-free-tier.html">&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;I’ve had 3 sites on netlify since 2022.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;URL&lt;/th&gt;
+      &lt;th&gt;Date created&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;https://spelling-b.netlify.app&lt;/td&gt;
+      &lt;td&gt;2022-08-15&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;https://beach-litriochta.netlify.app&lt;/td&gt;
+      &lt;td&gt;2022-07-12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;https://conorscocktails.netlify.app&lt;/td&gt;
+      &lt;td&gt;2022-01-06&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;I liked the service, although I wasn’t thrilled with their default flow for deployments. I wrote a &lt;a href=&quot;https://conorsheehan1.github.io/blog/2022/02/21/netlify-deployments-from-github-without-giving-write-access.html&quot;&gt;blogpost&lt;/a&gt; about how to deploy without giving netlify &lt;strong&gt;read &lt;em&gt;and&lt;/em&gt; write access&lt;/strong&gt; to all of your &lt;strong&gt;public &lt;em&gt;and&lt;/em&gt; private repositories&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;leaving-netlify&quot;&gt;Leaving Netlify&lt;/h2&gt;
+
+&lt;p&gt;Then I read in the news last week that a random developer using the same supposedly free tier on netlify got hit with a &amp;gt;$100k bill due to a DDOS attack. &lt;a href=&quot;https://news.ycombinator.com/item?id=39520776&quot;&gt;https://news.ycombinator.com/item?id=39520776&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This is because the netlify free tier is not free. 
+&lt;a href=&quot;https://www.netlify.com/pricing&quot;&gt;https://www.netlify.com/pricing&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Their landing page says &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;start for free&lt;/code&gt; but if you scroll down you’ll see there’s a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;100GB bandwidth&lt;/code&gt; limit, and a fee for any traffic over the limit.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/leaving_netlify/netlify-terms.png&quot; alt=&quot;netlify-terms&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Normally this would be fine, but when you hit their limit they don’t stop service. They might not even inform you that you’ve exceeded the free limit until you get a bill at the end of the month.&lt;/p&gt;
+
+&lt;p&gt;They also do not protect against DDOS. They just continue service with their high rate of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$55 per 100GB&lt;/code&gt;. For comparison AWS is around &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$9 per 100GB&lt;/code&gt;, and that’s still high IMO. &lt;a href=&quot;https://www.hostdime.com/blog/data-egress-fees-cloud&quot;&gt;https://www.hostdime.com/blog/data-egress-fees-cloud&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve been stretched thin lately and not working on personal projects, but the thought of a potentially infinite bill definitely kicked me into gear.
+Last week I copied all my netlify sites to cloudflare pages.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://conors-cocktails.pages.dev&quot;&gt;https://conors-cocktails.pages.dev&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://beach-litriochta.pages.dev&quot;&gt;https://beach-litriochta.pages.dev&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://spelling-bee-free.pages.dev&quot;&gt;https://spelling-bee-free.pages.dev&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Today I deleted all my netlify sites and my netlify account.
+I managed to run those 3 sites on netlify for the last 2 years with ~20Gb bandwidth usage, but I’m not willing to stay given the risk.&lt;/p&gt;
+
+&lt;h2 id=&quot;moving-to-cloudflare-pages&quot;&gt;Moving to cloudflare pages&lt;/h2&gt;
+
+&lt;p&gt;I found the dev experience really good moving to &lt;a href=&quot;https://pages.cloudflare.com/&quot;&gt;cloudflare pages&lt;/a&gt;.
+They give you preview sites based on pr builds for free.
+The github access is very easily controlled. They only ask for read access and you can choose the repositories they get access to.
+They do ask for write access to metadata so they can put status messages on PRs, but I like that.&lt;/p&gt;
+
+&lt;p&gt;I only had 2 tiny issues:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;I needed to set an environment variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YARN_VERSION&lt;/code&gt; to get the build to work&lt;/li&gt;
+  &lt;li&gt;I had to delete and recreate a site to change the pages.dev url
+  &lt;a href=&quot;https://developers.cloudflare.com/pages/platform/known-issues/#build-configuration]&quot;&gt;https://developers.cloudflare.com/pages/platform/known-issues/#build-configuration&lt;/a&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;If you need to change your *.pages.dev subdomain, delete your project and create a new one.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Other than that it was seamless. Definitely easier than the github action setup I needed for netlify.&lt;/p&gt;
+
+&lt;p&gt;Most importantly, on the free plan if you exceed their limits, they shutdown the service instead of continuing and charging you! &lt;a href=&quot;https://developers.cloudflare.com/pages/functions/pricing/#free-plan&quot;&gt;https://developers.cloudflare.com/pages/functions/pricing/#free-plan&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The icing on the cake is&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;On both free and paid plans, requests to static assets are free and unlimited&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://conorsheehan1.github.io/assets/images/leaving_netlify/cloudflare-terms.png&quot; alt=&quot;cloudflare-terms&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This reminds me of the good old days on heroku, where you had a free limit on compute each month, and if you exceeded it the service just stopped.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Although the &lt;a href=&quot;https://news.ycombinator.com/item?id=39521986&quot;&gt;Netlify CEO said they’d waive this bill&lt;/a&gt;, I wouldn’t recommend you host any site on netlify, unless you’re absolutely sure 100Gb of requests will make you more than netlify charge. For me I don’t run ads or make money per request, so I’ll be leaving entirely.&lt;/p&gt;
+
+&lt;p&gt;It seems like this tactic of keeping service up no matter what and charging high fees later isn’t limited to netlify. Vercel do something similar. &lt;a href=&quot;https://serverlesshorrors.com/all/vercel-23k&quot;&gt;https://serverlesshorrors.com/all/vercel-23k&lt;/a&gt;
+Generally I think this pattern is very dangerous. As a &lt;a href=&quot;https://news.ycombinator.com/item?id=39520981&quot;&gt;commenter on hackernews pointed out&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;It’s unbounded liability. Not to mention the strong conflict of interest for netlify, who stands to gain from their customers being attacked.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;If you’re looking for an alternative, I’d recommend &lt;a href=&quot;https://pages.cloudflare.com/&quot;&gt;cloudflare pages&lt;/a&gt;. I found it great so far.&lt;/p&gt;</content><author><name>ConorSheehan1</name></author><category term="blog" /><category term="devto" /><category term="hosting" /><category term="javascript" /><summary type="html">Background</summary></entry><entry><title type="html">Chrome Compare</title><link href="https://conorsheehan1.github.io/personal/2018/01/27/chrome-compare.html" rel="alternate" type="text/html" title="Chrome Compare" /><published>2018-01-27T00:00:00+00:00</published><updated>2018-01-27T00:00:00+00:00</updated><id>https://conorsheehan1.github.io/personal/2018/01/27/chrome-compare</id><content type="html" xml:base="https://conorsheehan1.github.io/personal/2018/01/27/chrome-compare.html">&lt;p&gt;Archived due to &lt;a href=&quot;https://developer.chrome.com/docs/extensions/mv3/intro/#start-the-conversion&quot;&gt;manifest v3&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I often found myself having to compare pages when upgrading legacy web applications. The urls were usually similar, but had a different host name or parameter. In order to speed up the comparisons, I made a chrome extension that reads the current url, gets all the variations of the url you specify, and opens them in new tabs.&lt;/p&gt;
+
+&lt;p&gt;The example in the README uses stack exchange sites, since they mostly follow the same url pattern, but have different host names.&lt;/p&gt;</content><author><name>ConorSheehan1</name></author><category term="personal" /><category term="javascript" /><category term="browser-extension" /><summary type="html">Archived due to manifest v3</summary></entry></feed>

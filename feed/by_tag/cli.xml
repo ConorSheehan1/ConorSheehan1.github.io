@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="https://conorsheehan1.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="https://conorsheehan1.github.io/feed/by_tag/cli.xml" rel="self" type="application/atom+xml" /><link href="https://conorsheehan1.github.io/" rel="alternate" type="text/html" /><updated>2026-01-17T22:30:13+00:00</updated><id>https://conorsheehan1.github.io/feed/by_tag/cli.xml</id><title type="html">Conor Sheehan</title><subtitle>Mostly a tech blog with some project notes and a little web archiving</subtitle><author><name>ConorSheehan1</name></author><entry><title type="html">Shot</title><link href="https://conorsheehan1.github.io/personal/2020/12/03/shot.html" rel="alternate" type="text/html" title="Shot" /><published>2020-12-03T00:00:00+00:00</published><updated>2020-12-03T00:00:00+00:00</updated><id>https://conorsheehan1.github.io/personal/2020/12/03/shot</id><content type="html" xml:base="https://conorsheehan1.github.io/personal/2020/12/03/shot.html">&lt;p&gt;I recently published &lt;a href=&quot;https://github.com/ConorSheehan1/shot&quot;&gt;shot&lt;/a&gt;, which stands for: &lt;strong&gt;S&lt;/strong&gt;creenshot &lt;strong&gt;H&lt;/strong&gt;elper for &lt;strong&gt;O&lt;/strong&gt;SX &lt;strong&gt;T&lt;/strong&gt;erminal.&lt;br /&gt;
+It a python CLI that I use day to day to copy / move / rename screenshots and videos.
+I also created a &lt;a href=&quot;https://gist.github.com/ConorSheehan1/2a72b13fa530388dcaec93307f4f7b09&quot;&gt;much smaller bash implementation&lt;/a&gt; first.&lt;/p&gt;
+
+&lt;p&gt;I learned a lot about python packaging from building &lt;a href=&quot;/personal/2020/09/21/osxdocker.html&quot;&gt;osxdocker&lt;/a&gt;, and decided not to publish this package to pypi since it’s Mac/OSX specific. Instead I created &lt;a href=&quot;https://github.com/ConorSheehan1/homebrew-ConorSheehan1&quot;&gt;a homebrew tap&lt;/a&gt; to make it easy to install on mac, like this:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;brew install conorsheehan1/conorsheehan1/shot&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It can still be installed via pip, just not from pypi. It can be pip installed from github like this:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pip install https://github.com/ConorSheehan1/shot/releases/latest/download/shot.tar.gz&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All installation options are listed at &lt;a href=&quot;https://github.com/ConorSheehan1/shot#install&quot;&gt;https://github.com/ConorSheehan1/shot#install&lt;/a&gt;&lt;br /&gt;
+I’ve found it fairly useful and I hope someone else will too.&lt;/p&gt;</content><author><name>ConorSheehan1</name></author><category term="personal" /><category term="python" /><category term="cli" /><category term="mac" /><category term="osx" /><summary type="html">I recently published shot, which stands for: Screenshot Helper for OSX Terminal. It a python CLI that I use day to day to copy / move / rename screenshots and videos. I also created a much smaller bash implementation first.</summary></entry><entry><title type="html">Osxdocker</title><link href="https://conorsheehan1.github.io/personal/2020/09/21/osxdocker.html" rel="alternate" type="text/html" title="Osxdocker" /><published>2020-09-21T00:00:00+00:00</published><updated>2020-09-21T00:00:00+00:00</updated><id>https://conorsheehan1.github.io/personal/2020/09/21/osxdocker</id><content type="html" xml:base="https://conorsheehan1.github.io/personal/2020/09/21/osxdocker.html">&lt;p&gt;I recently published my first python package, &lt;a href=&quot;https://pypi.org/project/osxdocker/&quot;&gt;osxdocker&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;I spend a lot of time looking at docker logs day to day. Unfortunately clearing docker logs on OSX/MAC turns out to be… 
+&lt;a href=&quot;https://stackoverflow.com/questions/42527291/clear-logs-in-native-docker-on-mac&quot;&gt;complicated&lt;/a&gt;.
+The issue stems from docker running on a VM on OSX/MAC. So I built a little python CLI to handle it, with some bash 
+completion and error handling.&lt;/p&gt;
+
+&lt;p&gt;Then I decided to try to get it on &lt;a href=&quot;https://pypi.org&quot;&gt;PyPI&lt;/a&gt;. It turned out to be a really interesting process.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;I converted to using &lt;a href=&quot;https://github.com/python-poetry/poetry&quot;&gt;poetry&lt;/a&gt;, after being a longtime &lt;a href=&quot;https://github.com/pypa/pipenv&quot;&gt;pipenv&lt;/a&gt; user. The main &lt;a href=&quot;https://github.com/ConorSheehan1/osxdocker/issues/8&quot;&gt;issue&lt;/a&gt; it solved was trying to keep &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pyproject.toml&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Pipfile&lt;/code&gt; in sync.&lt;/li&gt;
+  &lt;li&gt;I learned a lot about PyPI, Sphinx, ReadTheDocs, Github Actions, and continuos delivery.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It’s still not perfect, but it does what I need, so I’m pretty happy with it for now.
+I hope to add to it as I discover more things that are specifically tricky on OSX.&lt;/p&gt;</content><author><name>ConorSheehan1</name></author><category term="personal" /><category term="python" /><category term="osx" /><category term="mac" /><category term="cli" /><summary type="html">I recently published my first python package, osxdocker!</summary></entry></feed>
