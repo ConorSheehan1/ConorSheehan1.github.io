@@ -16,7 +16,7 @@ end
 
 group :test do
   gem "capybara", "~> 3.32.0"
-  gem "faraday", "~> 1.0.1"
+  gem "faraday", "~> 2.14.1"
   gem "rspec", "~> 3.7.0"
   gem "selenium-webdriver", "~> 3.8"
 end
