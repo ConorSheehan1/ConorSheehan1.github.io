@@ -37,6 +37,14 @@ bundle exec rubocop
 bundle exec rubocop --autocorrect
 ```
 
+## Security
+```bash
+bundle exec bundle-audit
+```
+
+No fix command provided. Manually patch versions.
+
+
 ### Configuration
 1. All pages should use the default layout or a layout which inherits from the default layout.
 This is because the default layout loads all css/js required by pages.

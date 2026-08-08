@@ -7,20 +7,21 @@ source "https://rubygems.org"
 # https://pages.github.com/versions/ dead :(
 # see https://ritviknag.com/tech-tips/ruby-versioning-hell-with-jekyll-&-github-pages/
 group :development, :test do
+  gem "bundle-audit"
   gem "byebug"
   gem "ffi"
   gem "jekyll", "~> 3.9.0"
   gem "kramdown", ">= 2.3.1" # sec
   gem "matrix"
   gem "rubocop"
-  gem "webdrivers", "~> 4.6.0" # 4.7.0 execute_script to reset local storage for theme tests fails
+  gem "webdrivers", "~> 5.0.0"
   gem "webrick"
 end
 
 group :test do
   gem "capybara", "~> 3.32.0"
   gem "cuprite"
-  gem "faraday", "~> 1.0.1"
+  gem "faraday", "~> 2.14.3"
   gem "rspec", "~> 3.7.0"
 end
 

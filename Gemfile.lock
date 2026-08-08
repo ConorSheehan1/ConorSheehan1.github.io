@@ -19,6 +19,11 @@ GEM
     ast (2.4.3)
     base64 (0.3.0)
     bigdecimal (4.1.2)
+    bundle-audit (0.2.0)
+      bundler-audit
+    bundler-audit (0.9.3)
+      bundler (>= 1.2.0)
+      thor (~> 1.0)
     byebug (13.0.0)
       reline (>= 0.6.0)
     capybara (3.32.2)
@@ -29,7 +34,6 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
-    childprocess (3.0.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -55,8 +59,12 @@ GEM
       logger
     eventmachine (1.2.7)
     execjs (2.10.1)
-    faraday (1.0.1)
-      multipart-post (>= 1.2, < 3)
+    faraday (2.14.3)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-net_http (3.4.4)
+      net-http (~> 0.5)
     ferrum (0.17.2)
       addressable (~> 2.5)
       base64 (~> 0.2)
@@ -262,7 +270,8 @@ GEM
     minitest (6.0.6)
       drb (~> 2.0)
       prism (~> 1.5)
-    multipart-post (2.4.1)
+    net-http (0.9.1)
+      uri (>= 0.11.1)
     nokogiri (1.19.4-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.19.4-aarch64-linux-musl)
@@ -342,23 +351,28 @@ GEM
       addressable (>= 2.3.5)
       faraday (>= 0.17.3, < 3)
     securerandom (0.4.1)
-    selenium-webdriver (3.142.7)
-      childprocess (>= 0.5, < 4.0)
-      rubyzip (>= 1.2.2)
+    selenium-webdriver (4.44.0)
+      base64 (~> 0.2)
+      logger (~> 1.4)
+      rexml (~> 3.2, >= 3.2.5)
+      rubyzip (>= 1.2.2, < 4.0)
+      websocket (~> 1.0)
     simpleidn (0.2.3)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
+    thor (1.5.0)
     typhoeus (1.6.0)
       ethon (>= 0.18.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.8.0)
     uri (1.1.1)
-    webdrivers (4.6.1)
+    webdrivers (5.0.0)
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
-      selenium-webdriver (>= 3.0, < 4.0)
+      selenium-webdriver (~> 4.0)
     webrick (1.9.2)
+    websocket (1.2.11)
     websocket-driver (0.8.2)
       base64
       websocket-extensions (>= 0.1.0)
@@ -377,10 +391,11 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  bundle-audit
   byebug
   capybara (~> 3.32.0)
   cuprite
-  faraday (~> 1.0.1)
+  faraday (~> 2.14.3)
   ffi
   github-pages
   jekyll (~> 3.9.0)
@@ -392,7 +407,7 @@ DEPENDENCIES
   matrix
   rspec (~> 3.7.0)
   rubocop
-  webdrivers (~> 4.6.0)
+  webdrivers (~> 5.0.0)
   webrick
 
 CHECKSUMS
@@ -401,10 +416,11 @@ CHECKSUMS
   ast (2.4.3) sha256=954615157c1d6a382bc27d690d973195e79db7f55e9765ac7c481c60bdb4d383
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bigdecimal (4.1.2) sha256=53d217666027eab4280346fba98e7d5b66baaae1b9c3c1c0ffe89d48188a3fbd
+  bundle-audit (0.2.0) sha256=cb499708f7fbc56d2d2e8bab09a1184f8f5b548bdbd628b757e5a1856874ca12
   bundler (4.0.18) sha256=02d9a17429de1847b4e0c9f27a9ee4b20c0a74c0a641b4e77195d6019e3618ac
+  bundler-audit (0.9.3) sha256=81c8766c71e47d0d28a0f98c7eed028539f21a6ea3cd8f685eb6f42333c9b4e9
   byebug (13.0.0) sha256=d2263efe751941ca520fa29744b71972d39cbc41839496706f5d9b22e92ae05d
   capybara (3.32.2) sha256=f20cb8fb03f633805791d5b0aca7b846339943cf2ea718de7699c4ff4cdf5f28
-  childprocess (3.0.0) sha256=4579a87cdc962de252eebf1482a4185fad383ae7dbe29a746ba2be8e261280c5
   coffee-script (2.4.1) sha256=82fe281e11b93c8117b98c5ea8063e71741870f1c4fbb27177d7d6333dd38765
   coffee-script-source (1.11.1) sha256=096ee2a4c29e286077292da31675199cd7a0e9e308319e86410e01f42984da75
   colorator (1.1.0) sha256=e2f85daf57af47d740db2a32191d1bdfb0f6503a0dfbc8327d0c9154d5ddfc38
@@ -419,7 +435,8 @@ CHECKSUMS
   ethon (0.18.0) sha256=b598afc9f30448cb068b850714b7d6948e941476095d04f90a4ac65b8d6efcb2
   eventmachine (1.2.7) sha256=994016e42aa041477ba9cff45cbe50de2047f25dd418eba003e84f0d16560972
   execjs (2.10.1) sha256=abe0ae028467eb8e30c10814eb934d07876a691aae7e803d813b7ce5a75e73f1
-  faraday (1.0.1) sha256=381aee04fcc9effbe5fa7cc703d8f5f20293722f987ded4f958f77514cd29373
+  faraday (2.14.3) sha256=1882247e6766615c8220b4392bf1d27f6ebb63d8e28267587cef1fb0bf37f278
+  faraday-net_http (3.4.4) sha256=0e78af151747ed1b00f33e25973b4bc220d7f16c00c39676817c8b12331eb588
   ferrum (0.17.2) sha256=2c2540a850b211a46f4d81de21bfd62048f507e4c327d1807225c3823c17e6ee
   ffi (1.17.4-aarch64-linux-gnu) sha256=b208f06f91ffd8f5e1193da3cae3d2ccfc27fc36fba577baf698d26d91c080df
   ffi (1.17.4-aarch64-linux-musl) sha256=9286b7a615f2676245283aef0a0a3b475ae3aae2bb5448baace630bb77b91f39
@@ -486,7 +503,7 @@ CHECKSUMS
   mini_mime (1.1.5) sha256=8681b7e2e4215f2a159f9400b5816d85e9d8c6c6b491e96a12797e798f8bccef
   minima (2.5.1) sha256=520e52bc631fb16cbb8100660f6caa44f97859e2fa7e397d508deb18739567be
   minitest (6.0.6) sha256=153ea36d1d987a62942382b61075745042a2b3123b1cd48f4c3675af9cc7d6f1
-  multipart-post (2.4.1) sha256=9872d03a8e552020ca096adadbf5e3cb1cd1cdd6acd3c161136b8a5737cdb4a8
+  net-http (0.9.1) sha256=25ba0b67c63e89df626ed8fac771d0ad24ad151a858af2cc8e6a716ca4336996
   nokogiri (1.19.4-aarch64-linux-gnu) sha256=1269fb644a6de405057a53dd5c762b1209b43ca7424f839454d3dbc677c31a8f
   nokogiri (1.19.4-aarch64-linux-musl) sha256=35c65b9ce72b3bb03207bdbe7067915019dc18c1b9b59139684bd6690fdd01af
   nokogiri (1.19.4-arm-linux-gnu) sha256=a301313e38bb065d68239e79734bcd6f56fb6efaacebde29e9abf2a4735340ca
@@ -526,15 +543,17 @@ CHECKSUMS
   sass-listen (4.0.0) sha256=ae9dcb76dd3e234329e5ba6e213f48e532c5a3e7b0b4d8a87f13aaca0cc18377
   sawyer (0.9.3) sha256=0d0f19298408047037638639fe62f4794483fb04320269169bd41af2bdcf5e41
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
-  selenium-webdriver (3.142.7) sha256=dea0993e0e4fdb364f0453144814c0e6099a411d17396807c6cac666d0ddac29
+  selenium-webdriver (4.44.0) sha256=6f1df072529af369589c46f0e01132952aabb250cfd683c274d74dc1eb5d8477
   simpleidn (0.2.3) sha256=08ce96f03fa1605286be22651ba0fc9c0b2d6272c9b27a260bc88be05b0d2c29
   terminal-table (1.8.0) sha256=13371f069af18e9baa4e44d404a4ada9301899ce0530c237ac1a96c19f652294
+  thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
   typhoeus (1.6.0) sha256=bacc41c23e379547e29801dc235cd1699b70b955a1ba3d32b2b877aa844c331d
   tzinfo (2.0.6) sha256=8daf828cc77bcf7d63b0e3bdb6caa47e2272dcfaf4fbfe46f8c3a9df087a829b
   unicode-display_width (1.8.0) sha256=0292132d364d59fcdd83f144910c48b3c8332b28a14c5c04bb093dd165600488
   uri (1.1.1) sha256=379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6
-  webdrivers (4.6.1) sha256=b779677d8e2ef647000b6cfbf7ce21fb36e3524ba9f5631c70f3a65a1dab5ed9
+  webdrivers (5.0.0) sha256=b292577fd9575f80d344a02255ae3f7dca1b05f9777b6a2d2c2d07c11987aa2f
   webrick (1.9.2) sha256=beb4a15fc474defed24a3bda4ffd88a490d517c9e4e6118c3edce59e45864131
+  websocket (1.2.11) sha256=b7e7a74e2410b5e85c25858b26b3322f29161e300935f70a0e0d3c35e0462737
   websocket-driver (0.8.2) sha256=97c556b019bf3410b4961002ac501621e9322d3f8a7bc02161a09301cc4c4146
   websocket-extensions (0.1.5) sha256=1c6ba63092cda343eb53fc657110c71c754c56484aad42578495227d717a8241
   xpath (3.2.0) sha256=6dfda79d91bb3b949b947ecc5919f042ef2f399b904013eb3ef6d20dd3a4082e
