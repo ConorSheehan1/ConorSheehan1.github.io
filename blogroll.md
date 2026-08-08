@@ -6,14 +6,15 @@ Blogs I think are useful, funny, or cool. In no particular order.
 See also [bookmarks]({{ '/bookmarks' | absolute_url }})
 
 ## Blogroll
+* [https://chainflow.io/tag/blogpost/](https://chainflow.io/tag/blogpost/) blockchain/crypto blog from a friend
 * [https://jvns.ca](https://jvns.ca)
 * [https://un.curl.dev](https://un.curl.dev)
 * [http://thewebsiteisdown.com](http://thewebsiteisdown.com)
 * [https://sive.rs](https://sive.rs)
 * [https://blog.codinghorror.com](https://blog.codinghorror.com)
 * [https://shunn.net](https://shunn.net)
-* [https://billwurtz.com/](https://billwurtz.com/)
-* [https://ciechanow.ski/](https://ciechanow.ski/)
+* [https://billwurtz.com/](https://billwurtz.com/) YouTube musical genius
+* [https://ciechanow.ski/](https://ciechanow.ski/) Visualisations 
 * [http://latentflip.com](http://latentflip.com)
 * [https://rachelbythebay.com](https://rachelbythebay.com)
 * [http://www.paulgraham.com](http://www.paulgraham.com)
