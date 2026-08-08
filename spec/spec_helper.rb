@@ -2,12 +2,25 @@
 
 require "rspec"
 require "capybara/rspec"
+require "capybara/cuprite"
 require "yaml"
 require "faraday"
-require "webdrivers"
-require "selenium/webdriver"
 
-Dir["#{__dir__}/support/**/*.rb"].sort.each { |f| require f }
+Capybara.register_driver(:cuprite_headless) do |app|
+  Capybara::Cuprite::Driver.new(app,
+                                headless: true,
+                                window_size: [1400, 1400],
+                                browser_options: {
+                                  "no-sandbox" => nil,
+                                  "disable-gpu" => nil,
+                                  "disable-dev-shm-usage" => nil
+                                })
+end
+
+Capybara.default_driver = :cuprite_headless
+Capybara.javascript_driver = :cuprite_headless
+
+Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|
   config.expect_with(:rspec) do |expectations|
@@ -22,10 +35,7 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  Capybara.current_driver = :selenium_headless
   Capybara.configure do |cap|
-    # Calling current_driver= from Capybara.configure is deprecated
-    cap.javascript_driver = :selenium_headless
     cap.run_server = false
     cap.app_host = "http://127.0.0.1:4000"
   end

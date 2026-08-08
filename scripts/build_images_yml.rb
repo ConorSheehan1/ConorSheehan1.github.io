@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 
 require "yaml"
-require "pp"
 
 def image_dir_to_yml(root_dir, glob_path, ext, excluded_projects)
   yml = {}

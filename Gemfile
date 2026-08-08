@@ -4,21 +4,25 @@ ruby ">= 2.7.0"
 
 source "https://rubygems.org"
 
-# https://pages.github.com/versions/
+# https://pages.github.com/versions/ dead :(
+# see https://ritviknag.com/tech-tips/ruby-versioning-hell-with-jekyll-&-github-pages/
 group :development, :test do
-  gem "byebug", "~> 10.0"
-  gem "ffi", "~> 1.12.0" # 1.13.0 has issues https://github.com/ffi/ffi/issues/773
+  gem "bundle-audit"
+  gem "byebug"
+  gem "ffi"
   gem "jekyll", "~> 3.9.0"
   gem "kramdown", ">= 2.3.1" # sec
-  gem "rubocop", "~> 0.90.0"
-  gem "webdrivers", "~> 4.6.0" # 4.7.0 execute_script to reset local storage for theme tests fails
+  gem "matrix"
+  gem "rubocop"
+  gem "webdrivers", "~> 5.0.0"
+  gem "webrick"
 end
 
 group :test do
   gem "capybara", "~> 3.32.0"
-  gem "faraday", "~> 1.0.1"
+  gem "cuprite"
+  gem "faraday", "~> 2.14.3"
   gem "rspec", "~> 3.7.0"
-  gem "selenium-webdriver", "~> 3.8"
 end
 
 group :jekyll_plugins do

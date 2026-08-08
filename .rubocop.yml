@@ -2,12 +2,15 @@
 #   Enabled: false
 
 AllCops:
-  TargetRubyVersion: 2.7.1
+  TargetRubyVersion: 3.2
   NewCops: enable # remove if this causes problems
 
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*.rb"
+
+Layout/IndentationWidth:
+  Width: 2
 
 # add indent after access modifier e.g. private
 Layout/IndentationConsistency:
@@ -30,7 +33,7 @@ Style/RegexpLiteral:
 # exceptions for Gmefile, spec, require, etc. type methods
 Style/MethodCallWithArgsParentheses:
   Enabled: true
-  IgnoredMethods:
+  AllowedMethods:
     - expect
     - gem
     - include
