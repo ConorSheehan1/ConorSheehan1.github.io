@@ -32,7 +32,7 @@ describe "projects search on home page", type: :feature, js: true do
       categories = ["Blog", "College", "Open source", "Personal"]
       categories.each do |category|
         category_xpath = "//a[contains(@class, 'jstree-anchor')" \
-          " and contains(text(), '#{category}')]"
+                         " and contains(text(), '#{category}')]"
         expect(page).to have_xpath(category_xpath)
       end
     end
@@ -40,8 +40,8 @@ describe "projects search on home page", type: :feature, js: true do
       before do
         # icon_css = '#j1_2 > i'
         # @college_category_toggle_icon = page.find(:css, icon_css)
-        college_folder_xpath = "//a[contains(@class, 'jstree-anchor')"\
-          " and contains(text(), 'College')]"
+        college_folder_xpath = "//a[contains(@class, 'jstree-anchor')" \
+                               " and contains(text(), 'College')]"
         college_icon_xpath = "#{college_folder_xpath}/preceding-sibling::i"
         @college_category_toggle_icon = page.find(:xpath, college_icon_xpath)
         @college_category_toggle_icon.click

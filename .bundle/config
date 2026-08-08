@@ -1,2 +1,3 @@
 ---
 BUNDLE_MIN_AGE: "7"
+BUNDLE_PATH: "vendor/bundle"

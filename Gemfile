@@ -4,13 +4,14 @@ ruby ">= 2.7.0"
 
 source "https://rubygems.org"
 
-# https://pages.github.com/versions/
+# https://pages.github.com/versions/ dead :(
+# see https://ritviknag.com/tech-tips/ruby-versioning-hell-with-jekyll-&-github-pages/
 group :development, :test do
   gem "byebug"
   gem "ffi"
   gem "jekyll", "~> 3.9.0"
   gem "kramdown", ">= 2.3.1" # sec
-  gem "rubocop", "~> 0.90.0"
+  gem "rubocop"
   gem "webdrivers", "~> 4.6.0" # 4.7.0 execute_script to reset local storage for theme tests fails
 end
 

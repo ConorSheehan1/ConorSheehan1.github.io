@@ -4,3 +4,4 @@ _site
 .rspec-local
 TODO.md
 *.bak
+vendor

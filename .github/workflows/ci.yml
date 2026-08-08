@@ -30,8 +30,8 @@ jobs:
         bundler-cache: true
     - name: Install dependencies
       run: |
-        gem install bundler -v 2.1.4
-        bundle config path vendor/bundle
+        # ruby smart enough to install correct bundler automatically now?
+        # gem install bundler -v 4.0.18
         bundle install
     - name: Start jekyll
       run: |

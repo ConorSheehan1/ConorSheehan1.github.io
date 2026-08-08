@@ -31,7 +31,7 @@ jobs:
           # jekyll_cfg: '_config.yml'  # Default is _config.yml
           # jekyll_baseurl: 'https://conorsheehan1.github.io/'         # Default is according to _config.yml
           ruby_ver: '3.2.3'
-          bundler_ver: '2.1.4'       # Default is latest bundler version
+          bundler_ver: '4.0.18'       # Default is latest bundler version
           # fix after broken nokogiri, see #50
           # cname: ''                  # Default is to not use a cname
           # actor: ''                  # Default is the GITHUB_ACTOR
