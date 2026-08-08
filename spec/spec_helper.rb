@@ -6,22 +6,21 @@ require "capybara/cuprite"
 require "yaml"
 require "faraday"
 
-Capybara.register_driver :cuprite_headless do |app|
+Capybara.register_driver(:cuprite_headless) do |app|
   Capybara::Cuprite::Driver.new(app,
-    headless: true,
-    window_size: [1400, 1400],
-    browser_options: {
-      "no-sandbox" => nil,
-      "disable-gpu" => nil,
-      "disable-dev-shm-usage" => nil
-    }
-  )
+                                headless: true,
+                                window_size: [1400, 1400],
+                                browser_options: {
+                                  "no-sandbox" => nil,
+                                  "disable-gpu" => nil,
+                                  "disable-dev-shm-usage" => nil
+                                })
 end
 
 Capybara.default_driver = :cuprite_headless
 Capybara.javascript_driver = :cuprite_headless
 
-Dir["#{__dir__}/support/**/*.rb"].sort.each { |f| require f }
+Dir["#{__dir__}/support/**/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|
   config.expect_with(:rspec) do |expectations|
